@@ -1,0 +1,15 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://www.w3.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.seu.projeto</groupId> <!-- Mude para o groupId do seu projeto pai -->
+        <artifactId>pbl3</artifactId>      <!-- Mude para o artifactId do seu projeto pai -->
+        <version>1.0.0</version>           <!-- Versão do seu projeto pai -->
+    </parent>
+
+    <artifactId>backend</artifactId>
+    <packaging>jar</packaging>
+
+    <!-- Mantenha as dependências e configurações que já existiam no backend -->
+</project>

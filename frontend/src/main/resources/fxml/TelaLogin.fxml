@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to left, #FF1493, #FF69B4, #FFB6C1 50%, #FFFFFF 50%);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaLogin">
+   <children>
+      <Button layoutX="56.0" layoutY="358.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="210.0" style="-fx-background-color: #FFB6C1;" text="Entrar" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font>
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor>
+      </Button>
+      <Label layoutX="54.0" layoutY="61.0">
+         <font>
+            <Font name="Comic Sans MS Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="179.0" text="Nome de usuário">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="250.0" text="Senha">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="169.0" layoutY="311.0" text="Esqueceu a senha? " />
+      <Label layoutX="175.0" layoutY="328.0" text="Faça outra conta." />
+      <TextField layoutX="56.0" layoutY="201.0" prefHeight="26.0" prefWidth="210.0" promptText="Informe o nome do usuário" />
+      <PasswordField layoutX="56.0" layoutY="272.0" prefHeight="26.0" prefWidth="210.0" promptText="Informe sua senha" />
+      <ImageView fitHeight="316.0" fitWidth="320.0" layoutX="3.0" layoutY="-67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Sayumi.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="58.0" layoutY="133.0" prefHeight="36.0" prefWidth="166.0" text="Login" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="SW_RESIZE" />
+   </cursor>
+</AnchorPane>
