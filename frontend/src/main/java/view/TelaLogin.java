@@ -1,35 +1,50 @@
 package view;
 
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
 
 public class TelaLogin {
 
     @FXML
-    private TextField usernameField;
+    private TextField campoLogin;
 
     @FXML
-    private PasswordField passwordField;
+    private PasswordField campoSenha;
 
-    // Este método é chamado quando o botão "Entrar" é clicado
+    @FXML
+    private Label labelAbriTelaCadastro;
+
     @FXML
     private void handleLogin() {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+        String login = campoLogin.getText();
+        String senha = campoSenha.getText();
 
-        // Lógica para enviar os dados para o backend e validar o login
-        if (isValidLogin(username, password)) {
-            // Redireciona para a próxima tela ou exibe mensagem de sucesso
+        if (isValidLogin(login, senha)) {
+            // Lógica de navegação para a próxima tela
+            System.out.println("Login bem-sucedido!");
+
+            // Por exemplo, carregar a tela de eventos
         } else {
-            // Exibe mensagem de erro
+            showErrorMessage("Nome de usuário ou senha inválidos.");
         }
     }
 
     private boolean isValidLogin(String username, String password) {
-        // Aqui você chama o backend para validar o login
-        // Retorne true se for válido, false se não for
-        return true; // apenas um exemplo
+        return "admin".equals(username) && "senha123".equals(password); // Lógica de validação
     }
+
+    private void showErrorMessage(String message) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Erro de Login");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+
 }

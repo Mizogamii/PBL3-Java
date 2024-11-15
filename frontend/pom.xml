@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.seu.projeto</groupId>
+        <groupId>projeto</groupId>
         <artifactId>pbl3</artifactId>
         <version>1.0.0</version>
     </parent>
@@ -16,7 +16,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>20</version>
+            <version>22.0.1</version>
         </dependency>
         <!-- Outras dependências de JavaFX, se necessário -->
     </dependencies>
