@@ -1,0 +1,184 @@
+/*******************************************************************************************
+ Autor: Sayumi Mizogami Santana
+ Componente Curricular: EXA 863 - MI Programação
+ Concluido em: 20/10/2024
+ Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
+ trecho de código de outro colega ou de outro autor, tais como provindos de livros e
+ apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
+ de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
+ do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
+ *******************************************************************************************/
+package projeto.backend.controller;
+
+import projeto.backend.model.Evento;
+import projeto.backend.model.Usuario;
+import projeto.backend.repository.ArmazenamentoDados;
+import projeto.backend.repository.LeituraDados;
+
+import java.io.File;
+import java.util.List;
+
+public class ControllerUsuario {
+    List<Evento> eventos = ArmazenamentoDados.eventos;
+    //CADASTRO DE USUÁRIO
+    /**
+     *
+     * @param login Login do usuário.
+     * @param senha Senha do usuário.
+     * @param nome Nome do usuário.
+     * @param cpf CPF do usuário.
+     * @param email E-mail do usuário.
+     * @return Retorna usuário cadastrado.
+     */
+
+    public Usuario cadastrarUsuario(String login, String senha, String nome, String cpf, String email) {
+        if (verificacaoLogin(login) == null) {
+            Usuario usuario = new Usuario(login, senha, nome, cpf, email);
+            ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
+            return usuario;
+        } else {
+            throw new IllegalArgumentException("Erro ao cadastrar usuário. Verifique as informações e tente novamente.");
+        }
+    }
+
+    /**
+     * @param login Login do usuário.
+     * @param senha Senha do usuário.
+     * @param nome Nome do usuário.
+     * @param cpf CPF do usuário.
+     * @param email E-mail do usuário.
+     * @param admin Indica se o usuário é um administrador.
+     * @return Retorna administrador cadastrado.
+     */
+
+    public Usuario cadastrarUsuarioAdmin(String login, String senha, String nome, String cpf, String email, boolean admin) {
+        if (verificacaoLogin(login) == null) {
+            Usuario usuario = new Usuario(login, senha, nome, cpf, email, admin);
+            ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
+            return usuario;
+        } else {
+            throw new IllegalArgumentException("Erro ao cadastrar usuário. Verifique as informações e tente novamente.");
+        }
+    }
+
+    //LOGIN DO USUÁRIO
+    /**
+     * Realiza o login de um usuário.
+     * @param login Login do usuário.
+     * @param senha Senha do usuário.
+     * @return Retorna o usuário que fez login.
+     */
+    public Usuario fazerLogin(String login, String senha) {
+        Usuario usuario = verificacaoLogin(login);
+        if (usuario != null) {
+            if (usuario.getSenha().equals(senha)) {
+                return usuario;
+            } else {
+                throw new IllegalArgumentException("ERRO! Senha incorreta!");
+            }
+        } else {
+            throw new IllegalArgumentException("ERRO! Login inexistente!");
+        }
+    }
+
+    //EDIÇÃO DE DADOS
+    /**
+     * Edita o nome que está no login do usuário.
+     * @param usuario Usuário a ser modificado.
+     * @param login Login atual.
+     * @param senha Senha atual.
+     * @param newLogin O novo login escolhido pelo usuaário.
+     */
+    public void editarLogin(Usuario usuario, String login, String senha, String newLogin) {
+        if (verificacaoLogin(newLogin) == null) {
+            usuario.setLogin(newLogin);
+            File arquivoUsuario = geradorDeCaminho("Repositorio/usuarioDados", usuario.getCpf() + ".json");
+            LeituraDados.ler(Usuario.class, arquivoUsuario.getPath());
+            ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
+        } else {
+            throw new IllegalArgumentException("Dados incorretos, tente novamente!");
+        }
+    }
+
+    /**
+     * Edita a senha do usuário.
+     * @param usuario Usuário a ser modificado.
+     * @param login Login atual.
+     * @param senha Senha atual.
+     * @param newSenha Nova senha escolhida pelo usuário.
+     */
+    public void editarSenha(Usuario usuario, String login, String senha, String newSenha){
+        if(fazerLogin(login, senha) != null){
+            usuario.setSenha(newSenha);
+        }
+        ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
+    }
+
+    /**
+     * Edita o nome do usuário.
+     * @param usuario Usuário a ser modificado.
+     * @param login Login atual.
+     * @param senha Senha atual.
+     * @param newNome Nova nome escolhido pelo usuário.
+     */
+    public void editarNome(Usuario usuario, String login, String senha, String newNome){
+        if(fazerLogin(login, senha) != null){
+            usuario.setNome(newNome);
+        }
+        ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
+    }
+
+    /**
+     * Edita o email do usuário.
+     * @param usuario Usuário a ser modificado.
+     * @param login Login atual.
+     * @param senha Senha atual.
+     * @param newEmail Nova email escolhido pelo usuário.
+     */
+    public void editarEmail(Usuario usuario, String login, String senha, String newEmail){
+        if(fazerLogin(login, senha) != null){
+            usuario.setEmail(newEmail);
+        }
+        ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
+    }
+    //MÉTODOS PARA USO INTERNO
+    /**
+     * /Gera o caminho do arquivo para a leitura de dados
+     * @param caminhoInicial Caminho do repositório e o nome da pasta em que o arquivo json se encontra.
+     * @param nomeArquivo Nome do arquivo json a ser buscado.
+     * @return Retona o caminho do arquivo json.
+     */
+    public static File geradorDeCaminho(String caminhoInicial, String nomeArquivo){
+        String caminho = caminhoInicial;
+        File arquivoUsuario = new File(caminho, nomeArquivo);
+        return arquivoUsuario;
+    }
+
+
+    /**
+     * Verifica se existe um usuario com o mesmo login, uma vez que o login deveria ser algo único.
+     * @param login Login do usuário
+     * @return Retorna o usuário caso o login exista e null caso não.
+     */
+    public Usuario verificacaoLogin(String login) {
+        File arquivosJson[];
+        File diretorio = new File("Repositorio/usuarioDados");
+        arquivosJson = diretorio.listFiles();
+
+        if(!diretorio.isDirectory() || !diretorio.exists() || arquivosJson == null || arquivosJson.length == 0){
+            return null;
+        }else{
+            for (int i = 0; i < arquivosJson.length; i++) {
+                File arquivo = arquivosJson[i];
+
+                if (arquivo.isFile() && arquivo.getName().toLowerCase().endsWith(".json")) {
+                    Usuario usuario = LeituraDados.ler(Usuario.class, arquivo.getPath());
+                    if (usuario != null && usuario.getLogin().equals(login)) {
+                        return usuario;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+}
