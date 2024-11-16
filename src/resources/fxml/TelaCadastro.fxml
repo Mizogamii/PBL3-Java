@@ -7,57 +7,57 @@
 
 <AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to left, #FF1493, #FF69B4, #FFB6C1 50%, #FFFFFF 50%);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaCadastroController">
    <children>
-      <ImageView fitHeight="201.0" fitWidth="210.0" layoutX="60.0" layoutY="-44.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Sayumi.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="131.0" layoutY="389.0" mnemonicParsing="false" onAction="#botaoSalvar" style="-fx-background-color: #FFB6C1; -fx-cursor: hand;" text="Salvar" textFill="WHITE">
+      <Button layoutX="129.0" layoutY="389.0" mnemonicParsing="false" onAction="#botaoSalvar" style="-fx-background-color: #FFB6C1; -fx-cursor: hand;" text="Salvar" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font></Button>
-      <Label layoutX="90.0" layoutY="84.0" text="Criar sua conta">
+      <Label layoutX="88.0" layoutY="98.0" text="Criar sua conta">
          <font>
             <Font name="Comic Sans MS Bold" size="20.0" />
          </font></Label>
 
-      <Label layoutX="60.0" layoutY="112.0" text="Nome">
+      <Label layoutX="58.0" layoutY="126.0" text="Nome">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font></Label>
 
-      <TextField fx:id="campoNome" layoutX="60.0" layoutY="130.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu nome" />
-      <Label layoutX="60.0" layoutY="159.0" text="Login">
+      <TextField fx:id="campoNome" layoutX="58.0" layoutY="144.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu nome" />
+      <Label layoutX="58.0" layoutY="173.0" text="Login">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font></Label>
-      <TextField fx:id="campoLogin" layoutX="60.0" layoutY="177.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o nome do usuário" />
-      <Label layoutX="60.0" layoutY="206.0" text="E-mail">
+      <TextField fx:id="campoLogin" layoutX="58.0" layoutY="191.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o nome do usuário" />
+      <Label layoutX="58.0" layoutY="220.0" text="E-mail">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font></Label>
 
-      <TextField fx:id="campoEmail" layoutX="60.0" layoutY="228.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu e-mail" />
-      <Label layoutX="60.0" layoutY="253.0" text="CPF">
+      <TextField fx:id="campoEmail" layoutX="58.0" layoutY="242.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu e-mail" />
+      <Label layoutX="58.0" layoutY="267.0" text="CPF">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font></Label>
-      <TextField fx:id="campoCpf" layoutX="60.0" layoutY="270.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu CPF" />
-      <Label layoutX="60.0" layoutY="300.0" text="Senha">
+      <TextField fx:id="campoCpf" layoutX="58.0" layoutY="284.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu CPF" />
+      <Label layoutX="58.0" layoutY="314.0" text="Senha">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font>
       </Label>
-      <PasswordField fx:id="campoSenha" layoutX="60.0" layoutY="318.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira uma senha" />
-      <Label layoutX="123.0" layoutY="348.0" text="Já tem conta? ">
+      <PasswordField fx:id="campoSenha" layoutX="58.0" layoutY="332.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira uma senha" />
+      <Label layoutX="121.0" layoutY="362.0" text="Já tem conta? ">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="207.0" layoutY="349.0" onMouseClicked="#voltandoLogin" style="-fx-text-fill: #000000; -fx-cursor: hand;" styleClass="label-button" text="Clique aqui!">
+      <Label layoutX="205.0" layoutY="363.0" onMouseClicked="#voltandoLogin" style="-fx-text-fill: #000000; -fx-cursor: hand;" styleClass="label-button" text="Clique aqui!">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font>
       </Label>
+      <ImageView fitHeight="95.0" fitWidth="149.0" layoutX="94.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagemLogo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
