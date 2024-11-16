@@ -22,6 +22,7 @@ public class Evento {
     private Date data;
     private boolean ativo;
     private String idEvento;
+    private String categoria;
     private List<Comentario> comentarios;
 
     /**
