@@ -71,11 +71,8 @@ public class TelaLoginController {
     public void abrirTelaCadastro(){
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaCadastro.fxml"));
-            TelaCadastroController controller = new TelaCadastroController();
-            loader.setController(controller);
-            controller.setControllerUsuario(controllerUsuario);
-
             Parent root = loader.load();
+
             Stage novaTela = new Stage();
             novaTela.setTitle("Cadastro");
             novaTela.setScene(new Scene(root));

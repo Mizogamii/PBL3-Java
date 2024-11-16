@@ -11,10 +11,7 @@ import projeto.backend.model.Usuario;
 
 public class TelaCadastroController {
 
-    private ControllerUsuario controllerUsuario;
-    public void setControllerUsuario(ControllerUsuario controllerUsuario){
-        this.controllerUsuario = controllerUsuario;
-    }
+    private ControllerUsuario controllerUsuario = new ControllerUsuario();
 
     @FXML
     private TextField campoNome;
@@ -38,6 +35,8 @@ public class TelaCadastroController {
         String email = campoEmail.getText();
         String cpf = campoCpf.getText();
         String senha = campoSenha.getText();
+
+        System.out.println("Dados recebidos: " + nome + ", " + login + ", " + email + ", " + cpf + ", " + senha);
 
         if(controllerUsuario == null){
             showErrorMessage("Erro: Controller não foi inicializado");
