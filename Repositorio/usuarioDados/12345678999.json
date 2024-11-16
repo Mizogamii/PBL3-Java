@@ -1,0 +1,10 @@
+{
+  "login": "funcionaPeloAmorDeDeus",
+  "senha": "123",
+  "nome": "Funciona Por Favor",
+  "cpf": "12345678999",
+  "email": "funciona@gmail.com",
+  "admin": false,
+  "ingressos": [],
+  "recibos": []
+}

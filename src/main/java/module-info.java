@@ -16,5 +16,6 @@ module projeto {
     exports projeto.backend.model;
     exports projeto.backend.controller;
     opens projeto.frontend.view.controllers to javafx.fxml;
+    opens projeto.backend.model to com.google.gson;
 
 }

@@ -18,7 +18,7 @@ import java.util.Objects;
 
 
 public class Usuario {
-    private String login;
+    protected String login;
     private String senha;
     private String nome;
     private String cpf;

@@ -47,6 +47,7 @@ public class TelaCadastroController {
             Usuario usuario = controllerUsuario.cadastrarUsuario(login, senha,nome,cpf,email);
             if(usuario != null){
                 showSuccessMessage("Cadastro realizado com sucesso!");
+                limparCampos();
             }else{
                 showErrorMessage("Erro ao cadastrar. Tente novamente");
             }
@@ -73,6 +74,14 @@ public class TelaCadastroController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    private void limparCampos() {
+        campoNome.clear();
+        campoLogin.clear();
+        campoEmail.clear();
+        campoCpf.clear();
+        campoSenha.clear();
     }
 }
 

@@ -41,37 +41,34 @@ public class ArmazenamentoDados {
      * @param caminho Caminho do arquivo que será utilizado.
      * @throws IOException Para caso ocorram erros.
      */
+
     public static void salvarObjeto(Object objeto, String caminho) throws IOException {
         try (FileWriter inserir = new FileWriter(caminho)) {
             gson.toJson(objeto, inserir);
             inserir.flush();
         } catch (Exception e) {
-            e.getStackTrace();
+            e.printStackTrace();
+            throw new RuntimeException("Erro ao salvar objeto no caminho: " + caminho, e);
         }
     }
 
+
     /**
      * Salva um objeto no repositório
-     * @param objSalvar Obejto a ser salvo
+     * @param objeto Obejto a ser salvo
      * @param nomePasta Nome da pasta onde será salvo o objeto.
      * @param nomeDoArquivo Nome do arquivo json onde o objeto será salvo.
      */
-    public static void salvarNoRepositorio(Object objSalvar, String nomePasta, String nomeDoArquivo) {
+    public static <T> void salvarNoRepositorio(T objeto, String nomePasta, String nomeDoArquivo) {
         try {
-            File repositorio = new File("Repositorio");
-            if (!repositorio.exists()) {
-                repositorio.mkdirs();
-            }
-
-            File pastaDados = new File(repositorio, nomePasta);
+            File pastaDados = new File("Repositorio", nomePasta);
             if (!pastaDados.exists()) {
                 pastaDados.mkdirs();
             }
-
             String caminho = pastaDados.getPath() + File.separator + nomeDoArquivo;
-            ArmazenamentoDados.salvarObjeto(objSalvar, caminho);
-
+            salvarObjeto(objeto, caminho);
         } catch (IOException e) {
+            System.err.println("Erro ao salvar no repositório: " + nomePasta + "/" + nomeDoArquivo);
             e.printStackTrace();
         }
     }

@@ -17,11 +17,7 @@ import java.io.IOException;
 
 public class TelaLoginController {
 
-    private ControllerUsuario controllerUsuario;
-
-    public void setControllerUsuario(ControllerUsuario controllerUsuario){
-        this.controllerUsuario = controllerUsuario;
-    }
+    private ControllerUsuario controllerUsuario = new ControllerUsuario();
 
     @FXML
     private TextField campoLogin;
@@ -36,6 +32,12 @@ public class TelaLoginController {
     private void handleLogin() {
         String login = campoLogin.getText();
         String senha = campoSenha.getText();
+
+        if(controllerUsuario == null){
+            showErrorMessage("Erro: Controller não foi inicializado");
+            return;
+        }
+
         try{
             Usuario usuario = controllerUsuario.fazerLogin(login, senha);
             abrirTelaPrincipal(usuario);
