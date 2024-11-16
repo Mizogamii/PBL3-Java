@@ -6,8 +6,16 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import projeto.backend.controller.ControllerUsuario;
+import projeto.backend.model.Usuario;
 
 public class TelaCadastroController {
+
+    private ControllerUsuario controllerUsuario;
+    public void setControllerUsuario(ControllerUsuario controllerUsuario){
+        this.controllerUsuario = controllerUsuario;
+    }
+
     @FXML
     private TextField campoNome;
 
@@ -31,5 +39,42 @@ public class TelaCadastroController {
         String cpf = campoCpf.getText();
         String senha = campoSenha.getText();
 
+        if(controllerUsuario == null){
+            showErrorMessage("Erro: Controller não foi inicializado");
+            return;
+        }
+
+        try{
+            Usuario usuario = controllerUsuario.cadastrarUsuario(login, senha,nome,cpf,email);
+            if(usuario != null){
+                showSuccessMessage("Cadastro realizado com sucesso!");
+            }else{
+                showErrorMessage("Erro ao cadastrar. Tente novamente");
+            }
+        }catch(IllegalArgumentException e){
+            showErrorMessage("Erro! Tente novamente.");
+        }
+    }
+
+    public void initialize(){
+        System.out.println("Iniciando nova tela");
+    }
+
+    private void showErrorMessage(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erro ao realizar cadastro");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private void showSuccessMessage(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Cadastro Realizado");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
+
+
