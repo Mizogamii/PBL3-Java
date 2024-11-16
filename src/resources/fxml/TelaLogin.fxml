@@ -36,7 +36,7 @@
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font></Label>
-      <Button layoutX="56.0" layoutY="316.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="36.0" prefWidth="210.0" style="-fx-background-color: #FFB6C1; -fx-cursor: hand;" text="Entrar" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+      <Button layoutX="56.0" layoutY="316.0" mnemonicParsing="false" onAction="#abrirTelaLogin" prefHeight="36.0" prefWidth="210.0" style="-fx-background-color: #FFB6C1; -fx-cursor: hand;" text="Entrar" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="Comic Sans MS Bold" size="14.0" />
          </font>
@@ -48,7 +48,7 @@
          </cursor>
       </Button>
       <Label layoutX="105.0" layoutY="362.0" text="Não tem conta? " />
-      <Label layoutX="195.0" layoutY="362.0" onMouseClicked="#abrirTelaCadastro" style="-fx-text-fill: #000000; -fx-cursor: hand;" styleClass="label-button" text="Inscreva-se">
+      <Label fx:id="labelAbrirTelaCadastro" layoutX="195.0" layoutY="362.0" onMouseClicked="#abrirTelaCadastro" style="-fx-text-fill: #000000; -fx-cursor: hand;" styleClass="label-button" text="Inscreva-se">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font>

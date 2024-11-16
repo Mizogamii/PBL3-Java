@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to right, #FF1493, #FF69B4, #FFB6C1 50%, #FFFFFF 50%);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaCadastroController">
    <children>
-      <Button layoutX="411.0" layoutY="344.0" mnemonicParsing="false" onAction="#botaoSalvar" style="-fx-background-color: #FFB6C1; -fx-cursor: hand;" text="Salvar" textFill="WHITE">
+      <Button layoutX="411.0" layoutY="353.0" mnemonicParsing="false" onAction="#botaoSalvar" style="-fx-background-color: #FFB6C1; -fx-cursor: hand;" text="Salvar" textFill="WHITE">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font></Button>
@@ -21,25 +21,43 @@
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font></Label>
 
-      <TextField fx:id="campoNome" layoutX="341.0" layoutY="113.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu nome" />
+      <TextField fx:id="campoNome" layoutX="341.0" layoutY="112.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu nome" />
       <Label layoutX="341.0" layoutY="141.0" text="Login">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font></Label>
-      <TextField fx:id="campoLogin" layoutX="341.0" layoutY="164.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o nome do usuário" />
-      <Label layoutX="340.0" layoutY="192.0" text="E-mail" />
-      <TextField fx:id="campoEmail" layoutX="340.0" layoutY="212.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu e-mail" />
-      <Label layoutX="340.0" layoutY="239.0" text="CPF">
+      <TextField fx:id="campoLogin" layoutX="341.0" layoutY="159.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o nome do usuário" />
+      <Label layoutX="341.0" layoutY="188.0" text="E-mail">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font></Label>
-      <TextField fx:id="campoCpf" layoutX="340.0" layoutY="257.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu CPF" />
-      <Label layoutX="341.0" layoutY="286.0" text="Senha" />
-      <PasswordField fx:id="campoSenha" layoutX="340.0" layoutY="304.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira uma senha" />
+
+      <TextField fx:id="campoEmail" layoutX="341.0" layoutY="206.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu e-mail" />
+      <Label layoutX="341.0" layoutY="235.0" text="CPF">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font></Label>
+      <TextField fx:id="campoCpf" layoutX="341.0" layoutY="252.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira o seu CPF" />
+      <Label layoutX="341.0" layoutY="282.0" text="Senha">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="campoSenha" layoutX="341.0" layoutY="300.0" prefHeight="26.0" prefWidth="210.0" promptText="Insira uma senha" />
       <ImageView fitHeight="144.0" fitWidth="149.0" layoutX="374.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Sayumi.png" />
          </image>
       </ImageView>
+      <Label layoutX="403.0" layoutY="330.0" text="Já tem conta? ">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="486.0" layoutY="330.0" onMouseClicked="#voltandoLogin" style="-fx-text-fill: #000000; -fx-cursor: hand;" styleClass="label-button" text="Clique aqui!">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
