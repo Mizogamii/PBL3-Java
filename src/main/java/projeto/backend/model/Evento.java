@@ -32,7 +32,7 @@ public class Evento {
      * @param descricao Descrição do evento.
      * @param data      Data do evento.
      */
-    public Evento(String nome, String descricao, int quantidadeAssentosDisponiveis, Date data) {
+    public Evento(String nome, String descricao, int quantidadeAssentosDisponiveis, Date data, String categoria) {
         this.nome = nome;
         this.descricao = descricao;
         this.quantidadeAssentosDisponiveis = quantidadeAssentosDisponiveis;
@@ -41,6 +41,8 @@ public class Evento {
         SimpleDateFormat dataEdit = new SimpleDateFormat("dd-MM-yyyy");
         String codigo = nome + dataEdit.format(data);
         this.idEvento = codigo;
+
+        this.categoria = categoria;
     }
 
     //Getters e setters
@@ -66,6 +68,14 @@ public class Evento {
 
     public void setData(Date data) {
         this.data = data;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public String getIdEvento() {

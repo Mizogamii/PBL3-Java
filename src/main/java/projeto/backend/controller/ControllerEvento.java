@@ -32,9 +32,9 @@ public class ControllerEvento {
      * @param data Data do evento.
      * @return Retorna evento cadastrado.
      */
-    public Evento cadastrarEvento(Usuario adm, String nome, String descricao, int quantidadeAssentos, Date data) {
+    public Evento cadastrarEvento(Usuario adm, String nome, String descricao, int quantidadeAssentos, Date data, String categoria) {
         if (adm.isAdmin()) {
-            Evento evento = new Evento(nome, descricao, quantidadeAssentos, data);
+            Evento evento = new Evento(nome, descricao, quantidadeAssentos, data, categoria);
             evento.statusAtualizadoEvento();
             eventos.add(evento);
             ArmazenamentoDados.salvarNoRepositorio(evento, "eventosDados", evento.getIdEvento() + ".json");

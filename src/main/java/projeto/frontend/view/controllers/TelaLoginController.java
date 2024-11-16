@@ -9,6 +9,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Usuario;
@@ -30,6 +32,20 @@ public class TelaLoginController {
     private Label labelAbrirTelaCadastro;
 
     @FXML
+    private void initialize(){
+        campoLogin.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                KeyCodeCombination fecharPorTeclado = new KeyCodeCombination(KeyCode.W, KeyCodeCombination.CONTROL_DOWN);
+                newScene.setOnKeyPressed(event -> {
+                    if(fecharPorTeclado.match(event)){
+                        fecharTela();
+                    }
+                });
+            }
+        });
+    }
+
+    @FXML
     private void abrirTelaLogin() {
         String login = campoLogin.getText();
         String senha = campoSenha.getText();
@@ -45,6 +61,7 @@ public class TelaLoginController {
         }catch (IllegalArgumentException e){
             NavegacaoTela.showErrorMessage(e.getMessage());
         }
+
     }
 
     private void abrirTelaPrincipal(Usuario usuario) {
@@ -64,4 +81,10 @@ public class TelaLoginController {
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaCadastro.fxml", "Cadastro");
     }
+
+    private void fecharTela(){
+        Stage stage = (Stage) campoLogin.getScene().getWindow();
+        stage.close();
+    }
 }
+
