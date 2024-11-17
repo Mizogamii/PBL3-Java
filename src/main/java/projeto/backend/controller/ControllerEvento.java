@@ -10,6 +10,7 @@
  *******************************************************************************************/
 package projeto.backend.controller;
 
+import org.w3c.dom.events.Event;
 import projeto.backend.model.Comentario;
 import projeto.backend.model.Evento;
 import projeto.backend.model.Ingresso;
@@ -50,7 +51,12 @@ public class ControllerEvento {
      * @return Retorna uma lista com os nomes dos eventos disponíveis.
      */
 
-    public List<String> listarEventosDisponiveis() {
+    public List<Evento> listarEventosDisponiveis() {
+
+        return ArmazenamentoDados.listarEventos();
+    }
+
+    public List<String> listarEventosDisponiveisNome() {
         List<Evento> eventos = ArmazenamentoDados.listarEventos();
         List<String> eventosDisp = new ArrayList<>();
 
@@ -59,6 +65,7 @@ public class ControllerEvento {
         }
         return eventosDisp;
     }
+
     //FEEDBACK DO CLIENTE
     /**
      * Processa o comentário feito pelo usuário sovbre um evento participado por ele.

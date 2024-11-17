@@ -10,6 +10,9 @@ public class TelaPrincipalUsuarioController {
     @FXML
     private Label labelAbrirTelaEdicao;
 
+    @FXML
+    private Label labelAbrirTelaListar;
+
    @FXML
     public void abrirTelaEditar(){
         Stage stage = null;
@@ -19,5 +22,16 @@ public class TelaPrincipalUsuarioController {
             stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaEdicao.fxml", "Editar Dados");
+    }
+
+    @FXML
+    public void abrirTelaListar(){
+        Stage stage = null;
+        if (labelAbrirTelaListar == null) {
+            System.out.println("labelAbriTelaListar está null!");
+        } else {
+            stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
+        }
+        NavegacaoTela.trocarTela(stage, "/fxml/TelaListarEvento.fxml", "Listar dados");
     }
 }

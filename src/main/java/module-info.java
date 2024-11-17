@@ -10,12 +10,14 @@ module projeto {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
+
     requires java.base;
 
     exports projeto.frontend.view;
     exports projeto.backend.model;
     exports projeto.backend.controller;
-    opens projeto.frontend.view.controllers to javafx.fxml;
+    opens projeto.frontend.view.controllers to javafx.fxml, eu.hansolo.toolbox;
+    //opens projeto.frontend.view.controllers to javafx.fxml;
     opens projeto.backend.model to com.google.gson;
 
 }
