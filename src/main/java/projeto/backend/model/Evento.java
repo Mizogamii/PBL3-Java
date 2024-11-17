@@ -10,6 +10,9 @@
  *******************************************************************************************/
 package projeto.backend.model;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -33,6 +36,10 @@ public class Evento {
      * @param data      Data do evento.
      */
     public Evento(String nome, String descricao, int quantidadeAssentosDisponiveis, Date data, String categoria) {
+        Gson gson = new GsonBuilder()
+                .setDateFormat("dd/MM/yyyy")
+                .create();
+
         this.nome = nome;
         this.descricao = descricao;
         this.quantidadeAssentosDisponiveis = quantidadeAssentosDisponiveis;

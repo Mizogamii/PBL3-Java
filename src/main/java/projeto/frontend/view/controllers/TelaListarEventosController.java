@@ -12,6 +12,7 @@ import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Evento;
 import projeto.frontend.utils.NavegacaoTela;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class TelaListarEventosController {

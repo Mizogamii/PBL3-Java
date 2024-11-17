@@ -18,6 +18,7 @@ import projeto.backend.model.Usuario;
 import projeto.backend.repository.ArmazenamentoDados;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -52,9 +53,10 @@ public class ControllerEvento {
      */
 
     public List<Evento> listarEventosDisponiveis() {
-
+        eventos.sort(Comparator.comparing(Evento::getData));
         return ArmazenamentoDados.listarEventos();
     }
+
 
     public List<String> listarEventosDisponiveisNome() {
         List<Evento> eventos = ArmazenamentoDados.listarEventos();
