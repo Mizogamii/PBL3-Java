@@ -11,7 +11,7 @@ module projeto {
     requires eu.hansolo.tilesfx;
 
 
-    requires java.base;
+    requires java.desktop;
 
     exports projeto.frontend.view;
     exports projeto.backend.model;

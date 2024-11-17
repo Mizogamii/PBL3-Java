@@ -12,12 +12,12 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaLogin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaPrincipal.fxml"));
             Parent root = loader.load();
 
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Login");
+            primaryStage.setTitle("Tela Principal");
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
