@@ -2,7 +2,9 @@ package projeto.frontend.view.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -38,6 +40,9 @@ public class TelaListarEventosController {
     private TableColumn<Evento, String> colunaData;
 
     @FXML
+    private ComboBox<String> filtroCategoria;
+
+    @FXML
     private TableColumn<Evento, Integer> colunaQuantidadeAssentosDisponiveis;
 
     private final List<Evento> eventos = controllerEvento.listarEventosDisponiveis();
@@ -51,9 +56,34 @@ public class TelaListarEventosController {
         colunaQuantidadeAssentosDisponiveis.setCellValueFactory(new PropertyValueFactory<>("quantidadeAssentosDisponiveis"));
         ObservableList<Evento> listaEventos = FXCollections.observableArrayList(eventos);
         tabelaEventos.setItems(listaEventos);
+        ObservableList<String> categorias = FXCollections.observableArrayList();
+        eventos.forEach(evento -> {
+            if(!categorias.contains(evento.getCategoria())){
+                categorias.add(evento.getCategoria());
+            }
+        });
+        filtroCategoria.setItems(categorias);
+        filtroCategoria.getItems().add(0, "Todas");
+        filtroCategoria.getSelectionModel().select(0);
     }
 
     public void voltarTela(MouseEvent mouseEvent) {
         NavegacaoTela.voltarTelaInicial();
+    }
+
+    public void filtrarCategoria(ActionEvent actionEvent) {
+        String categoriaSelecionada = filtroCategoria.getValue();
+
+        if ("Todas".equals(categoriaSelecionada)) {
+            tabelaEventos.setItems(FXCollections.observableArrayList(eventos));
+        } else {
+            ObservableList<Evento> eventosFiltrados = FXCollections.observableArrayList();
+            for (Evento evento : eventos) {
+                if (evento.getCategoria().equals(categoriaSelecionada)) {
+                    eventosFiltrados.add(evento);
+                }
+            }
+            tabelaEventos.setItems(eventosFiltrados);
+        }
     }
 }

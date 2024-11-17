@@ -53,8 +53,9 @@ public class ControllerEvento {
      */
 
     public List<Evento> listarEventosDisponiveis() {
-        eventos.sort(Comparator.comparing(Evento::getData));
-        return ArmazenamentoDados.listarEventos();
+        List<Evento> eventosDisponiveis = new ArrayList<>(ArmazenamentoDados.listarEventos());
+        eventosDisponiveis.sort(Comparator.comparing(Evento::getData));
+        return eventosDisponiveis;
     }
 
 
