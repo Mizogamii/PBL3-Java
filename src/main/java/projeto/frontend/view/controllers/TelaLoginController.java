@@ -11,6 +11,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Usuario;
@@ -85,6 +86,10 @@ public class TelaLoginController {
     private void fecharTela(){
         Stage stage = (Stage) campoLogin.getScene().getWindow();
         stage.close();
+    }
+
+    public void voltarTela(MouseEvent mouseEvent) {
+        NavegacaoTela.voltarTelaInicial();
     }
 }
 

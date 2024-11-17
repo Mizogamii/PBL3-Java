@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Usuario;
@@ -77,6 +78,10 @@ public class TelaCadastroController {
         campoEmail.clear();
         campoCpf.clear();
         campoSenha.clear();
+    }
+
+    public void voltarTela(MouseEvent mouseEvent) {
+        NavegacaoTela.voltarTelaInicial();
     }
 }
 

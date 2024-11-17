@@ -9,8 +9,9 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 80%, #FFB6C1 80%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaListarEventosController">
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaListarEventosController">
    <children>
+      <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
       <TableView fx:id="tabelaEventos" layoutX="112.0" layoutY="132.0" prefHeight="270.0" prefWidth="426.0" style="-fx-background-color: white;">
         <columns>
           <TableColumn fx:id="colunaNomeEvento" prefWidth="75.0" text="Evento" />
@@ -20,17 +21,16 @@
             <TableColumn fx:id="colunaQuantidadeAssentosDisponiveis" prefWidth="164.00002441406252" text="Quantidade de assentos" />
         </columns>
       </TableView>
-      <Label layoutX="227.0" layoutY="31.0" text="Listagem de eventos">
+      <Label layoutX="242.0" layoutY="90.0" text="Listagem de eventos">
          <font>
-            <Font name="Comic Sans MS Bold" size="20.0" />
+            <Font name="Comic Sans MS Bold" size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="89.0" fitWidth="135.0" layoutX="14.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="89.0" fitWidth="135.0" layoutX="266.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagemLogo.png" />
          </image>
       </ImageView>
-      <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
       <Label fx:id="voltarTelaInicial" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
    </children>
 </AnchorPane>
