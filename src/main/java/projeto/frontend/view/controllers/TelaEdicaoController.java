@@ -62,6 +62,8 @@ public class TelaEdicaoController {
             if (!newSenha.isEmpty()) {
                 controllerUsuario.editarSenha(usuario, newSenha);
             }
+            NavegacaoTela.showSuccessMessage("Dados Editados", "Dados editados com sucesso!");
+
         } catch (IllegalArgumentException e) {
             NavegacaoTela.showErrorMessage("Erro! " + e.getMessage());
         }
