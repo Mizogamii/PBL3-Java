@@ -2,6 +2,7 @@ package projeto.frontend.view.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
@@ -54,5 +55,29 @@ public class TelaPrincipalUsuarioLogadoController {
             stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaPrincipal.fxml", "Tela Principal");
+    }
+
+    public void abrirTelaComprar(MouseEvent mouseEvent) {
+        Stage stage = null;
+        if (labelAbrirTelaListar == null) {
+            System.out.println("labelAbriTelaComprar está null!");
+        } else {
+            stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
+        }
+        NavegacaoTela.trocarTela(stage, "/fxml/TelaComprar.fxml", "Comprar Ingresso");
+    }
+
+    public void voltarTela(MouseEvent mouseEvent) {
+        NavegacaoTela.voltarTelaInicial();
+    }
+
+    public void comprasFeitas(MouseEvent mouseEvent) {
+        Stage stage = null;
+        if (labelAbrirTelaListar == null) {
+            System.out.println("labelComprasFeitas está null!");
+        } else {
+            stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
+        }
+        NavegacaoTela.trocarTela(stage, "/fxml/TelaComprasFeitas.fxml", "Compras Realizadas");
     }
 }

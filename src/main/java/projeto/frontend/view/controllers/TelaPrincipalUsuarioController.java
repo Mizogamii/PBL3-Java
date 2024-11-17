@@ -67,8 +67,4 @@ public class TelaPrincipalUsuarioController {
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaLogin.fxml", "Login");
     }
-
-    public void abrirTelaEditar(MouseEvent mouseEvent) {
-
-    }
 }
