@@ -9,6 +9,12 @@ import java.io.IOException;
 
 public class NavegacaoTela {
 
+    private static Stage primaryStage;
+
+    public static void setPrimaryStage(Stage stage){
+        primaryStage = stage;
+    }
+
     public static void trocarTela(Stage stage, String fxmlPath, String title) {
         if(stage == null){
             System.out.println("Stage nulo");
@@ -44,5 +50,13 @@ public class NavegacaoTela {
         alert.setHeaderText(null);
         alert.setContentText(mensagem);
         alert.showAndWait();
+    }
+
+    public static void voltarTelaInicial(){
+        if(primaryStage != null){
+            trocarTela(primaryStage, "/fxml/TelaPrincipal.fxml", "Tela Principal");
+        }else{
+            showErrorMessage("Erro! Não há tela principal definido.");
+        }
     }
 }
