@@ -58,9 +58,6 @@ public class TelaPrincipalUsuarioController {
     }
 
     @FXML
-    private TextField campoNome;
-
-    @FXML
     public void abrirTelaCadastro() {
         System.out.println("Label: " + labelAbrirTelaCadastro);
         Stage stage = null;
