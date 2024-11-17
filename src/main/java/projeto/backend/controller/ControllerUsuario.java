@@ -85,11 +85,9 @@ public class ControllerUsuario {
     /**
      * Edita o nome que está no login do usuário.
      * @param usuario Usuário a ser modificado.
-     * @param login Login atual.
-     * @param senha Senha atual.
      * @param newLogin O novo login escolhido pelo usuaário.
      */
-    public void editarLogin(Usuario usuario, String login, String senha, String newLogin) {
+    public void editarLogin(Usuario usuario, String newLogin) {
         if (verificacaoLogin(newLogin) == null) {
             usuario.setLogin(newLogin);
             File arquivoUsuario = geradorDeCaminho("Repositorio/usuarioDados", usuario.getCpf() + ".json");
@@ -103,42 +101,30 @@ public class ControllerUsuario {
     /**
      * Edita a senha do usuário.
      * @param usuario Usuário a ser modificado.
-     * @param login Login atual.
-     * @param senha Senha atual.
      * @param newSenha Nova senha escolhida pelo usuário.
      */
-    public void editarSenha(Usuario usuario, String login, String senha, String newSenha){
-        if(fazerLogin(login, senha) != null){
-            usuario.setSenha(newSenha);
-        }
+    public void editarSenha(Usuario usuario, String newSenha){
+        usuario.setSenha(newSenha);
         ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
     }
 
     /**
      * Edita o nome do usuário.
      * @param usuario Usuário a ser modificado.
-     * @param login Login atual.
-     * @param senha Senha atual.
      * @param newNome Nova nome escolhido pelo usuário.
      */
-    public void editarNome(Usuario usuario, String login, String senha, String newNome){
-        if(fazerLogin(login, senha) != null){
-            usuario.setNome(newNome);
-        }
+    public void editarNome(Usuario usuario, String newNome){
+        usuario.setNome(newNome);
         ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
     }
 
     /**
      * Edita o email do usuário.
      * @param usuario Usuário a ser modificado.
-     * @param login Login atual.
-     * @param senha Senha atual.
      * @param newEmail Nova email escolhido pelo usuário.
      */
-    public void editarEmail(Usuario usuario, String login, String senha, String newEmail){
-        if(fazerLogin(login, senha) != null){
-            usuario.setEmail(newEmail);
-        }
+    public void editarEmail(Usuario usuario, String newEmail){
+        usuario.setEmail(newEmail);
         ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
     }
     //MÉTODOS PARA USO INTERNO

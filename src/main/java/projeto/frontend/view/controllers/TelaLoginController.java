@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
+import projeto.frontend.utils.UsuarioLogado;
 
 import java.io.IOException;
 
@@ -58,7 +59,9 @@ public class TelaLoginController {
 
         try{
             Usuario usuario = controllerUsuario.fazerLogin(login, senha);
+            UsuarioLogado.login(usuario);
             abrirTelaPrincipal(usuario);
+
         }catch (IllegalArgumentException e){
             NavegacaoTela.showErrorMessage(e.getMessage());
         }
@@ -67,7 +70,7 @@ public class TelaLoginController {
 
     private void abrirTelaPrincipal(Usuario usuario) {
         Stage stage = (Stage) campoLogin.getScene().getWindow();
-        NavegacaoTela.trocarTela(stage, "/fxml/TelaPrincipal.fxml", "Tela Principal");
+        NavegacaoTela.trocarTela(stage, "/fxml/TelaLogada.fxml", "Tela Principal");
     }
 
 

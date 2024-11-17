@@ -19,7 +19,7 @@
       <TextField fx:id="campoEmail" layoutX="60.0" layoutY="273.0" prefHeight="26.0" prefWidth="210.0" promptText="Novo e-mail" />
       <Label layoutX="60.0" layoutY="309.0" text="Senha" />
       <PasswordField fx:id="campoSenha" layoutX="60.0" layoutY="327.0" prefHeight="26.0" prefWidth="210.0" promptText="Nova senha" />
-      <Button layoutX="86.0" layoutY="376.0" mnemonicParsing="false" style="-fx-background-color: #FFB6C1; -fx-cursor: hand;" text="Salvar alterações" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="86.0" layoutY="376.0" mnemonicParsing="false" onAction="#botaoAlterarDados" style="-fx-background-color: #FFB6C1; -fx-cursor: hand;" text="Salvar alterações" textAlignment="CENTER" textFill="WHITE">
           <font>
               <Font name="Comic Sans MS Bold" size="16.0" />
           </font>

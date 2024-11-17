@@ -12,6 +12,7 @@ module projeto {
 
 
     requires java.desktop;
+    requires java.management;
 
     exports projeto.frontend.view;
     exports projeto.backend.model;

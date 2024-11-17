@@ -7,10 +7,11 @@ import javafx.scene.input.MouseEvent;
 import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
+import projeto.frontend.utils.UsuarioLogado;
+
+import javax.management.InvalidAttributeValueException;
 
 public class TelaEdicaoController {
-   private ControllerUsuario controllerUsuario = new ControllerUsuario();
-
     @FXML
     private TextField campoNome;
 
@@ -23,32 +24,46 @@ public class TelaEdicaoController {
     @FXML
     private PasswordField campoSenha;
 
+    private ControllerUsuario controllerUsuario = new ControllerUsuario();
+
     public void voltarTela(MouseEvent mouseEvent) {
-     NavegacaoTela.voltarTelaInicial();
+        NavegacaoTela.voltarTelaInicial();
     }
 
-    /*@FXML
-    private void botaoAlterarDados() {
-        String nome = campoNome.getText();
-        String login = campoLogin.getText();
-        String email = campoEmail.getText();
-        String senha = campoSenha.getText();
 
-        System.out.println("Dados recebidos: " + nome + ", " + login + ", " + email + ", " + senha);
-        if(controllerUsuario == null){
-            NavegacaoTela.showErrorMessage("Erro: Controller não foi inicializado");
+    @FXML
+    private void botaoAlterarDados() {
+        String newNome = campoNome.getText();
+        String newLogin = campoLogin.getText();
+        String newEmail = campoEmail.getText();
+        String newSenha = campoSenha.getText();
+
+        Usuario usuario = UsuarioLogado.getUsuarioLogado();
+
+        if (newNome.isEmpty() && newLogin.isEmpty() && newEmail.isEmpty() && newSenha.isEmpty()) {
+            NavegacaoTela.showErrorMessage("ERRO! Preencha pelo menos uma das lacunas.");
             return;
         }
 
-        try{
-            Usuario usuario = controllerUsuario.editarEmail(login, senha,email);
-            if(usuario != null){
-                NavegacaoTela.showSuccessMessage("Edição Realizado", "Edição realizado com sucesso!");
-            }else{
-                NavegacaoTela.showErrorMessage("Erro ao editar. Tente novamente");
-            }
-        }catch(IllegalArgumentException e){
-            NavegacaoTela.showErrorMessage("Erro! Tente novamente.");
+        if (controllerUsuario == null) {
+            NavegacaoTela.showErrorMessage("ERRO! Controller não foi inicializado.");
+            return;
         }
-    }*/
+        try {
+            if (!newNome.isEmpty()) {
+                controllerUsuario.editarNome(usuario, newNome);
+            }
+            if (!newLogin.isEmpty()) {
+                controllerUsuario.editarLogin(usuario, newLogin);
+            }
+            if (!newEmail.isEmpty()) {
+                controllerUsuario.editarEmail(usuario, newEmail);
+            }
+            if (!newSenha.isEmpty()) {
+                controllerUsuario.editarSenha(usuario, newSenha);
+            }
+        } catch (IllegalArgumentException e) {
+            NavegacaoTela.showErrorMessage("Erro! " + e.getMessage());
+        }
+    }
 }

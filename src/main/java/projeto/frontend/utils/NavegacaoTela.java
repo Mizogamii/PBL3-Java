@@ -1,5 +1,6 @@
 package projeto.frontend.utils;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -53,10 +54,28 @@ public class NavegacaoTela {
     }
 
     public static void voltarTelaInicial(){
+        String telaInicial = null;
         if(primaryStage != null){
-            trocarTela(primaryStage, "/fxml/TelaPrincipal.fxml", "Tela Principal");
+            UsuarioLogado.isLogado();
+            if(UsuarioLogado.isLogado()){
+                telaInicial = "/fxml/TelaLogada.fxml";
+            }else{
+                telaInicial = "/fxml/TelaPrincipal.fxml";
+            }
+            trocarTela(primaryStage, telaInicial, "Tela Principal");
         }else{
-            showErrorMessage("Erro! Não há tela principal definido.");
-        }
+            showErrorMessage("ERRO! Não há tela principal definida.");
     }
+}
+
+    /*public void abrirTelas(){
+        System.out.println("Label: " + labelAbrirTelaCadastro);
+        Stage stage = null;
+        if (labelAbrirTelaCadastro == null) {
+            System.out.println("labelAbriTelaCadastro está null!");
+        } else {
+            stage = (Stage) labelAbrirTelaCadastro.getScene().getWindow();
+        }
+        NavegacaoTela.trocarTela(stage, "/fxml/TelaCadastro.fxml", "Cadastro");
+    }*/
 }

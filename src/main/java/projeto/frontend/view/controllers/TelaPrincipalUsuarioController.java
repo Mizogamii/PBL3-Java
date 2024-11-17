@@ -3,19 +3,17 @@ package projeto.frontend.view.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.frontend.utils.NavegacaoTela;
+import projeto.frontend.utils.UsuarioLogado;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class TelaPrincipalUsuarioController {
 
     @FXML
     public Label labelAbrirTelaLogin;
-
-    @FXML
-    private Label labelAbrirTelaEdicao;
 
     @FXML
     private Label labelAbrirTelaListar;
@@ -36,23 +34,12 @@ public class TelaPrincipalUsuarioController {
     }
 
     @FXML
-    public void abrirTelaEditar(){
-        Stage stage = null;
-        if (labelAbrirTelaEdicao == null) {
-            System.out.println("labelAbriTelaEdicao está null!");
-        } else {
-            stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
-        }
-        NavegacaoTela.trocarTela(stage, "/fxml/TelaEdicao.fxml", "Editar Dados");
-    }
-
-    @FXML
     public void abrirTelaListar(){
         Stage stage = null;
         if (labelAbrirTelaListar == null) {
             System.out.println("labelAbriTelaListar está null!");
         } else {
-            stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
+            stage = (Stage) labelAbrirTelaListar.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaListarEvento.fxml", "Listar dados");
     }
@@ -79,5 +66,9 @@ public class TelaPrincipalUsuarioController {
             stage = (Stage) labelAbrirTelaLogin.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaLogin.fxml", "Login");
+    }
+
+    public void abrirTelaEditar(MouseEvent mouseEvent) {
+
     }
 }

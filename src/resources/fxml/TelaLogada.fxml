@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Region?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="449.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 70%, #FFB6C1 70%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaPrincipalUsuarioController">
+<AnchorPane prefHeight="449.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 70%, #FFB6C1 70%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaPrincipalUsuarioLogadoController">
    <children>
-      <Region layoutY="133.0" prefHeight="40.0" prefWidth="742.0" style="-fx-background-color: #e8e8e8;" />
+      <Region layoutY="133.0" prefHeight="40.0" prefWidth="667.0" style="-fx-background-color: #e8e8e8;" />
       <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="293.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">
          <image>
             <Image url="@../imagemLogo.png" />
@@ -19,8 +16,8 @@
       </ImageView>
       <Label fx:id="labelAbrirTelaEdicao" layoutX="21.0" layoutY="144.0" onMouseClicked="#abrirTelaEditar" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Editar dados " />
       <Label fx:id="labelAbrirTelaListar" layoutX="105.0" layoutY="144.0" onMouseClicked="#abrirTelaListar" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Listar eventos" />
-      <Region layoutY="-1.0" prefHeight="30.0" prefWidth="742.0" style="-fx-background-color: #909090;" />
-      <ChoiceBox fx:id="SelecionarIdioma" layoutX="632.0" layoutY="138.0" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #000000; -fx-text-fill: #333; -fx-cursor: hand;">
+      <Region layoutY="-1.0" prefHeight="30.0" prefWidth="667.0" style="-fx-background-color: #909090;" />
+      <ChoiceBox fx:id="SelecionarIdioma" layoutX="547.0" layoutY="138.0" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #000000; -fx-text-fill: #333; -fx-cursor: hand;">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="English" />
@@ -29,7 +26,7 @@
             </FXCollections>
          </items>
       </ChoiceBox>
-      <Label layoutX="597.0" layoutY="5.0" prefHeight="18.0" prefWidth="69.0" style="-fx-background-color: #FF1493; -fx-text-fill: white; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.3, 0, 2);" text="       Sair " />
-      <Label fx:id="labelAbrirTelaListar1" layoutX="192.0" layoutY="144.0" onMouseClicked="#abrirTelaListar" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Comprar ingresso" />
+      <Label fx:id="sairDaConta" layoutX="577.0" layoutY="5.0" onMouseClicked="#sairDaConta" prefHeight="18.0" prefWidth="69.0" style="-fx-background-color: #FF1493; -fx-text-fill: white; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.3, 0, 2);" text="       Sair " />
+      <Label fx:id="labelComprarIngresso" layoutX="192.0" layoutY="144.0" onMouseClicked="#abrirTelaListar" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Comprar ingresso" />
    </children>
 </AnchorPane>

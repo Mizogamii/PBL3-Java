@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import projeto.frontend.utils.NavegacaoTela;
+import projeto.frontend.utils.UsuarioLogado;
 
 
 public class Main extends Application {
@@ -14,7 +15,14 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             NavegacaoTela.setPrimaryStage(primaryStage);
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaPrincipal.fxml"));
+            String telaInicial = null;
+            if(UsuarioLogado.isLogado()){
+                telaInicial = "/fxml/TelaLogada.fxml";
+            }else{
+                telaInicial = "/fxml/TelaPrincipal.fxml";
+            }
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(telaInicial));
             Parent root = loader.load();
 
             Scene scene = new Scene(root);
