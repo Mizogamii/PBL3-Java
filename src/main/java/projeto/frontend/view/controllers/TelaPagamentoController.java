@@ -18,6 +18,8 @@ import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.controller.ControllerEvento;
 import projeto.frontend.utils.UsuarioLogado;
 
+import java.lang.management.ClassLoadingMXBean;
+
 public class TelaPagamentoController {
 
     private ControllerCompra controllerCompra = new ControllerCompra();
@@ -25,13 +27,25 @@ public class TelaPagamentoController {
     @FXML
     private Label nomeEventoLabel;
 
+    @FXML
+    private Label dataLabel;
+
+    @FXML
+    private Label categoriaLabel;
+
+    @FXML
+    private Label precoLabel;
+
+
     private Evento eventoInfo;
 
     public void setEvento(Evento eventoInfo) {
         this.eventoInfo = eventoInfo;
         Platform.runLater(() -> {
             nomeEventoLabel.setText(eventoInfo.getNome());
-            System.out.println("Evento: " + eventoInfo.getNome());
+            dataLabel.setText(String.format("", eventoInfo.getData()));
+            categoriaLabel.setText(eventoInfo.getCategoria());
+            precoLabel.setText(String.format("%.2f", eventoInfo.getPreco()));
         });
     }
 

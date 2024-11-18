@@ -19,7 +19,7 @@
             </image>
         </ImageView>
         <Label fx:id="voltarTela" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
-        <Label fx:id="nomeEventoLabel" layoutX="75.0" layoutY="143.0" prefHeight="30.0" prefWidth="522.0" alignment="CENTER">
+        <Label fx:id="nomeEventoLabel" alignment="CENTER" layoutX="75.0" layoutY="143.0" prefHeight="30.0" prefWidth="522.0">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font></Label>
@@ -82,6 +82,11 @@
       <Button fx:id="botaoTeste" layoutX="222.0" layoutY="386.0" mnemonicParsing="false" onAction="#botaoTeste" text="teste" />
       <Pane layoutX="228.0" layoutY="179.0" prefHeight="164.0" prefWidth="258.0">
          <children>
+            <Label layoutX="8.0" layoutY="14.0" text="Informações sobre o evento">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
             <Label layoutX="13.0" layoutY="49.0" prefHeight="29.0" prefWidth="122.0" text="Data do evento: ">
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
@@ -91,15 +96,7 @@
                   </ImageView>
                </graphic>
             </Label>
-            <Label layoutX="13.0" layoutY="123.0" prefHeight="29.0" prefWidth="89.0" text="Preço: R$">
-               <graphic>
-                  <ImageView fitHeight="41.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../preco.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Label>
+            <Label fx:id="dataLabel" layoutX="135.0" layoutY="55.0" prefHeight="17.0" prefWidth="107.0" text="Label1" />
             <Label layoutX="13.0" layoutY="86.0" prefHeight="29.0" prefWidth="98.0" text="Categoria: ">
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
@@ -109,19 +106,27 @@
                   </ImageView>
                </graphic>
             </Label>
-            <Label layoutX="8.0" layoutY="14.0" text="Informações sobre o evento">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
+            <Label fx:id="categpriaLabel" layoutX="106.0" layoutY="93.0" prefHeight="17.0" prefWidth="147.0" text="Label2" />
+            <Label layoutX="13.0" layoutY="123.0" prefHeight="29.0" prefWidth="89.0" text="Preço: R$">
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../preco.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Label>
-            <Label layoutX="135.0" layoutY="55.0" prefHeight="17.0" prefWidth="107.0" text="Label1" />
-            <Label layoutX="102.0" layoutY="129.0" prefHeight="17.0" prefWidth="147.0" text="Label3" />
-            <Label layoutX="106.0" layoutY="93.0" prefHeight="17.0" prefWidth="147.0" text="Label2" />
+            <Label fx:id="precoLabel" layoutX="102.0" layoutY="129.0" prefHeight="17.0" prefWidth="147.0" text="Label3" />
          </children>
       </Pane>
       <Label layoutX="476.0" layoutY="195.0" prefHeight="20.0" prefWidth="98.0" text="Total a pagar: ">
          <font>
             <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="precoLabel1" layoutX="496.0" layoutY="215.0" prefHeight="58.0" prefWidth="147.0" text="Label3">
+         <font>
+            <Font name="System Bold" size="15.0" />
          </font>
       </Label>
     </children>
