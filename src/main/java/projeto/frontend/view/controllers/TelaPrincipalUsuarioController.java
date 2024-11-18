@@ -67,4 +67,6 @@ public class TelaPrincipalUsuarioController {
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaLogin.fxml", "Login");
     }
+
+
 }

@@ -4,6 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -15,6 +17,7 @@ import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Evento;
 import projeto.frontend.utils.NavegacaoTela;
 
+import java.io.IOException;
 import java.util.List;
 
 public class TelaComprarController {
@@ -72,12 +75,20 @@ public class TelaComprarController {
         filtroCategoria.getSelectionModel().select(0);
 
         tabelaEventos.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) { // Duplo clique
+            if (event.getClickCount() == 2) {
                 Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
                 if (eventoSelecionado != null) {
-                    Stage stage = null;
-                    stage = (Stage) tabelaEventos.getScene().getWindow();
-                    NavegacaoTela.trocarTela(stage, "/fxml/TelaPagamento.fxml", "Pagamento");
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaPagamento.fxml"));
+                        Parent root = loader.load();
+                        TelaPagamentoController telaPagamentoController = loader.getController();;
+                        telaPagamentoController.setEvento(eventoSelecionado);
+
+                        Stage stage = (Stage) tabelaEventos.getScene().getWindow();
+                        NavegacaoTela.trocarTela(stage, "/fxml/TelaPagamento.fxml", "Pagamento");
+                    }catch(IOException e){
+                        e.printStackTrace();
+                    }
                 }
             }
         });

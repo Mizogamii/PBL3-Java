@@ -29,13 +29,7 @@ public class Pagamento {
      * Enumeração que define os tipos de pagamento disponíveis.
      */
     public enum TipoPagamento {
-        BOLETO, CRÉDITO, DÉBITO, PIX;
-    }
-
-    public static String[] getMetodosPagamento() {
-        return Arrays.stream(TipoPagamento.values())
-                .map(Enum::name)
-                .toArray(String[]::new);
+        BOLETO, CREDITO, DEBITO, PIX;
     }
 
     private TipoPagamento tipoPagamento;

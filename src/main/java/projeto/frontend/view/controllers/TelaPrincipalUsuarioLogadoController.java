@@ -10,7 +10,7 @@ import projeto.frontend.utils.UsuarioLogado;
 public class TelaPrincipalUsuarioLogadoController {
 
     @FXML
-    public Label labelAbrirTelaLogin;
+    public Label labelAbrirTelaComentar;
 
     @FXML
     private Label labelAbrirTelaEdicao;
@@ -38,11 +38,6 @@ public class TelaPrincipalUsuarioLogadoController {
             stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaListarEvento.fxml", "Listar dados");
-    }
-
-    @FXML
-    public void comprarIngresso(){
-
     }
 
     @FXML
@@ -79,5 +74,15 @@ public class TelaPrincipalUsuarioLogadoController {
             stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaComprasFeitas.fxml", "Compras Realizadas");
+    }
+
+    public void comentar(MouseEvent mouseEvent) {
+        Stage stage = null;
+        if (labelAbrirTelaComentar == null) {
+            System.out.println("labelComprasComentar está null!");
+        } else {
+            stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
+        }
+        NavegacaoTela.trocarTela(stage, "/fxml/TelaComentario.fxml", "Comentários");
     }
 }

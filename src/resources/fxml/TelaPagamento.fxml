@@ -23,18 +23,18 @@
                 <Image url="@../imagemLogo.png" />
             </image>
         </ImageView>
-        <Label fx:id="voltarTelaInicial" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
-      <Label fx:id="nomeEventoLabel" layoutX="36.0" layoutY="153.0" prefHeight="29.0" prefWidth="162.0">
+        <Label fx:id="voltarTela" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
+        <Label fx:id="nomeEventoLabel" layoutX="244.0" layoutY="143.0" prefHeight="29.0" prefWidth="162.0" style="-fx-background-color: yellow;" text="Evento: ">
          <font>
             <Font name="Comic Sans MS Bold" size="14.0" />
          </font></Label>
-      <ComboBox fx:id="metodoPagamento" layoutX="27.0" layoutY="229.0" prefWidth="150.0" />
-      <Label layoutX="27.0" layoutY="210.0" text="Escolha o tipo de pagamento:">
+      <ComboBox fx:id="metodoPagamento" layoutX="36.0" layoutY="386.0" prefHeight="26.0" prefWidth="173.0" />
+      <Label layoutX="36.0" layoutY="363.0" text="Escolha a forma de pagamento:">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font>
       </Label>
-      <Pane layoutX="7.0" layoutY="255.0" prefHeight="184.0" prefWidth="201.0">
+      <Pane layoutX="10.0" layoutY="188.0" prefHeight="184.0" prefWidth="187.0">
          <children>
             <Label layoutX="26.0" layoutY="4.0" text="Formas de pagamento">
                <font>
@@ -84,5 +84,50 @@
             <Font name="Comic Sans MS Bold" size="15.0" />
          </font>
       </Button>
+      <Button fx:id="botaoTeste" layoutX="222.0" layoutY="386.0" mnemonicParsing="false" onAction="#botaoTeste" text="teste" />
+      <Pane layoutX="228.0" layoutY="179.0" prefHeight="164.0" prefWidth="258.0">
+         <children>
+            <Label layoutX="13.0" layoutY="49.0" prefHeight="29.0" prefWidth="122.0" text="Data do evento: ">
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../data.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label layoutX="13.0" layoutY="123.0" prefHeight="29.0" prefWidth="89.0" text="Preço: R$">
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../preco.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label layoutX="13.0" layoutY="86.0" prefHeight="29.0" prefWidth="98.0" text="Categoria: ">
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../categoria.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label layoutX="8.0" layoutY="14.0" text="Informações sobre o evento">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="135.0" layoutY="55.0" prefHeight="17.0" prefWidth="107.0" text="Label1" />
+            <Label layoutX="102.0" layoutY="129.0" prefHeight="17.0" prefWidth="147.0" text="Label3" />
+            <Label layoutX="106.0" layoutY="93.0" prefHeight="17.0" prefWidth="147.0" text="Label2" />
+         </children>
+      </Pane>
+      <Label layoutX="476.0" layoutY="195.0" prefHeight="20.0" prefWidth="98.0" text="Total a pagar: ">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

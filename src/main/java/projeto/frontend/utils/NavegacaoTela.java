@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import projeto.frontend.view.controllers.TelaPagamentoController;
+
 import java.io.IOException;
 
 public class NavegacaoTela {
@@ -23,7 +25,6 @@ public class NavegacaoTela {
         try {
             FXMLLoader loader = new FXMLLoader(NavegacaoTela.class.getResource(fxmlPath));
             Parent root = loader.load();
-
             stage.setTitle(title);
             stage.setScene(new Scene(root));
             stage.show();

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id=" linear-gradient(to top, #FFFFFF 95%, #FFFFFF)" prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaComentarioController">
+   <children>
+      <Region layoutY="110.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
+      <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="265.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">
+         <image>
+            <Image url="@../imagemLogo.png" />
+         </image>
+      </ImageView>
+      <Region layoutY="-1.0" prefHeight="30.0" prefWidth="650.0" style="-fx-background-color: #909090;" />
+      <Label layoutX="71.0" layoutY="163.0" text="Evento: " />
+      <Label layoutX="282.0" layoutY="111.0" text="Comentar">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="70.0" layoutY="186.0" prefHeight="200.0" prefWidth="520.0" />
+      <Label fx:id="voltarTelaInicial" layoutX="504.0" layoutY="115.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
+      <Button layoutX="450.0" layoutY="393.0" mnemonicParsing="false" style="-fx-background-color: #FFB6C1;" text="Enviar comentário" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font>
+      </Button>
+
+   </children>
+</AnchorPane>

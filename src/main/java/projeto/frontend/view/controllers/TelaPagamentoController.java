@@ -1,5 +1,6 @@
 package projeto.frontend.view.controllers;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ import projeto.backend.model.Pagamento;
 import projeto.backend.controller.ControllerCompra;
 import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.controller.ControllerEvento;
+import projeto.frontend.utils.UsuarioLogado;
 
 public class TelaPagamentoController {
 
@@ -22,9 +24,17 @@ public class TelaPagamentoController {
 
     @FXML
     private Label nomeEventoLabel;
-    public void setNomeEvento(String nomeEvento) {
-        nomeEventoLabel.setText("Evento: " + nomeEvento);
+
+    private Evento eventoInfo;
+
+    public void setEvento(Evento eventoInfo) {
+        this.eventoInfo = eventoInfo;
+        Platform.runLater(() -> {
+            nomeEventoLabel.setText(eventoInfo.getNome());
+            System.out.println("Evento: " + eventoInfo.getNome());
+        });
     }
+
 
     @FXML
     private ComboBox<String> metodoPagamento;
@@ -34,8 +44,8 @@ public class TelaPagamentoController {
     public void initialize(){
         ObservableList<String> opcoes = FXCollections.observableArrayList(
                 Pagamento.TipoPagamento.BOLETO.name(),
-                Pagamento.TipoPagamento.CRÉDITO.name(),
-                Pagamento.TipoPagamento.DÉBITO.name(),
+                Pagamento.TipoPagamento.CREDITO.name(),
+                Pagamento.TipoPagamento.DEBITO.name(),
                 Pagamento.TipoPagamento.PIX.name()
         );
         metodoPagamento.setItems(opcoes);
@@ -48,13 +58,31 @@ public class TelaPagamentoController {
     public void botaoRealizarPagamento(ActionEvent actionEvent) {
         try{
             String metodoSelecionado = metodoPagamento.getValue();
+            System.out.println(metodoSelecionado);
+
+            if(metodoSelecionado == null || metodoSelecionado.isEmpty()){
+                NavegacaoTela.showErrorMessage("Erro! Selecione uma forma de pagamento.");
+                return;
+            }
+
+            System.out.println("Convertendo para enum...");
 
             Pagamento.TipoPagamento tipoPagamento = Pagamento.TipoPagamento.valueOf(metodoSelecionado);
+            System.out.println("Método convertido para enum: " + tipoPagamento);
 
-            controllerCompra.fazerIngresso(usuario, evento.getNome(), tipoPagamento, usuario.getLogin());
+            controllerCompra.fazerIngresso(UsuarioLogado.getUsuarioLogado(), eventoInfo.getNome(), tipoPagamento, UsuarioLogado.getUsuarioLogado().getLogin());
 
         }catch (IllegalArgumentException | NullPointerException e){
             NavegacaoTela.showErrorMessage("Erro! Selecione uma forma de pagamento.");
+        }
+    }
+
+    public void botaoTeste(ActionEvent actionEvent) {
+        String metodoSelecionado = metodoPagamento.getValue();
+        if (metodoSelecionado == null) {
+            System.out.println("Método não selecionado.");
+        } else {
+            System.out.println("Método selecionado: " + metodoSelecionado);
         }
     }
 }

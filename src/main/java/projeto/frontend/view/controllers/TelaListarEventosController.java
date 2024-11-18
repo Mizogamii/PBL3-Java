@@ -71,7 +71,7 @@ public class TelaListarEventosController {
         filtroCategoria.getSelectionModel().select(0);
 
         tabelaEventos.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) { // Duplo clique
+            if (event.getClickCount() == 2) {
                 Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
                 if (eventoSelecionado != null) {
                     abrirTelaDetalhes(eventoSelecionado);
