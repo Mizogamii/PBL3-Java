@@ -44,6 +44,9 @@ public class TelaListarEventosController {
     @FXML
     private TableColumn<Evento, Integer> colunaQuantidadeAssentosDisponiveis;
 
+    @FXML
+    public TableColumn<Evento, Double> colunaPreco;
+
     private final List<Evento> eventos = controllerEvento.listarEventosDisponiveis();
 
     @FXML
@@ -53,7 +56,10 @@ public class TelaListarEventosController {
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
         colunaData.setCellValueFactory(new PropertyValueFactory<>("data"));
         colunaQuantidadeAssentosDisponiveis.setCellValueFactory(new PropertyValueFactory<>("quantidadeAssentosDisponiveis"));
+        colunaPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
+
         ObservableList<Evento> listaEventos = FXCollections.observableArrayList(eventos);
+
         tabelaEventos.setItems(listaEventos);
         ObservableList<String> categorias = FXCollections.observableArrayList();
         eventos.forEach(evento -> {

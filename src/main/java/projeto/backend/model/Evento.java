@@ -26,6 +26,7 @@ public class Evento {
     private boolean ativo;
     private String idEvento;
     private String categoria;
+    private double preco;
     private List<Comentario> comentarios;
 
     /**
@@ -117,6 +118,14 @@ public class Evento {
 
     public void setQuantidadeAssentosDisponiveis(int quantidadeAssentosDisponiveis) {
         this.quantidadeAssentosDisponiveis = quantidadeAssentosDisponiveis;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     public boolean quantidadeEvento() {

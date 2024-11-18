@@ -23,11 +23,10 @@ public class ControllerCompra {
     /**
      * @param usuario Usuário que está comprando o ingresso.
      * @param evento Evento para o qual o ingresso está sendo criado.
-     * @param preco Preço do ingresso.
      * @return Ingresso criado.
      */
-    public Ingresso criarIngresso(Usuario usuario, Evento evento, double preco) {
-        Ingresso ingresso = new Ingresso(evento, preco);
+    public Ingresso criarIngresso(Usuario usuario, Evento evento) {
+        Ingresso ingresso = new Ingresso(evento);
         if (usuario.getIngressos() == null) {
             usuario.setIngressos(new ArrayList<>());
         }
@@ -60,7 +59,7 @@ public class ControllerCompra {
     public Ingresso fazerIngresso(Usuario usuario, String nomeEvento, double preco, Pagamento.TipoPagamento tipoPagamento, Date dataDaCompra, String loginUsuario) {
         for (Evento evento : eventos) {
             if (evento.getNome().equals(nomeEvento) && evento.getData().after(dataDaCompra) && evento.quantidadeEvento()) {
-                Ingresso ingresso = criarIngresso(usuario, evento, preco);
+                Ingresso ingresso = criarIngresso(usuario, evento);
                 atualizarQuantidadeAssentoDisponivel(evento);
                 comprarIngresso(tipoPagamento, dataDaCompra, ingresso, loginUsuario, usuario);
                 ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");

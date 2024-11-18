@@ -26,11 +26,9 @@ public class Ingresso {
     /**
      * Construtor
      * @param evento Evento associado ao ingresso.
-     * @param preco Preço do ingresso.
      */
-    public Ingresso(Evento evento, double preco) {
+    public Ingresso(Evento evento) {
         this.evento = evento;
-        this.preco = preco;
         this.ativo = true;
         this.idIngresso = UUID.randomUUID().toString();
     }
@@ -54,6 +52,10 @@ public class Ingresso {
 
     public String getDescricaoEvento() {
         return evento != null ? evento.getDescricao() : "";
+    }
+
+    public double getPrecoEvento() {
+        return evento != null ? evento.getPreco() : 0;
     }
 
     public String getDataEvento() {
@@ -86,6 +88,8 @@ public class Ingresso {
     public String getIdIngresso() {
         return idIngresso;
     }
+
+
 
     /**
      * Cancela o ingresso, se a data do evento for posterior à data atual.

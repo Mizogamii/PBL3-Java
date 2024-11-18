@@ -18,8 +18,9 @@
           <TableColumn fx:id="colunaNomeEvento" prefWidth="102.40003204345703" text="Evento" />
           <TableColumn fx:id="colunaCategoria" prefWidth="109.60003662109375" text="Categoria" />
             <TableColumn fx:id="colunaDescricao" prefWidth="95.199951171875" text="Descrição" />
-            <TableColumn fx:id="colunaData" prefWidth="106.39996337890625" text="Data" />
-            <TableColumn fx:id="colunaQuantidadeAssentosDisponiveis" prefWidth="186.4000305175781" text="Quantidade de assentos" />
+            <TableColumn fx:id="colunaData" prefWidth="72.00006103515625" text="Data" />
+            <TableColumn fx:id="colunaQuantidadeAssentosDisponiveis" prefWidth="110.39993286132812" text="Quantidade de assentos" />
+            <TableColumn fx:id="colunaPreco" prefWidth="109.60003662109375" text="Preço" />
         </columns>
       </TableView>
       <Label layoutX="242.0" layoutY="90.0" text="Listagem de eventos">
