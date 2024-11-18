@@ -132,5 +132,22 @@ public class ArmazenamentoDados {
     }
     return ingressosComprados;
     }
+
+
+    public static List<Ingresso> listarComprasObjeto(){
+        List<Ingresso> ingressosComprados = new ArrayList<>();
+        List<File> arquivos = listarArquivos("usuarioDados");
+
+        for(File arquivo: arquivos){
+            Usuario usuario = LeituraDados.ler(Usuario.class, arquivo.getPath());
+            if (usuario.getIngressos() != null){
+                for (Ingresso ingresso : usuario.getIngressos()) {
+                    ingressosComprados.add(ingresso);
+
+                }
+            }
+        }
+        return ingressosComprados;
+    }
 }
 

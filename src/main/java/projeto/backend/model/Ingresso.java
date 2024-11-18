@@ -10,6 +10,7 @@
  *******************************************************************************************/
 package projeto.backend.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
@@ -41,6 +42,29 @@ public class Ingresso {
 
     public void setEvento(Evento evento) {
         this.evento = evento;
+    }
+
+    public String getNomeEvento(){
+        return evento != null ? evento.getNome(): "";
+    }
+
+    public String getCategoriaEvento() {
+        return evento != null ? evento.getCategoria() : "";
+    }
+
+    public String getDescricaoEvento() {
+        return evento != null ? evento.getDescricao() : "";
+    }
+
+    public String getDataEvento() {
+        if (evento != null && evento.getData() != null) {
+            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+            return formatador.format(evento.getData());
+        }
+        return "";    }
+
+    public String getStatusEvento() {
+        return evento != null && evento.isAtivo() ? "Evento por vir" : "Evento já realizado";
     }
 
     public double getPreco() {

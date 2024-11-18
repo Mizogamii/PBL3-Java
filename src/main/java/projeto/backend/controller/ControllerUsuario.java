@@ -11,11 +11,13 @@
 package projeto.backend.controller;
 
 import projeto.backend.model.Evento;
+import projeto.backend.model.Ingresso;
 import projeto.backend.model.Usuario;
 import projeto.backend.repository.ArmazenamentoDados;
 import projeto.backend.repository.LeituraDados;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ControllerUsuario {
@@ -166,5 +168,10 @@ public class ControllerUsuario {
             }
         }
         return null;
+    }
+
+    public List<Ingresso> listarComprasRealizadas(){
+        List<Ingresso> comprasFeitas = new ArrayList<>(ArmazenamentoDados.listarComprasObjeto());
+        return comprasFeitas;
     }
 }

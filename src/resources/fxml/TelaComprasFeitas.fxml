@@ -9,19 +9,19 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaListarEventosController">
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaComprasRealizadasController">
    <children>
       <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
-      <TableView fx:id="tabelaEventos" layoutX="112.0" layoutY="132.0" prefHeight="270.0" prefWidth="426.0" style="-fx-background-color: white;">
+      <TableView fx:id="tabelaCompras" layoutX="70.0" layoutY="135.0" prefHeight="270.0" prefWidth="518.0" style="-fx-background-color: white;">
         <columns>
-          <TableColumn fx:id="colunaNomeEvento" prefWidth="75.0" text="Evento" />
-          <TableColumn fx:id="colunaCategoria" prefWidth="75.0" text="Categoria" />
-            <TableColumn fx:id="colunaDescricao" prefWidth="75.0" text="Descrição" />
-            <TableColumn fx:id="colunaData" prefWidth="75.0" text="Data" />
-            <TableColumn fx:id="colunaQuantidadeAssentosDisponiveis" prefWidth="164.00002441406252" text="Quantidade de assentos" />
+          <TableColumn fx:id="colunaNomeEvento" prefWidth="92.80005645751953" text="Evento" />
+          <TableColumn fx:id="colunaCategoria" prefWidth="92.7999267578125" text="Categoria" />
+            <TableColumn fx:id="colunaDescricao" prefWidth="131.2000732421875" text="Descrição" />
+            <TableColumn fx:id="colunaData" prefWidth="84.0" text="Data" />
+            <TableColumn fx:id="colunaStatusEvento" prefWidth="119.19992065429688" text="Status do evento" />
         </columns>
       </TableView>
-      <Label layoutX="242.0" layoutY="90.0" text="Listagem de eventos">
+      <Label layoutX="242.0" layoutY="90.0" text="Ingressos comprados">
          <font>
             <Font name="Comic Sans MS Bold" size="18.0" />
          </font>

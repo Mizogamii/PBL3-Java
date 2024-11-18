@@ -14,7 +14,6 @@ import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Evento;
 import projeto.frontend.utils.NavegacaoTela;
 
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class TelaListarEventosController {
@@ -58,7 +57,7 @@ public class TelaListarEventosController {
         tabelaEventos.setItems(listaEventos);
         ObservableList<String> categorias = FXCollections.observableArrayList();
         eventos.forEach(evento -> {
-            if(!categorias.contains(evento.getCategoria())){
+            if (!categorias.contains(evento.getCategoria())) {
                 categorias.add(evento.getCategoria());
             }
         });
@@ -86,4 +85,6 @@ public class TelaListarEventosController {
             tabelaEventos.setItems(eventosFiltrados);
         }
     }
+
+
 }
