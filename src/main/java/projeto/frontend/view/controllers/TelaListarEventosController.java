@@ -4,14 +4,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Evento;
+import projeto.backend.model.Ingresso;
 import projeto.frontend.utils.NavegacaoTela;
 
 import java.util.List;
@@ -70,6 +68,15 @@ public class TelaListarEventosController {
         filtroCategoria.setItems(categorias);
         filtroCategoria.getItems().add(0, "Todas");
         filtroCategoria.getSelectionModel().select(0);
+
+        tabelaEventos.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) { // Duplo clique
+                Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
+                if (eventoSelecionado != null) {
+                    abrirTelaDetalhes(eventoSelecionado);
+                }
+            }
+        });
     }
 
     public void voltarTela(MouseEvent mouseEvent) {
@@ -92,5 +99,15 @@ public class TelaListarEventosController {
         }
     }
 
-
+    public void abrirTelaDetalhes(Evento evento){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Detalhes do Evento");
+        alert.setHeaderText(evento.getNome());
+        alert.setContentText("Categoria: " + evento.getCategoria() + "\n" +
+                "Descrição: " + evento.getDescricao() + "\n" +
+                "Data: " + evento.getData() + "\n" +
+                "Preço: R$ " + evento.getPreco() + "\n" +
+                "Assentos Disponíveis: " + evento.getQuantidadeAssentosDisponiveis());
+        alert.showAndWait();
+    }
 }
