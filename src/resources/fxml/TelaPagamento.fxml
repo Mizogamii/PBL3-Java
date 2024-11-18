@@ -8,9 +8,9 @@
 <AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaPagamentoController">
     <children>
         <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
-        <Label layoutX="285.0" layoutY="90.0" text="Pagamento">
+        <Label layoutX="285.0" layoutY="93.0" text="Pagamento">
             <font>
-                <Font name="Comic Sans MS Bold" size="18.0" />
+                <Font name="Arial Bold" size="18.0" />
             </font>
         </Label>
         <ImageView fitHeight="89.0" fitWidth="135.0" layoutX="266.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
@@ -19,6 +19,38 @@
             </image>
         </ImageView>
         <Label fx:id="voltarTelaInicial" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
-      <Label layoutX="74.0" layoutY="159.0" text="Label" />
+      <Label fx:id="nomeEventoLabel" layoutX="42.0" layoutY="146.0" prefHeight="18.0" prefWidth="123.0" text="Nome do evento">
+         <font>
+            <Font name="Comic Sans MS Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="488.0" layoutY="301.0" text="Formas de pagamento">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="41.0" fitWidth="29.0" layoutX="488.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recibo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="29.0" layoutX="488.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons8-parte-traseira-de-cartão-de-banco-24.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="522.0" layoutY="331.0" text="Boleto" />
+      <Label layoutX="522.0" layoutY="366.0" text="Cartão " />
+      <ImageView fitHeight="41.0" fitWidth="29.0" layoutX="488.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons8-foto-50.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="523.0" layoutY="401.0" text="Pix" />
+      <ComboBox fx:id="metodoPagamento" layoutX="39.0" layoutY="210.0" prefWidth="150.0" />
+      <Label layoutX="39.0" layoutY="191.0" text="Escolha o tipo de pagamento:">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

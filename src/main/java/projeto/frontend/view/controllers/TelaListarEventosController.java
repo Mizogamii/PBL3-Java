@@ -59,6 +59,7 @@ public class TelaListarEventosController {
         ObservableList<Evento> listaEventos = FXCollections.observableArrayList(eventos);
 
         tabelaEventos.setItems(listaEventos);
+
         ObservableList<String> categorias = FXCollections.observableArrayList();
         eventos.forEach(evento -> {
             if (!categorias.contains(evento.getCategoria())) {

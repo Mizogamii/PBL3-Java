@@ -10,6 +10,8 @@
  *******************************************************************************************/
 package projeto.backend.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Objects;
 /**
@@ -28,6 +30,12 @@ public class Pagamento {
      */
     public enum TipoPagamento {
         CREDITO, BOLETO, PIX, DEBITO;
+    }
+
+    public static String[] getMetodosPagamento() {
+        return Arrays.stream(TipoPagamento.values())
+                .map(Enum::name)
+                .toArray(String[]::new);
     }
 
     private TipoPagamento tipoPagamento;
