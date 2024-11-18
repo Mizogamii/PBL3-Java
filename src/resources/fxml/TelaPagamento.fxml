@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaPagamentoController">
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaPagamentoController">
     <children>
         <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
         <Label layoutX="285.0" layoutY="93.0" text="Pagamento">
@@ -24,9 +19,9 @@
             </image>
         </ImageView>
         <Label fx:id="voltarTela" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
-        <Label fx:id="nomeEventoLabel" layoutX="244.0" layoutY="143.0" prefHeight="29.0" prefWidth="162.0" style="-fx-background-color: yellow;" text="Evento: ">
+        <Label fx:id="nomeEventoLabel" layoutX="75.0" layoutY="143.0" prefHeight="30.0" prefWidth="522.0" alignment="CENTER">
          <font>
-            <Font name="Comic Sans MS Bold" size="14.0" />
+            <Font name="Arial Bold" size="16.0" />
          </font></Label>
       <ComboBox fx:id="metodoPagamento" layoutX="36.0" layoutY="386.0" prefHeight="26.0" prefWidth="173.0" />
       <Label layoutX="36.0" layoutY="363.0" text="Escolha a forma de pagamento:">

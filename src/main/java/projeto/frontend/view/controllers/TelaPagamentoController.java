@@ -49,6 +49,8 @@ public class TelaPagamentoController {
                 Pagamento.TipoPagamento.PIX.name()
         );
         metodoPagamento.setItems(opcoes);
+
+
     }
 
     public void voltarTela(MouseEvent mouseEvent) {

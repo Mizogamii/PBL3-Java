@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -78,20 +79,29 @@ public class TelaComprarController {
             if (event.getClickCount() == 2) {
                 Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
                 if (eventoSelecionado != null) {
-                    try {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaPagamento.fxml"));
-                        Parent root = loader.load();
-                        TelaPagamentoController telaPagamentoController = loader.getController();;
-                        telaPagamentoController.setEvento(eventoSelecionado);
-
-                        Stage stage = (Stage) tabelaEventos.getScene().getWindow();
-                        NavegacaoTela.trocarTela(stage, "/fxml/TelaPagamento.fxml", "Pagamento");
-                    }catch(IOException e){
-                        e.printStackTrace();
-                    }
+                    abrirTelaPagamento(eventoSelecionado);
                 }
             }
         });
+    }
+
+    private void abrirTelaPagamento(Evento evento){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaPagamento.fxml"));
+            Parent root = loader.load();
+
+            TelaPagamentoController telaPagamentoController = loader.getController();
+
+            telaPagamentoController.setEvento(evento);
+
+            Stage stage = (Stage) tabelaEventos.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            NavegacaoTela.showErrorMessage("Erro ao abrir a tela de pagamento");
+        }
     }
 
     public void voltarTela(MouseEvent mouseEvent) {

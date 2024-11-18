@@ -1,6 +1,6 @@
 {
-  "login": "johndoe",
-  "senha": "senha123",
+  "login": "t",
+  "senha": "t",
   "nome": "John Doe",
   "cpf": "12345678910",
   "email": "john.doe@example.com",
@@ -17,6 +17,7 @@
         "categoria": "Musica",
         "preco": 65.0
       },
+      "preco": 0.0,
       "ativo": false,
       "idIngresso": "e9b70563-1260-49e1-b4c4-23bd596779cb"
     }

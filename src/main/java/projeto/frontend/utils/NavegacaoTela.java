@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class NavegacaoTela {
 
-    private static Stage primaryStage;
+    public static Stage primaryStage;
 
     public static void setPrimaryStage(Stage stage){
         primaryStage = stage;
