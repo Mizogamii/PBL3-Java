@@ -19,6 +19,7 @@ import java.util.List;
 
 public class ControllerCompra {
     List<Evento> eventos = ArmazenamentoDados.eventos;
+    Date dataDaCompra = new Date();
     //INGRESSOS E COMPRA
     /**
      * @param usuario Usuário que está comprando o ingresso.
@@ -50,18 +51,16 @@ public class ControllerCompra {
      *
      * @param usuario Usuário que está comprando o ingresso.
      * @param nomeEvento Nome do evento.
-     * @param preco Preço do ingresso.
      * @param tipoPagamento Tipo de pagamento utilizado.
-     * @param dataDaCompra Data da compra.
      * @param loginUsuario Login do usuário.
      * @return Retorna o ingresso comprado.
      */
-    public Ingresso fazerIngresso(Usuario usuario, String nomeEvento, double preco, Pagamento.TipoPagamento tipoPagamento, Date dataDaCompra, String loginUsuario) {
+    public Ingresso fazerIngresso(Usuario usuario, String nomeEvento, Pagamento.TipoPagamento tipoPagamento, String loginUsuario) {
         for (Evento evento : eventos) {
             if (evento.getNome().equals(nomeEvento) && evento.getData().after(dataDaCompra) && evento.quantidadeEvento()) {
                 Ingresso ingresso = criarIngresso(usuario, evento);
                 atualizarQuantidadeAssentoDisponivel(evento);
-                comprarIngresso(tipoPagamento, dataDaCompra, ingresso, loginUsuario, usuario);
+                comprarIngresso(tipoPagamento, ingresso, loginUsuario, usuario);
                 ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
                 return ingresso;
             }
@@ -74,13 +73,12 @@ public class ControllerCompra {
      * Processa o pagamento de um ingresso e gera um recibo.
      *
      * @param tipoPagamento Tipo de pagamento utilizado.
-     * @param dataDaCompra Data da compra.
      * @param ingresso Ingresso que está sendo comprado.
      * @param loginUsuario Login do usuário.
      * @param usuario Usuário que está comprando o ingresso.
      * @return Retorna o recibo gerado para a compra.
      */
-    public Recibo comprarIngresso(Pagamento.TipoPagamento tipoPagamento, Date dataDaCompra, Ingresso ingresso, String loginUsuario, Usuario usuario) {
+    public Recibo comprarIngresso(Pagamento.TipoPagamento tipoPagamento, Ingresso ingresso, String loginUsuario, Usuario usuario) {
         Pagamento pagamento = new Pagamento(tipoPagamento, dataDaCompra, ingresso, loginUsuario);
         Recibo recibo = pagamento.gerarRecibo(loginUsuario, tipoPagamento, dataDaCompra, ingresso.getEvento().getNome(), ingresso.getEvento().getData(), ingresso.getPreco());
         usuario.getCompras().add(recibo);

@@ -29,7 +29,7 @@ public class Pagamento {
      * Enumeração que define os tipos de pagamento disponíveis.
      */
     public enum TipoPagamento {
-        CREDITO, BOLETO, PIX, DEBITO;
+        BOLETO, CRÉDITO, DÉBITO, PIX;
     }
 
     public static String[] getMetodosPagamento() {
