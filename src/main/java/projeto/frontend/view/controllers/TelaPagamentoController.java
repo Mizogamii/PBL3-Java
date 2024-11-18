@@ -19,6 +19,8 @@ import projeto.backend.controller.ControllerEvento;
 import projeto.frontend.utils.UsuarioLogado;
 
 import java.lang.management.ClassLoadingMXBean;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 
 public class TelaPagamentoController {
 
@@ -36,16 +38,21 @@ public class TelaPagamentoController {
     @FXML
     private Label precoLabel;
 
+    @FXML
+    private Label precoLabel1;
+
 
     private Evento eventoInfo;
 
     public void setEvento(Evento eventoInfo) {
         this.eventoInfo = eventoInfo;
-        Platform.runLater(() -> {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");        Platform.runLater(() -> {
             nomeEventoLabel.setText(eventoInfo.getNome());
-            dataLabel.setText(String.format("", eventoInfo.getData()));
+            dataLabel.setText(formatter.format(eventoInfo.getData()));
             categoriaLabel.setText(eventoInfo.getCategoria());
             precoLabel.setText(String.format("%.2f", eventoInfo.getPreco()));
+            precoLabel1.setText(String.format("%.2f", eventoInfo.getPreco()));
+
         });
     }
 
@@ -63,8 +70,6 @@ public class TelaPagamentoController {
                 Pagamento.TipoPagamento.PIX.name()
         );
         metodoPagamento.setItems(opcoes);
-
-
     }
 
     public void voltarTela(MouseEvent mouseEvent) {

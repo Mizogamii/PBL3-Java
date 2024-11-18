@@ -106,7 +106,7 @@
                   </ImageView>
                </graphic>
             </Label>
-            <Label fx:id="categpriaLabel" layoutX="106.0" layoutY="93.0" prefHeight="17.0" prefWidth="147.0" text="Label2" />
+            <Label fx:id="categoriaLabel" layoutX="106.0" layoutY="93.0" prefHeight="17.0" prefWidth="147.0" text="Label2" />
             <Label layoutX="13.0" layoutY="123.0" prefHeight="29.0" prefWidth="89.0" text="Preço: R$">
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
