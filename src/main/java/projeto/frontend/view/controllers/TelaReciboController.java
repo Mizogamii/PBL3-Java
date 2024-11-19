@@ -2,6 +2,7 @@ package projeto.frontend.view.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import projeto.backend.model.Ingresso;
 
 import javafx.scene.control.Label;
@@ -23,6 +24,9 @@ public class TelaReciboController {
     @FXML
     private Label statusLabel;
 
+    @FXML
+    private Label labelAbrirTelaComentar;
+
     public void exibirRecibo(Ingresso ingresso) {
         nomeEventoLabel.setText(ingresso.getNomeEvento());
         categoriaLabel.setText(ingresso.getCategoriaEvento());
@@ -32,5 +36,15 @@ public class TelaReciboController {
     }
     public void voltarTela(MouseEvent mouseEvent) {
         NavegacaoTela.voltarTelaInicial();
+    }
+
+    public void comentar(MouseEvent mouseEvent) {
+        Stage stage = null;
+        if (labelAbrirTelaComentar == null) {
+            System.out.println("labelComprasComentar está null!");
+        } else {
+            stage = (Stage) labelAbrirTelaComentar.getScene().getWindow();
+        }
+        NavegacaoTela.trocarTela(stage, "/fxml/TelaComentario.fxml", "Comentários");
     }
 }

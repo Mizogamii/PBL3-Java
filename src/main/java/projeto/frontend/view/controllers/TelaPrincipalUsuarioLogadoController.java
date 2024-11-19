@@ -75,14 +75,4 @@ public class TelaPrincipalUsuarioLogadoController {
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaComprasFeitas.fxml", "Compras Realizadas");
     }
-
-    public void comentar(MouseEvent mouseEvent) {
-        Stage stage = null;
-        if (labelAbrirTelaComentar == null) {
-            System.out.println("labelComprasComentar está null!");
-        } else {
-            stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
-        }
-        NavegacaoTela.trocarTela(stage, "/fxml/TelaComentario.fxml", "Comentários");
-    }
 }

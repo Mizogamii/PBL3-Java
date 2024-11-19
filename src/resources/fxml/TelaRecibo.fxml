@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaReciboController">
    <children>
-      <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
+      <Region layoutX="-2.0" layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
       <Label layoutX="297.0" layoutY="90.0" text="Recibo">
          <font>
             <Font name="Comic Sans MS Bold" size="18.0" />
@@ -21,19 +21,58 @@
             <Image url="@../imagemLogo.png" />
          </image>
       </ImageView>
-      <Label fx:id="voltarTelaInicial" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
-      <Pane layoutX="104.0" layoutY="146.0" prefHeight="262.0" prefWidth="444.0">
+      <Label fx:id="voltarTelaInicial" layoutX="508.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
+      <Pane layoutX="58.0" layoutY="146.0" prefHeight="262.0" prefWidth="543.0">
          <children>
-            <Label layoutX="25.0" layoutY="22.0" text="Evento: " />
-            <Label fx:id="nomeEventoLabel" layoutX="67.0" layoutY="22.0" prefHeight="17.0" prefWidth="344.0" />
-            <Label layoutX="25.0" layoutY="50.0" text="Categoria: " />
-            <Label fx:id="categoriaLabel" layoutX="82.0" layoutY="50.0" prefHeight="17.0" prefWidth="315.0" text="Label" />
-            <Label layoutX="25.0" layoutY="74.0" text="Descrição: " />
-            <Label fx:id="descricaoLabel" layoutX="82.0" layoutY="74.0" prefHeight="17.0" prefWidth="344.0" text="adsdsf" />
-            <Label layoutX="25.0" layoutY="91.0" text="Data do evento:" />
-            <Label fx:id="dataLabel" layoutX="116.0" layoutY="91.0" prefHeight="17.0" prefWidth="315.0" text="data" />
-            <Label layoutX="25.0" layoutY="108.0" text="Status: " />
-            <Label fx:id="statusLabel" layoutX="63.0" layoutY="108.0" prefHeight="17.0" prefWidth="403.0" text="status" />
+            <Label layoutX="25.0" layoutY="22.0" text="Evento: ">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="nomeEventoLabel" layoutX="95.0" layoutY="22.0" prefHeight="17.0" prefWidth="344.0" text="eve">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="25.0" layoutY="53.0" text="Categoria: ">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="categoriaLabel" layoutX="121.0" layoutY="53.0" prefHeight="17.0" prefWidth="315.0" text="cat">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="25.0" layoutY="83.0" text="Descrição: ">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="descricaoLabel" layoutX="129.0" layoutY="83.0" prefHeight="17.0" prefWidth="344.0" text="des">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="25.0" layoutY="111.0" text="Data do evento:">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="dataLabel" layoutX="166.0" layoutY="111.0" prefHeight="17.0" prefWidth="315.0" text="data">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="25.0" layoutY="141.0" text="Status: ">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="statusLabel" layoutX="93.0" layoutY="141.0" prefHeight="17.0" prefWidth="403.0" text="status">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="labelAbrirTelaComentar" layoutX="405.0" layoutY="206.0" onMouseClicked="#comentar" style="-fx-cursor: hand; -fx-background-color: #FFB6C1; -fx-text-fill: white; -fx-padding: 8 16; -fx-border-radius: 5; -fx-background-radius: 5; -fx-font-size: 14px;" text="Comentar">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../comentar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
          </children>
       </Pane>
    </children>

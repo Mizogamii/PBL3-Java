@@ -51,7 +51,7 @@ public class TelaPagamentoController {
             dataLabel.setText(formatter.format(eventoInfo.getData()));
             categoriaLabel.setText(eventoInfo.getCategoria());
             precoLabel.setText(String.format("%.2f", eventoInfo.getPreco()));
-            precoLabel1.setText(String.format("%.2f", eventoInfo.getPreco()));
+            precoLabel1.setText(String.format("R$%.2f", eventoInfo.getPreco()));
 
         });
     }
