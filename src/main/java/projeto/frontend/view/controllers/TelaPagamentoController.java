@@ -46,7 +46,8 @@ public class TelaPagamentoController {
 
     public void setEvento(Evento eventoInfo) {
         this.eventoInfo = eventoInfo;
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");        Platform.runLater(() -> {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Platform.runLater(() -> {
             nomeEventoLabel.setText(eventoInfo.getNome());
             dataLabel.setText(formatter.format(eventoInfo.getData()));
             categoriaLabel.setText(eventoInfo.getCategoria());
