@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -17,6 +18,7 @@ import projeto.backend.model.Evento;
 import projeto.backend.model.Ingresso;
 import projeto.frontend.utils.NavegacaoTela;
 
+import java.io.IOException;
 import java.util.List;
 
 public class TelaComprasRealizadasController {
@@ -56,10 +58,14 @@ public class TelaComprasRealizadasController {
         tabelaCompras.setItems(listaIngressos);
 
         tabelaCompras.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) {  // Verifica se o clique foi simples
+            if (event.getClickCount() == 2) {
                 Ingresso ingressoSelecionado = tabelaCompras.getSelectionModel().getSelectedItem();
                 if (ingressoSelecionado != null) {
-                    abrirTelaRecibo(ingressoSelecionado);
+                    try {
+                        abrirTelaRecibo(ingressoSelecionado);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         });
@@ -67,8 +73,17 @@ public class TelaComprasRealizadasController {
     }
 
 
-    private void abrirTelaRecibo(Ingresso ingresso){
-        NavegacaoTela.trocarTela(NavegacaoTela.primaryStage,"/fxml/TelaRecibo.fxml", "Recibo de Compra");
+    private void abrirTelaRecibo(Ingresso ingresso) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaRecibo.fxml"));
+        Parent root = loader.load();
+
+        TelaReciboController telaReciboController = loader.getController();
+
+        telaReciboController.exibirRecibo(ingresso);
+
+        Stage stage = (Stage) tabelaCompras.getScene().getWindow();
+        stage.setScene(new Scene(root));
+
     }
 
     public void voltarTela(MouseEvent mouseEvent) {

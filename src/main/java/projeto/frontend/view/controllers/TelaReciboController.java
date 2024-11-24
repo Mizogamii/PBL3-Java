@@ -1,12 +1,19 @@
 package projeto.frontend.view.controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.backend.model.Ingresso;
 
 import javafx.scene.control.Label;
+import projeto.backend.model.Recibo;
 import projeto.frontend.utils.NavegacaoTela;
+
+import java.io.IOException;
 
 public class TelaReciboController {
     @FXML
@@ -27,24 +34,31 @@ public class TelaReciboController {
     @FXML
     private Label labelAbrirTelaComentar;
 
+    private Recibo recibo;
+
     public void exibirRecibo(Ingresso ingresso) {
-        nomeEventoLabel.setText(ingresso.getNomeEvento());
-        categoriaLabel.setText(ingresso.getCategoriaEvento());
-        descricaoLabel.setText(ingresso.getDescricaoEvento());
-        dataLabel.setText(ingresso.getDataEvento());
-        statusLabel.setText(ingresso.getStatusEvento());
+        Platform.runLater(() -> {
+            nomeEventoLabel.setText(ingresso.getNomeEvento());
+            categoriaLabel.setText(ingresso.getCategoriaEvento());
+            descricaoLabel.setText(ingresso.getDescricaoEvento());
+            dataLabel.setText(ingresso.getDataEvento());
+            statusLabel.setText(ingresso.getStatusEvento());
+        });
     }
     public void voltarTela(MouseEvent mouseEvent) {
         NavegacaoTela.voltarTelaInicial();
     }
 
-    public void comentar(MouseEvent mouseEvent) {
-        Stage stage = null;
-        if (labelAbrirTelaComentar == null) {
-            System.out.println("labelComprasComentar está null!");
-        } else {
-            stage = (Stage) labelAbrirTelaComentar.getScene().getWindow();
-        }
-        NavegacaoTela.trocarTela(stage, "/fxml/TelaComentario.fxml", "Comentários");
+    public void comentar(MouseEvent mouseEvent) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaComentario.fxml"));
+        Parent root = loader.load();
+
+        TelaComentarioController telaComentarioController = loader.getController();
+
+        telaComentarioController.exibirNomeEvento(recibo);
+
+        Stage stage = (Stage) labelAbrirTelaComentar.getScene().getWindow();
+        stage.setScene(new Scene(root));
     }
 }
