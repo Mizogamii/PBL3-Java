@@ -31,6 +31,7 @@ public class Ingresso {
         this.evento = evento;
         this.ativo = true;
         this.idIngresso = UUID.randomUUID().toString();
+        this.preco = evento.getPreco();
     }
 
     //Getters e setters

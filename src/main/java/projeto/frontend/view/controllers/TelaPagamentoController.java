@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Evento;
+import projeto.backend.model.Ingresso;
 import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.backend.model.Pagamento;
@@ -91,9 +92,8 @@ public class TelaPagamentoController {
 
             Pagamento.TipoPagamento tipoPagamento = Pagamento.TipoPagamento.valueOf(metodoSelecionado);
             System.out.println("Método convertido para enum: " + tipoPagamento);
-
-            controllerCompra.fazerIngresso(UsuarioLogado.getUsuarioLogado(), eventoInfo.getNome(), tipoPagamento, UsuarioLogado.getUsuarioLogado().getLogin());
-
+            Ingresso retorno = controllerCompra.fazerIngresso(UsuarioLogado.getUsuarioLogado(), eventoInfo.getNome(), tipoPagamento, UsuarioLogado.getUsuarioLogado().getLogin());
+            System.out.println(retorno);
         }catch (IllegalArgumentException | NullPointerException e){
             NavegacaoTela.showErrorMessage("Erro! Selecione uma forma de pagamento.");
         }

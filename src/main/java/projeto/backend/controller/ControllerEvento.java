@@ -53,6 +53,9 @@ public class ControllerEvento {
      */
 
     public List<Evento> listarEventosDisponiveis() {
+        if (ArmazenamentoDados.eventos.isEmpty()) {
+            ArmazenamentoDados.carregarEventos();
+        }
         List<Evento> eventosDisponiveis = new ArrayList<>(ArmazenamentoDados.listarEventos());
         eventosDisponiveis.sort(Comparator.comparing(Evento::getData));
         return eventosDisponiveis;
@@ -60,6 +63,7 @@ public class ControllerEvento {
 
 
     public List<String> listarEventosDisponiveisNome() {
+
         List<Evento> eventos = ArmazenamentoDados.listarEventos();
         List<String> eventosDisp = new ArrayList<>();
 

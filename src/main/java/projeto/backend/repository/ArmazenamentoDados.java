@@ -31,8 +31,22 @@ public class ArmazenamentoDados {
 
     public static List<Evento> eventos = new ArrayList<>();
 
-    public static void adicionarEvento(Evento evento) {
+    /*public static void adicionarEvento(Evento evento) {
         eventos.add(evento);
+    }*/
+
+    public static void carregarEventos() {
+        eventos.clear();
+        List<File> arquivos = listarArquivos("eventosDados");
+        System.out.println("Chamando carregar");
+        for(File arquivo : arquivos){
+            Evento evento = LeituraDados.ler(Evento.class, arquivo.getPath());
+            System.out.println("testando car");
+            if(evento != null){
+                System.out.println("carregando...");
+                eventos.add(evento);
+            }
+        }
     }
 
     /**
@@ -72,6 +86,7 @@ public class ArmazenamentoDados {
             e.printStackTrace();
         }
     }
+
 
     /**
      * Lista os arquivos de dentro do repositório para futuras utilizações.

@@ -56,8 +56,11 @@ public class ControllerCompra {
      * @return Retorna o ingresso comprado.
      */
     public Ingresso fazerIngresso(Usuario usuario, String nomeEvento, Pagamento.TipoPagamento tipoPagamento, String loginUsuario) {
+        System.out.println(dataDaCompra);
+        System.out.println(eventos);
         for (Evento evento : eventos) {
             if (evento.getNome().equals(nomeEvento) && evento.getData().after(dataDaCompra) && evento.quantidadeEvento()) {
+                System.out.println("Teste data");
                 Ingresso ingresso = criarIngresso(usuario, evento);
                 atualizarQuantidadeAssentoDisponivel(evento);
                 comprarIngresso(tipoPagamento, ingresso, loginUsuario, usuario);
