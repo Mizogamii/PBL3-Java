@@ -5,6 +5,31 @@
   "cpf": "12369852144",
   "email": "sayu@mail.com",
   "admin": false,
-  "ingressos": [],
-  "recibos": []
+  "ingressos": [
+    {
+      "evento": {
+        "nome": "Festival Gastronômico",
+        "descricao": "Comidas e Bebidas de Todo o Mundo",
+        "quantidadeAssentosDisponiveis": 2499,
+        "data": "Jan 15, 2025, 8:32:38 AM",
+        "statusEvento": false,
+        "idEvento": "Festival Gastronômico15-01-2025",
+        "categoria": "Gastronomia",
+        "preco": 35.0
+      },
+      "preco": 35.0,
+      "ativo": false,
+      "idIngresso": "b2581f7e-c6ca-4603-95d1-91489454904f"
+    }
+  ],
+  "recibos": [
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Nov 29, 2024, 3:14:35 PM",
+      "nomeDoEvento": "Festival Gastronômico",
+      "dataDoEvento": "Jan 15, 2025, 8:32:38 AM",
+      "preco": 35.0
+    }
+  ]
 }

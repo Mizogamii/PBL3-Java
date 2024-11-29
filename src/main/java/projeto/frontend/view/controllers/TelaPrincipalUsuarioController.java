@@ -24,14 +24,14 @@ public class TelaPrincipalUsuarioController {
     @FXML
     private Label abrirTelaLogin;
 
-    @FXML
+   /* @FXML
     public void initialize() {
         if (abrirTelaLogin != null) {
             System.out.println("A variável 'abrirTelaLogin' foi inicializada com sucesso!");
         } else {
             System.out.println("Erro: o objeto 'abrirTelaLogin' não foi injetado.");
         }
-    }
+    }*/
 
     @FXML
     public void abrirTelaListar(){

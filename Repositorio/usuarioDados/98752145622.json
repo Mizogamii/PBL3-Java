@@ -1,26 +1,25 @@
 {
-  "login": "t",
-  "senha": "t",
-  "nome": "t",
-  "cpf": "12396385214",
-  "email": "t@email.com",
+  "login": "Usuario1",
+  "senha": "123",
+  "nome": "Usuario1",
+  "cpf": "98752145622",
+  "email": "usuario1@gmail.com",
   "admin": false,
-  "ingressos": [
-    {
-      "evento": {
-        "nome": "Shakespeare in the Park",
-        "descricao": "Teatro Nacional",
-        "quantidadeAssentosDisponiveis": 99,
-        "data": "Jan 30, 2025, 8:32:38 AM",
-        "statusEvento": true,
-        "idEvento": "Shakespeare in the Park30-01-2025",
-        "categoria": "Cultura",
-        "preco": 45.0
-      },
-      "preco": 45.0,
-      "ativo": false,
-      "idIngresso": "742cd224-7463-4798-9bcc-73ed91892d48"
+  "ingressos": [{
+    "evento": {
+      "nome": "Shakespeare in the Park",
+      "descricao": "Teatro Nacional",
+      "quantidadeAssentosDisponiveis": 99,
+      "data": "Jan 30, 2025, 8:32:38 AM",
+      "statusEvento": true,
+      "idEvento": "Shakespeare in the Park30-01-2025",
+      "categoria": "Cultura",
+      "preco": 45.0
     },
+    "preco": 45.0,
+    "ativo": false,
+    "idIngresso": "742cd224-7463-4798-9bcc-73ed91892d48"
+  },
     {
       "evento": {
         "nome": "Fanmeeting Brasil",
@@ -50,8 +49,8 @@
       "preco": 150.0,
       "ativo": false,
       "idIngresso": "5f004c58-c0d8-4f51-bd49-a945ff29760d"
-    }
-  ],
+    }],
+
   "recibos": [
     {
       "loginUsuario": "t",

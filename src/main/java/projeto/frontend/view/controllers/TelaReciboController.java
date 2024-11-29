@@ -41,7 +41,7 @@ public class TelaReciboController {
             nomeEventoLabel.setText(ingresso.getNomeEvento());
             categoriaLabel.setText(ingresso.getCategoriaEvento());
             descricaoLabel.setText(ingresso.getDescricaoEvento());
-            dataLabel.setText(ingresso.getDataEvento());
+            dataLabel.setText(ingresso.getDataEventoFormatado());
             statusLabel.setText(ingresso.getStatusEvento());
         });
     }

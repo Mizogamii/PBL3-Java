@@ -88,12 +88,9 @@ public class TelaPagamentoController {
                 return;
             }
 
-            System.out.println("Convertendo para enum...");
-
             Pagamento.TipoPagamento tipoPagamento = Pagamento.TipoPagamento.valueOf(metodoSelecionado);
-            System.out.println("Método convertido para enum: " + tipoPagamento);
             Ingresso retorno = controllerCompra.fazerIngresso(UsuarioLogado.getUsuarioLogado(), eventoInfo.getNome(), tipoPagamento, UsuarioLogado.getUsuarioLogado().getLogin());
-            System.out.println(retorno);
+            NavegacaoTela.showSuccessMessage("Pagamento", "Pagamento realizado com sucesso!");
         }catch (IllegalArgumentException | NullPointerException e){
             NavegacaoTela.showErrorMessage("Erro! Selecione uma forma de pagamento.");
         }

@@ -18,6 +18,7 @@ import projeto.backend.repository.LeituraDados;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ControllerUsuario {
@@ -156,12 +157,12 @@ public class ControllerUsuario {
         if(!diretorio.isDirectory() || !diretorio.exists() || arquivosJson == null || arquivosJson.length == 0){
             return null;
         }else{
-            for (int i = 0; i < arquivosJson.length; i++) {
+            for(int i = 0; i < arquivosJson.length; i++) {
                 File arquivo = arquivosJson[i];
 
-                if (arquivo.isFile() && arquivo.getName().toLowerCase().endsWith(".json")) {
+                if(arquivo.isFile() && arquivo.getName().toLowerCase().endsWith(".json")) {
                     Usuario usuario = LeituraDados.ler(Usuario.class, arquivo.getPath());
-                    if (usuario != null && usuario.getLogin().equals(login)) {
+                    if(usuario != null && usuario.getLogin().equals(login)) {
                         return usuario;
                     }
                 }
@@ -170,8 +171,43 @@ public class ControllerUsuario {
         return null;
     }
 
-    public List<Ingresso> listarComprasRealizadas(){
-        List<Ingresso> comprasFeitas = new ArrayList<>(ArmazenamentoDados.listarComprasObjeto());
+    public List<Ingresso> listarComprasRealizadas(Usuario usuario){
+        List<Ingresso> comprasFeitas = new ArrayList<>(ArmazenamentoDados.listarComprasObjeto(usuario.getCpf() + ".json"));
         return comprasFeitas;
+    }
+
+    public List<Ingresso> listarEventosParticipados(Usuario usuario){
+        List<String> eventosPassados = ArmazenamentoDados.listarEventosPassados();
+        List<Ingresso> ingressosComprados = listarComprasRealizadas(usuario);
+        List<Ingresso> ingressosEventosParticipados = new ArrayList<>();
+
+        for(Ingresso ingresso: ingressosComprados){
+            if(eventosPassados.contains(ingresso.getEvento().getIdEvento())){
+                ingressosEventosParticipados.add(ingresso);
+            }
+        }
+        return ingressosEventosParticipados;
+    }
+
+    public void atualizarRecibo(Usuario usuario){
+        File arquivosJson[];
+        File diretorio = new File("Repositorio/usuarioDados");
+        arquivosJson = diretorio.listFiles();
+        Date dataAtual = new Date();
+        System.out.println(dataAtual);
+        if(diretorio.isDirectory() || diretorio.exists() || arquivosJson != null || arquivosJson.length > 0){
+            for (int i = 0; i < arquivosJson.length; i++) {
+                File arquivo = arquivosJson[i];
+
+                if(arquivo.isFile() && arquivo.getName().toLowerCase().endsWith(".json")) {
+                    Ingresso ingresso = LeituraDados.ler(Ingresso.class, arquivo.getPath());
+                    System.out.println(ingresso.getDataEvento());
+                    if (ingresso != null && ingresso.getDataEvento().before(dataAtual)) {
+                        ingresso.setAtivo(false);
+                        ArmazenamentoDados.salvarNoRepositorio(usuario, "Repositorio/usuarioDados", usuario.getCpf()+".json");
+                    }
+                }
+            }
+        }
     }
 }

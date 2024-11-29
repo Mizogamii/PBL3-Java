@@ -123,7 +123,7 @@ public class ControllerCompra {
      * @return Retorna lista de ingressos comprados pelo usuário.
      */
     public List<String> listarIngressosComprados(Usuario usuario) {
-        List<String> ingressosComprados = ArmazenamentoDados.listarCompras();
+        List<String> ingressosComprados = ArmazenamentoDados.listarCompras(usuario.getCpf()+".json");
         return ingressosComprados;
     }
 }

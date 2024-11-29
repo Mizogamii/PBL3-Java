@@ -118,7 +118,7 @@ public class ArmazenamentoDados {
 
         for(File arquivo : arquivos){
             Evento evento = LeituraDados.ler(Evento.class, arquivo.getPath());
-            if (evento != null && evento.isAtivo()) {
+            if (evento != null && evento.isStatusEvento()) {
                 eventosDisponiveis.add(evento);
             }
         }
@@ -129,40 +129,63 @@ public class ArmazenamentoDados {
      * Lista os ingressos compradoa pelo usuário.
      * @return Retorna uma lista de strings de algumas informações essenciais do ingresso comprado.
      */
-    public static List<String> listarCompras(){
+
+    public static List<String> listarCompras(String nomeArquivoUsuario) {
         List<String> ingressosComprados = new ArrayList<>();
-        List<File> arquivos = listarArquivos("usuarioDados");
+        File diretorio = new File("Repositorio/usuarioDados");
+        File arquivosJson[];
+        arquivosJson = diretorio.listFiles();
 
-        for(File arquivo: arquivos){
-            Usuario usuario = LeituraDados.ler(Usuario.class, arquivo.getPath());
-            if (usuario.getIngressos() != null){
-                for (Ingresso ingresso : usuario.getIngressos()) {
-                    String informacoesDoIngresso = "Evento: " + ingresso.getEvento().getNome() +
-                            "Descricao: " + ingresso.getEvento().getDescricao() +
-                            "Data: " + ingresso.getEvento().getData();
-                    ingressosComprados.add(informacoesDoIngresso);
-
-            }
-        }
-    }
-    return ingressosComprados;
-    }
-
-
-    public static List<Ingresso> listarComprasObjeto(){
-        List<Ingresso> ingressosComprados = new ArrayList<>();
-        List<File> arquivos = listarArquivos("usuarioDados");
-
-        for(File arquivo: arquivos){
-            Usuario usuario = LeituraDados.ler(Usuario.class, arquivo.getPath());
-            if (usuario.getIngressos() != null){
-                for (Ingresso ingresso : usuario.getIngressos()) {
-                    ingressosComprados.add(ingresso);
-
+        if (diretorio.isDirectory() && diretorio.exists() && arquivosJson != null && arquivosJson.length != 0) {
+            for(File arquivo: arquivosJson) {
+                if(arquivo.isFile() && arquivo.getName().equals(nomeArquivoUsuario)) {
+                    Usuario usuario = LeituraDados.ler(Usuario.class, arquivo.getPath());
+                    if(usuario != null && usuario.getIngressos()!= null) {
+                        for (Ingresso ingresso : usuario.getIngressos()) {
+                            String informacoesDoIngresso = "Evento: " + ingresso.getEvento().getNome() +
+                                    "Descricao: " + ingresso.getEvento().getDescricao() +
+                                    "Data: " + ingresso.getEvento().getData();
+                            ingressosComprados.add(informacoesDoIngresso);
+                        }
+                    }
+                    return ingressosComprados;
                 }
             }
         }
         return ingressosComprados;
+    }
+
+    public static List<Ingresso> listarComprasObjeto(String nomeArquivoUsuario){
+        List<Ingresso> ingressosComprados = new ArrayList<>();
+        List<File> arquivos = listarArquivos("usuarioDados");
+
+        for(File arquivo: arquivos){
+            if(arquivo.isFile() && arquivo.getName().equals(nomeArquivoUsuario)){
+                Usuario usuario = LeituraDados.ler(Usuario.class, arquivo.getPath());
+                if(usuario.getIngressos() != null){
+                    for (Ingresso ingresso : usuario.getIngressos()) {
+                        ingressosComprados.add(ingresso);
+                    }
+                    return ingressosComprados;
+                }
+        }
+    }
+        return ingressosComprados;
+    }
+
+    public static List<String> listarEventosPassados(){
+        List<String> eventosPassados = new ArrayList<>();
+        List<File> arquivos = listarArquivos("eventosDados");
+
+        for(File arquivo : arquivos){
+            Evento evento = LeituraDados.ler(Evento.class, arquivo.getPath());
+            if (evento != null && !evento.isStatusEvento()) {
+                String idEventosPassados = evento.getIdEvento();
+                eventosPassados.add(idEventosPassados);
+            }
+        }
+        return eventosPassados;
+
     }
 }
 

@@ -1,9 +1,9 @@
 {
   "nome": "Festival Gastronômico",
   "descricao": "Comidas e Bebidas de Todo o Mundo",
-  "quantidadeAssentosDisponiveis": 2500,
+  "quantidadeAssentosDisponiveis": 2499,
   "data": "Jan 15, 2025, 8:32:38 AM",
-  "ativo": true,
+  "statusEvento": false,
   "idEvento": "Festival Gastronômico15-01-2025",
   "categoria": "Gastronomia",
   "preco": 35.0

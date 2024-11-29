@@ -4,6 +4,7 @@
 <?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,15 +13,15 @@
 
 <AnchorPane id=" linear-gradient(to top, #FFFFFF 95%, #FFFFFF)" prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaPrincipalUsuarioController">
    <children>
-      <Region layoutY="110.0" prefHeight="40.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
+      <Region layoutY="113.0" prefHeight="338.0" prefWidth="154.0" style="-fx-background-color: #e8e8e8;" />
       <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="265.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">
          <image>
             <Image url="@../imagemLogo.png" />
          </image>
       </ImageView>
-      <Label fx:id="labelAbrirTelaListar" layoutX="20.0" layoutY="121.0" onMouseClicked="#abrirTelaListar" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Listar eventos" />
+      <Label fx:id="labelAbrirTelaListar" layoutX="41.0" layoutY="150.0" onMouseClicked="#abrirTelaListar" prefHeight="30.0" prefWidth="100.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Listar eventos" />
       <Region layoutY="-1.0" prefHeight="30.0" prefWidth="650.0" style="-fx-background-color: #909090;" />
-      <ChoiceBox fx:id="SelecionarIdioma" layoutX="538.0" layoutY="115.0" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #000000; -fx-text-fill: #333; -fx-cursor: hand;">
+      <ChoiceBox fx:id="SelecionarIdioma" layoutX="547.0" layoutY="77.0" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #000000; -fx-text-fill: #333; -fx-cursor: hand;">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="English" />
@@ -38,6 +39,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
    </Label>
+      <ListView layoutX="167.0" layoutY="121.0" prefHeight="322.0" prefWidth="459.0" />
 
    </children>
 </AnchorPane>

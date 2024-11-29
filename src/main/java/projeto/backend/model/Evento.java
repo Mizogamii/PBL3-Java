@@ -23,7 +23,7 @@ public class Evento {
     private String descricao;
     private int quantidadeAssentosDisponiveis;
     private Date data;
-    private boolean ativo;
+    private boolean statusEvento;
     private String idEvento;
     private String categoria;
     private double preco;
@@ -103,13 +103,13 @@ public class Evento {
      *
      * @return Retorna true se o evento está ativo, false caso contrário.
      */
-    public boolean isAtivo() {
+    public boolean isStatusEvento() {
         statusAtualizadoEvento();
-        return this.ativo;
+        return this.statusEvento;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setStatusEvento(boolean statusEvento) {
+        this.statusEvento = statusEvento;
     }
 
     public int getQuantidadeAssentosDisponiveis() {
@@ -134,7 +134,7 @@ public class Evento {
 
     public void statusAtualizadoEvento() {
         Date dataAtual = new Date();
-        this.ativo = dataAtual.before(this.data);
+        this.statusEvento = dataAtual.before(this.data);
     }
 
     /**
@@ -146,7 +146,7 @@ public class Evento {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Evento evento)) return false;
-        return isAtivo() == evento.isAtivo() && Objects.equals(getNome(), evento.getNome()) && Objects.equals(getDescricao(), evento.getDescricao()) && Objects.equals(getData(), evento.getData());
+        return isStatusEvento() == evento.isStatusEvento() && Objects.equals(getNome(), evento.getNome()) && Objects.equals(getDescricao(), evento.getDescricao()) && Objects.equals(getData(), evento.getData());
     }
 
     /**
@@ -155,7 +155,7 @@ public class Evento {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(getNome(), getDescricao(), getData(), isAtivo());
+        return Objects.hash(getNome(), getDescricao(), getData(), isStatusEvento());
     }
 
     /**
@@ -170,7 +170,7 @@ public class Evento {
                 ", descricao='" + descricao + '\'' +
                 ", quantidadeAssentosDiponiveis=" + quantidadeAssentosDisponiveis +
                 ", data=" + data +
-                ", ativo=" + ativo +
+                ", ativo=" + statusEvento +
                 ", idEvento='" + idEvento + '\'' +
                 '}';
     }

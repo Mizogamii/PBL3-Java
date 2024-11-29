@@ -1,9 +1,9 @@
 {
   "nome": "Fanmeeting Brasil",
   "descricao": "FirstKhao",
-  "quantidadeAssentosDisponiveis": 4000,
+  "quantidadeAssentosDisponiveis": 3998,
   "data": "Oct 10, 2023, 8:32:38 AM",
-  "ativo": true,
+  "statusEvento": false,
   "idEvento": "Fanmeeting Brasil03-10-2023",
   "categoria": "Fanmeeting",
   "preco": 150.0

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaComprasRealizadasController">
+    <children>
+        <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
+        <TableView fx:id="tabelaCompras" layoutX="72.0" layoutY="132.0" prefHeight="285.0" prefWidth="518.0" style="-fx-background-color: white;">
+            <columns>
+                <TableColumn fx:id="colunaNomeEvento" prefWidth="92.80005645751953" text="Evento" />
+                <TableColumn fx:id="colunaCategoria" prefWidth="135.79998779296875" text="Categoria" />
+                <TableColumn fx:id="colunaDescricao" prefWidth="189.0" text="Descrição" />
+                <TableColumn fx:id="colunaData" prefWidth="100.00003051757812" text="Data" />
+            </columns>
+        </TableView>
+        <Label layoutX="242.0" layoutY="90.0" text="Eventos participados">
+            <font>
+                <Font name="Comic Sans MS Bold" size="18.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="89.0" fitWidth="135.0" layoutX="266.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagemLogo.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="voltarTelaInicial" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
+    </children>
+</AnchorPane>

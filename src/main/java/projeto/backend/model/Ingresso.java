@@ -55,11 +55,11 @@ public class Ingresso {
         return evento != null ? evento.getDescricao() : "";
     }
 
-    public double getPrecoEvento() {
-        return evento != null ? evento.getPreco() : 0;
+    public Date getDataEvento(){
+        return evento != null ? evento.getData() : null;
     }
 
-    public String getDataEvento() {
+    public String getDataEventoFormatado() {
         if (evento != null && evento.getData() != null) {
             SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
             return formatador.format(evento.getData());
@@ -67,7 +67,7 @@ public class Ingresso {
         return "";    }
 
     public String getStatusEvento() {
-        return evento != null && evento.isAtivo() ? "Evento por vir" : "Evento já realizado";
+        return evento != null && evento.isStatusEvento() ? "Evento por vir" : "Evento já realizado";
     }
 
     public double getPreco() {
@@ -98,9 +98,7 @@ public class Ingresso {
      */
     public boolean cancelar(){
         boolean result;
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(2024, Calendar.SEPTEMBER, 9);
-        Date data = calendar.getTime();
+        Date data = new Date();
         result = data.after(evento.getData());
         if(result){
             this.ativo = true;
@@ -120,17 +118,20 @@ public class Ingresso {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Ingresso ingresso)) return false;
-        return Double.compare(preco, ingresso.preco) == 0 && ativo == ingresso.ativo && Objects.equals(evento, ingresso.evento);
+        return Double.compare(getPreco(), ingresso.getPreco()) == 0 && isAtivo() == ingresso.isAtivo() && Objects.equals(getEvento(), ingresso.getEvento()) && Objects.equals(getIdIngresso(), ingresso.getIdIngresso()) && Objects.equals(compra, ingresso.compra);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getEvento(), getPreco(), isAtivo(), getIdIngresso(), compra);
     }
 
     /**
      * Retorna o código hash baseado nos atributos do ingresso.
      * @return Retorna Código hash do ingresso.
      */
-    @Override
-    public int hashCode() {
-        return Objects.hash(evento, preco, ativo);
-    }
+
+
 
     @Override
     public String toString() {
