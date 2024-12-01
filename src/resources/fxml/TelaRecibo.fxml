@@ -67,15 +67,6 @@
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label fx:id="labelAbrirTelaComentar" layoutX="405.0" layoutY="206.0" onMouseClicked="#comentar" style="-fx-cursor: hand; -fx-background-color: #FFB6C1; -fx-text-fill: white; -fx-padding: 8 16; -fx-border-radius: 5; -fx-background-radius: 5; -fx-font-size: 14px;" text="Comentar">
-               <graphic>
-                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../comentar.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Label>
          </children>
       </Pane>
    </children>
