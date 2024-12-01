@@ -3,7 +3,6 @@ package projeto.frontend.view.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -12,7 +11,7 @@ import projeto.frontend.utils.UsuarioLogado;
 
 import java.io.IOException;
 
-public class TelaPrincipalUsuarioLogadoController {
+public class PrincipalUsuarioLogadoController {
 
     @FXML
     public Label labelAbrirTelaComentar;
@@ -22,6 +21,9 @@ public class TelaPrincipalUsuarioLogadoController {
 
     @FXML
     private Label labelAbrirTelaListar;
+
+    @FXML
+    private Label labelAvaliarEvento;
 
     @FXML
     public void abrirTelaEditar(){
@@ -81,16 +83,13 @@ public class TelaPrincipalUsuarioLogadoController {
         NavegacaoTela.trocarTela(stage, "/fxml/TelaComprasFeitas.fxml", "Compras Realizadas");
     }
 
-    public void comentar(MouseEvent mouseEvent) throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaComentario.fxml"));
-        Parent root = loader.load();
-
-        TelaComentarioController telaComentarioController = loader.getController();
-
-        telaComentarioController.exibirNomeEvento(recibo);
-
-        Stage stage = (Stage) labelAbrirTelaComentar.getScene().getWindow();
-        stage.setScene(new Scene(root));
+    public void fazerFeedBack(MouseEvent mouseEvent) throws IOException {
+        Stage stage = null;
+        if (labelAvaliarEvento == null) {
+            System.out.println("labelFeedBack está null!");
+        } else {
+            stage = (Stage) labelAvaliarEvento.getScene().getWindow();
+        }
+        NavegacaoTela.trocarTela(stage, "/fxml/TelaListaEventosFeedBack.fxml", "Compras Realizadas");
     }
 }

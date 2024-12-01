@@ -21,7 +21,7 @@ import projeto.frontend.utils.NavegacaoTela;
 import java.io.IOException;
 import java.util.List;
 
-public class TelaComprarController {
+public class ComprarController {
     private ControllerEvento controllerEvento = new ControllerEvento();
 
     @FXML
@@ -90,7 +90,7 @@ public class TelaComprarController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaPagamento.fxml"));
             Parent root = loader.load();
 
-            TelaPagamentoController telaPagamentoController = loader.getController();
+            PagamentoController telaPagamentoController = loader.getController();
 
             telaPagamentoController.setEvento(evento);
 

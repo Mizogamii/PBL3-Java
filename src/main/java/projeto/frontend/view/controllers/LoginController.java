@@ -1,11 +1,6 @@
 package projeto.frontend.view.controllers;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -18,10 +13,7 @@ import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
 
-import javax.sound.midi.Soundbank;
-import java.io.IOException;
-
-public class TelaLoginController {
+public class LoginController {
 
     private ControllerUsuario controllerUsuario = new ControllerUsuario();
 

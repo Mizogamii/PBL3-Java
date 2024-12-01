@@ -13,10 +13,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerUsuario;
-import projeto.backend.model.Evento;
 import projeto.backend.model.Ingresso;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
@@ -24,7 +22,7 @@ import projeto.frontend.utils.UsuarioLogado;
 import java.io.IOException;
 import java.util.List;
 
-public class TelaComprasRealizadasController {
+public class ComprasRealizadasController {
 
     private ControllerUsuario controllerUsuario = new ControllerUsuario();
     private List<Ingresso> ingressos = controllerUsuario.listarComprasRealizadas(UsuarioLogado.getUsuarioLogado());
@@ -93,7 +91,7 @@ public class TelaComprasRealizadasController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaRecibo.fxml"));
         Parent root = loader.load();
 
-        TelaReciboController telaReciboController = loader.getController();
+        ReciboController telaReciboController = loader.getController();
 
         telaReciboController.exibirRecibo(ingresso);
 

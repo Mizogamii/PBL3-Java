@@ -50,6 +50,21 @@
       "preco": 150.0,
       "ativo": false,
       "idIngresso": "5f004c58-c0d8-4f51-bd49-a945ff29760d"
+    },
+    {
+      "evento": {
+        "nome": "Love Yourself",
+        "descricao": "Grupo BTS",
+        "quantidadeAssentosDisponiveis": 2499,
+        "data": "May 10, 2025, 8:32:38 AM",
+        "statusEvento": false,
+        "idEvento": "Love Yourself10-05-2025",
+        "categoria": "Musica",
+        "preco": 650.0
+      },
+      "preco": 650.0,
+      "ativo": false,
+      "idIngresso": "77f47d91-48bc-46e1-be61-f1607f1e3c26"
     }
   ],
   "recibos": [
@@ -76,6 +91,14 @@
       "nomeDoEvento": "Fanmeeting Brasil",
       "dataDoEvento": "Oct 10, 2023, 8:32:38 AM",
       "preco": 150.0
+    },
+    {
+      "loginUsuario": "t",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Nov 30, 2024, 8:20:37 PM",
+      "nomeDoEvento": "Love Yourself",
+      "dataDoEvento": "May 10, 2025, 8:32:38 AM",
+      "preco": 650.0
     }
   ]
 }

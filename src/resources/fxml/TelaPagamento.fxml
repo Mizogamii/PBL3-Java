@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaPagamentoController">
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.PagamentoController">
     <children>
         <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
         <Label layoutX="285.0" layoutY="93.0" text="Pagamento">
@@ -18,7 +18,10 @@
                 <Image url="@../imagemLogo.png" />
             </image>
         </ImageView>
-        <Label fx:id="voltarTela" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
+        <Label fx:id="voltarTela" layoutX="458.0" layoutY="93.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font></Label>
         <Label fx:id="nomeEventoLabel" alignment="CENTER" layoutX="72.0" layoutY="127.0" prefHeight="30.0" prefWidth="522.0">
          <font>
             <Font name="Arial Bold" size="16.0" />

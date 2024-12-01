@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaComprasRealizadasController">
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.ListaEventosFeedBack">
     <children>
         <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
-        <TableView fx:id="tabelaCompras" layoutX="72.0" layoutY="132.0" prefHeight="285.0" prefWidth="518.0" style="-fx-background-color: white;">
+        <TableView fx:id="tabelaEventoParticipado" layoutX="72.0" layoutY="153.0" prefHeight="250.0" prefWidth="518.0" style="-fx-background-color: white;">
             <columns>
                 <TableColumn fx:id="colunaNomeEvento" prefWidth="92.80005645751953" text="Evento" />
                 <TableColumn fx:id="colunaCategoria" prefWidth="135.79998779296875" text="Categoria" />
@@ -27,5 +32,11 @@
             </image>
         </ImageView>
         <Label fx:id="voltarTelaInicial" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
+      <ComboBox layoutX="436.0" layoutY="122.0" prefWidth="150.0" />
+      <Label layoutX="107.0" layoutY="393.0" text="Para avaliar o evento, clique duas vezes no ingresso desejado.">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

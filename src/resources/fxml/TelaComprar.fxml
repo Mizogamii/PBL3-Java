@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaComprarController">
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.ComprarController">
    <children>
       <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
-      <TableView fx:id="tabelaEventos" layoutX="32.0" layoutY="154.0" prefHeight="270.0" prefWidth="602.0" style="-fx-background-color: #fdfdfd;">
+      <TableView fx:id="tabelaEventos" layoutX="32.0" layoutY="154.0" prefHeight="236.0" prefWidth="602.0" style="-fx-background-color: #fdfdfd;">
         <columns>
           <TableColumn fx:id="colunaNomeEvento" prefWidth="102.40003204345703" text="Evento" />
           <TableColumn fx:id="colunaCategoria" prefWidth="109.60003662109375" text="Categoria" />
@@ -28,12 +33,20 @@
             <Image url="@../imagemLogo.png" />
          </image>
       </ImageView>
-      <Label fx:id="voltarTelaInicial" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
-      <ComboBox fx:id="filtroCategoria" layoutX="512.0" layoutY="119.0" onAction="#filtrarCategoria" prefHeight="26.0" prefWidth="114.0" />
-      <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="590.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+      <Label fx:id="voltarTelaInicial" layoutX="462.0" layoutY="93.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font></Label>
+      <ComboBox fx:id="filtroCategoria" layoutX="512.0" layoutY="122.0" onAction="#filtrarCategoria" prefHeight="26.0" prefWidth="114.0" />
+      <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="590.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../categoria.png" />
          </image>
       </ImageView>
+      <Label layoutX="101.0" layoutY="390.0" text="Para realizar a compra, clique duas vezes no evento desejado.">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

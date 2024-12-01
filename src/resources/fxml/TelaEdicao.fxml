@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to left, #FF1493, #FF69B4, #FFB6C1 50%, #FFFFFF 50%);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaEdicaoController">
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to left, #FF1493, #FF69B4, #FFB6C1 50%, #FFFFFF 50%);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.EdicaoController">
    <children>
       <Label layoutX="85.0" layoutY="107.0" text="Edição de dados">
          <font>
@@ -29,6 +29,9 @@
             <Image url="@../imagemLogo.png" />
          </image>
       </ImageView>
-      <Label fx:id="voltarTelaInicial" layoutX="504.0" layoutY="410.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
+      <Label fx:id="voltarTelaInicial" layoutX="459.0" layoutY="413.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font></Label>
    </children>
 </AnchorPane>

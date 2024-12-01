@@ -2,15 +2,10 @@ package projeto.frontend.view.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.frontend.utils.NavegacaoTela;
-import projeto.frontend.utils.UsuarioLogado;
 
-import java.io.IOException;
-
-public class TelaPrincipalUsuarioController {
+public class PrincipalUsuarioController {
 
     @FXML
     public Label labelAbrirTelaLogin;

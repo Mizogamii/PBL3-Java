@@ -5,6 +5,31 @@
   "cpf": "32652587444",
   "email": "a@gmail.com",
   "admin": false,
-  "ingressos": [],
-  "recibos": []
+  "ingressos": [
+    {
+      "evento": {
+        "nome": "Festival Gastronômico",
+        "descricao": "Comidas e Bebidas de Todo o Mundo",
+        "quantidadeAssentosDisponiveis": 2498,
+        "data": "Jan 15, 2025, 8:32:38 AM",
+        "statusEvento": false,
+        "idEvento": "Festival Gastronômico15-01-2025",
+        "categoria": "Gastronomia",
+        "preco": 35.0
+      },
+      "preco": 35.0,
+      "ativo": false,
+      "idIngresso": "b6d2be4b-4f19-4a61-9768-e1344f4547c5"
+    }
+  ],
+  "recibos": [
+    {
+      "loginUsuario": "ab",
+      "tipoPagamento": "PIX",
+      "dataDaCompra": "Nov 30, 2024, 8:27:04 PM",
+      "nomeDoEvento": "Festival Gastronômico",
+      "dataDoEvento": "Jan 15, 2025, 8:32:38 AM",
+      "preco": 35.0
+    }
+  ]
 }

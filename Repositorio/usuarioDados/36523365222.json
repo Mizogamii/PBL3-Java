@@ -1,0 +1,10 @@
+{
+  "login": "Usuario2",
+  "senha": "123",
+  "nome": "Usuario2",
+  "cpf": "36523365222",
+  "email": "usuario2@email.com",
+  "admin": false,
+  "ingressos": [],
+  "recibos": []
+}

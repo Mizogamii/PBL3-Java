@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaComprasRealizadasController">
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.ComprasRealizadasController">
    <children>
       <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
-      <TableView fx:id="tabelaCompras" layoutX="73.0" layoutY="151.0" prefHeight="270.0" prefWidth="518.0" style="-fx-background-color: white;">
+      <TableView fx:id="tabelaCompras" layoutX="73.0" layoutY="151.0" prefHeight="250.0" prefWidth="518.0" style="-fx-background-color: white;">
         <columns>
           <TableColumn fx:id="colunaNomeEvento" prefWidth="92.80005645751953" text="Evento" />
           <TableColumn fx:id="colunaCategoria" prefWidth="92.7999267578125" text="Categoria" />
@@ -32,7 +27,15 @@
             <Image url="@../imagemLogo.png" />
          </image>
       </ImageView>
-      <Label fx:id="voltarTelaInicial" layoutX="512.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
+      <Label fx:id="voltarTelaInicial" layoutX="466.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font></Label>
       <ComboBox fx:id="filtroStatus" layoutX="458.0" layoutY="122.0" onAction="#filtrarStatus" prefHeight="26.0" prefWidth="132.0" />
+      <Label layoutX="118.0" layoutY="406.0" text="Para abrir o recibo, clique duas vezes no ingresso desejado." textAlignment="CENTER">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

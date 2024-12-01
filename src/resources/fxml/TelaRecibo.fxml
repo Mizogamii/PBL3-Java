@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaReciboController">
+<AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.ReciboController">
    <children>
-      <Region layoutX="-2.0" layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
+      <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
       <Label layoutX="297.0" layoutY="90.0" text="Recibo">
          <font>
             <Font name="Comic Sans MS Bold" size="18.0" />
@@ -21,7 +21,10 @@
             <Image url="@../imagemLogo.png" />
          </image>
       </ImageView>
-      <Label fx:id="voltarTelaInicial" layoutX="508.0" layoutY="94.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial" />
+      <Label fx:id="voltarTelaInicial" layoutX="464.0" layoutY="93.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font></Label>
       <Pane layoutX="58.0" layoutY="146.0" prefHeight="262.0" prefWidth="543.0">
          <children>
             <Label layoutX="25.0" layoutY="22.0" text="Evento: ">

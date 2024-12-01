@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id=" linear-gradient(to top, #FFFFFF 95%, #FFFFFF)" prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.TelaPrincipalUsuarioController">
+<AnchorPane id=" linear-gradient(to top, #FFFFFF 95%, #FFFFFF)" prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.PrincipalUsuarioController">
    <children>
       <Region layoutY="113.0" prefHeight="338.0" prefWidth="154.0" style="-fx-background-color: #e8e8e8;" />
       <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="265.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">

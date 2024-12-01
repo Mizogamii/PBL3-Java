@@ -8,22 +8,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Evento;
 import projeto.backend.model.Ingresso;
-import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.backend.model.Pagamento;
 import projeto.backend.controller.ControllerCompra;
-import projeto.backend.controller.ControllerUsuario;
-import projeto.backend.controller.ControllerEvento;
 import projeto.frontend.utils.UsuarioLogado;
 
-import java.lang.management.ClassLoadingMXBean;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 
-public class TelaPagamentoController {
+public class PagamentoController {
 
     private ControllerCompra controllerCompra = new ControllerCompra();
 

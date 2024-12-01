@@ -9,9 +9,7 @@ import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
 
-import javax.management.InvalidAttributeValueException;
-
-public class TelaEdicaoController {
+public class EdicaoController {
     @FXML
     private TextField campoNome;
 

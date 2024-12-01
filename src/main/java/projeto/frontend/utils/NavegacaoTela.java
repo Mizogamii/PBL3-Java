@@ -1,12 +1,10 @@
 package projeto.frontend.utils;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import projeto.frontend.view.controllers.TelaPagamentoController;
 
 import java.io.IOException;
 

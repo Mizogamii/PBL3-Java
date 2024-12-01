@@ -1,9 +1,9 @@
 {
   "nome": "Love Yourself",
   "descricao": "Grupo BTS",
-  "quantidadeAssentosDisponiveis": 2500,
+  "quantidadeAssentosDisponiveis": 2499,
   "data": "May 10, 2025, 8:32:38 AM",
-  "ativo": true,
+  "statusEvento": false,
   "idEvento": "Love Yourself10-05-2025",
   "categoria": "Musica",
   "preco": 650.0

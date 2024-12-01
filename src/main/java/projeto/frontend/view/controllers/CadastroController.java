@@ -1,8 +1,6 @@
 package projeto.frontend.view.controllers;
 
-import eu.hansolo.tilesfx.Test;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -12,7 +10,7 @@ import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
 
-public class TelaCadastroController {
+public class CadastroController {
 
     private ControllerUsuario controllerUsuario = new ControllerUsuario();
 

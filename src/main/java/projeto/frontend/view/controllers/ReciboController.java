@@ -15,7 +15,7 @@ import projeto.frontend.utils.NavegacaoTela;
 
 import java.io.IOException;
 
-public class TelaReciboController {
+public class ReciboController {
     @FXML
     private Label nomeEventoLabel;
 
@@ -49,16 +49,5 @@ public class TelaReciboController {
         NavegacaoTela.voltarTelaInicial();
     }
 
-    public void comentar(MouseEvent mouseEvent) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaComentario.fxml"));
-        Parent root = loader.load();
-
-        TelaComentarioController telaComentarioController = loader.getController();
-
-        telaComentarioController.exibirNomeEvento(recibo);
-
-        Stage stage = (Stage) labelAbrirTelaComentar.getScene().getWindow();
-        stage.setScene(new Scene(root));
-    }
 }

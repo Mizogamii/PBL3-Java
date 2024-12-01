@@ -9,12 +9,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Evento;
-import projeto.backend.model.Ingresso;
 import projeto.frontend.utils.NavegacaoTela;
 
 import java.util.List;
 
-public class TelaListarEventosController {
+public class ListarEventosController {
 
     private ControllerEvento controllerEvento = new ControllerEvento();
 
