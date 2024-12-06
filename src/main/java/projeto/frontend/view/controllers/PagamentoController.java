@@ -85,17 +85,9 @@ public class PagamentoController {
             Pagamento.TipoPagamento tipoPagamento = Pagamento.TipoPagamento.valueOf(metodoSelecionado);
             Ingresso retorno = controllerCompra.fazerIngresso(UsuarioLogado.getUsuarioLogado(), eventoInfo.getNome(), tipoPagamento, UsuarioLogado.getUsuarioLogado().getLogin());
             NavegacaoTela.showSuccessMessage("Pagamento", "Pagamento realizado com sucesso!");
+            NavegacaoTela.voltarTelaInicial();
         }catch (IllegalArgumentException | NullPointerException e){
             NavegacaoTela.showErrorMessage("Erro! Selecione uma forma de pagamento.");
-        }
-    }
-
-    public void botaoTeste(ActionEvent actionEvent) {
-        String metodoSelecionado = metodoPagamento.getValue();
-        if (metodoSelecionado == null) {
-            System.out.println("Método não selecionado.");
-        } else {
-            System.out.println("Método selecionado: " + metodoSelecionado);
         }
     }
 }

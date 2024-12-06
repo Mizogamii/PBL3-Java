@@ -43,6 +43,7 @@ public class ComentarioController {
             controllerEvento.fazerComentario(UsuarioLogado.getUsuarioLogado(), ingresso.getEvento(), ingresso.getNomeEvento(), comentarioTexto);
             if(!comentarioTexto.isEmpty()){
                 NavegacaoTela.showSuccessMessage("Comentário","Comentário realizado com sucesso!");
+                NavegacaoTela.voltarTelaInicial();
             }
         }catch (Exception e){
             NavegacaoTela.showErrorMessage("ERRO! Digite um comentário!");

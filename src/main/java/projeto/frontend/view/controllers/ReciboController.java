@@ -31,9 +31,6 @@ public class ReciboController {
     @FXML
     private Label statusLabel;
 
-    @FXML
-    private Label labelAbrirTelaComentar;
-
     private Recibo recibo;
 
     public void exibirRecibo(Ingresso ingresso) {

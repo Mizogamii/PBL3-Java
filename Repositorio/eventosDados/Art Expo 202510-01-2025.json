@@ -1,9 +1,9 @@
 {
   "nome": "Art Expo 2025",
   "descricao": "Exposição de Arte Contemporânea",
-  "quantidadeAssentosDisponiveis": 99,
+  "quantidadeAssentosDisponiveis": 98,
   "data": "Jan 10, 2026, 8:32:38 AM",
-  "ativo": true,
+  "statusEvento": false,
   "idEvento": "Art Expo 202510-01-2025",
   "categoria": "Musica",
   "preco": 40.0

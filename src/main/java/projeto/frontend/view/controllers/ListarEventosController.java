@@ -4,13 +4,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Evento;
 import projeto.frontend.utils.NavegacaoTela;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ListarEventosController {
@@ -44,7 +49,7 @@ public class ListarEventosController {
     @FXML
     public TableColumn<Evento, Double> colunaPreco;
 
-    private final List<Evento> eventos = controllerEvento.listarEventosDisponiveis();
+    private final List<Evento> eventos = controllerEvento.listarTodosOsEventos();
 
     @FXML
     public void initialize() {
@@ -73,7 +78,11 @@ public class ListarEventosController {
             if (event.getClickCount() == 2) {
                 Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
                 if (eventoSelecionado != null) {
-                    abrirTelaDetalhes(eventoSelecionado);
+                    try {
+                        abrirTelaEvento(eventoSelecionado);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         });
@@ -98,6 +107,19 @@ public class ListarEventosController {
             tabelaEventos.setItems(eventosFiltrados);
         }
     }
+
+    public void abrirTelaEvento(Evento evento) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaEventoIndividual.fxml"));
+        Parent root = loader.load();
+
+        TelaEventoController telaEvento = loader.getController();
+
+        telaEvento.initialize(evento);
+
+        Stage stage = (Stage) tabelaEventos.getScene().getWindow();
+        stage.setScene(new Scene(root));
+    }
+
 
     public void abrirTelaDetalhes(Evento evento){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

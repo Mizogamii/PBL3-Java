@@ -143,6 +143,5 @@
             </Pane>
          </children>
       </Pane>
-      <Button fx:id="botaoTeste" layoutX="249.0" layoutY="388.0" mnemonicParsing="false" onAction="#botaoTeste" text="teste" />
     </children>
 </AnchorPane>

@@ -128,6 +128,14 @@ public class Evento {
         this.preco = preco;
     }
 
+    public String getDataFormatada() {
+        if (this.data != null) {
+            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+            return formatador.format(this.data);
+        }
+        return "";
+    }
+
     public boolean quantidadeEvento() {
         return this.quantidadeAssentosDisponiveis > 0;
     }
@@ -135,6 +143,10 @@ public class Evento {
     public void statusAtualizadoEvento() {
         Date dataAtual = new Date();
         this.statusEvento = dataAtual.before(this.data);
+    }
+
+    public String getStatusEventoFormatado() {
+        return isStatusEvento() ? "Evento por vir" : "Evento já realizado";
     }
 
     /**

@@ -1,9 +1,9 @@
 {
   "nome": "Classical Night",
   "descricao": "Orquestra Sinfônica",
-  "quantidadeAssentosDisponiveis": 2500,
+  "quantidadeAssentosDisponiveis": 2499,
   "data": "Oct 10, 2026, 8:32:38 AM",
-  "ativo": true,
+  "statusEvento": false,
   "idEvento": "Classical Night10-10-2026",
   "categoria": "Musica",
   "preco": 153.0

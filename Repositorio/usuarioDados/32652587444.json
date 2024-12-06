@@ -26,7 +26,7 @@
         "nome": "The Wings Tour",
         "descricao": "Segunda turne mundial do grupo BTS",
         "quantidadeAssentosDisponiveis": 13998,
-        "data": "Feb 18, 2017, 16:32:38 PM",
+        "data": "Feb 19, 2017, 4:32:38 AM",
         "statusEvento": false,
         "idEvento": "The Wings Tour18-02-2017",
         "categoria": "Musica",
@@ -35,6 +35,36 @@
       "preco": 600.0,
       "ativo": false,
       "idIngresso": "dae7f17a-2a83-4e2f-becf-986cae8ad63f"
+    },
+    {
+      "evento": {
+        "nome": "Shakespeare in the Park",
+        "descricao": "Teatro Nacional",
+        "quantidadeAssentosDisponiveis": 97,
+        "data": "Jan 30, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Shakespeare in the Park30-01-2025",
+        "categoria": "Cultura",
+        "preco": 45.0
+      },
+      "preco": 45.0,
+      "ativo": false,
+      "idIngresso": "583d4878-8a49-45dd-8377-b6bc51a2cc44"
+    },
+    {
+      "evento": {
+        "nome": "Classical Night",
+        "descricao": "Orquestra Sinfônica",
+        "quantidadeAssentosDisponiveis": 2499,
+        "data": "Oct 10, 2026, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Classical Night10-10-2026",
+        "categoria": "Musica",
+        "preco": 153.0
+      },
+      "preco": 153.0,
+      "ativo": false,
+      "idIngresso": "a986be32-f42c-4d82-b70e-3e9c7becb4bd"
     }
   ],
   "recibos": [
@@ -49,10 +79,26 @@
     {
       "loginUsuario": "a",
       "tipoPagamento": "BOLETO",
-      "dataDaCompra": "Dec 6, 2024, 6:27:26 AM",
+      "dataDaCompra": "Jan 6, 2017, 6:27:26 AM",
       "nomeDoEvento": "The Wings Tour",
-      "dataDoEvento": "Feb 18, 2025, 6:32:38 PM",
+      "dataDoEvento": "Feb 18, 2017, 6:32:38 PM",
       "preco": 600.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 6, 2024, 6:37:21 PM",
+      "nomeDoEvento": "Shakespeare in the Park",
+      "dataDoEvento": "Jan 30, 2025, 8:32:38 AM",
+      "preco": 45.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 6, 2024, 6:37:55 PM",
+      "nomeDoEvento": "Classical Night",
+      "dataDoEvento": "Oct 10, 2026, 8:32:38 AM",
+      "preco": 153.0
     }
   ]
 }

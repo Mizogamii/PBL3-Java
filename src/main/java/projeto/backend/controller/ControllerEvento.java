@@ -61,6 +61,14 @@ public class ControllerEvento {
         return eventosDisponiveis;
     }
 
+    public List<Evento> listarTodosOsEventos() {
+        if (ArmazenamentoDados.eventos.isEmpty()) {
+            ArmazenamentoDados.carregarEventos();
+        }
+        List<Evento> eventosExistentes = new ArrayList<>(ArmazenamentoDados.listarTodosEventos());
+        eventosExistentes.sort(Comparator.comparing(Evento::getData));
+        return eventosExistentes;
+    }
 
     public List<String> listarEventosDisponiveisNome() {
 

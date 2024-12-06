@@ -126,6 +126,17 @@ public class ArmazenamentoDados {
         return eventosDisponiveis;
     }
 
+    public static List<Evento> listarTodosEventos(){
+        List<Evento> todosEventos = new ArrayList<>();
+        List<File> arquivos = listarArquivos("eventosDados");
+
+        for(File arquivo : arquivos){
+            Evento evento = LeituraDados.ler(Evento.class, arquivo.getPath());
+                todosEventos.add(evento);
+        }
+        return todosEventos;
+    }
+
     /**
      * Lista os ingressos compradoa pelo usuário.
      * @return Retorna uma lista de strings de algumas informações essenciais do ingresso comprado.
