@@ -82,7 +82,7 @@ public class ListaEventosFeedBack {
 
             ComentarioController telaComentarioController = loader.getController();
 
-            telaComentarioController.exibirNomeEvento(ingresso);
+            telaComentarioController.setIngresso(ingresso);
 
             Stage stage = (Stage) tabelaEventoParticipado.getScene().getWindow();
             stage.setScene(new Scene(root));

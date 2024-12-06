@@ -1,9 +1,9 @@
 {
   "nome": "Shakespeare in the Park",
   "descricao": "Teatro Nacional",
-  "quantidadeAssentosDisponiveis": 99,
+  "quantidadeAssentosDisponiveis": 98,
   "data": "Jan 30, 2025, 8:32:38 AM",
-  "ativo": true,
+  "statusEvento": true,
   "idEvento": "Shakespeare in the Park30-01-2025",
   "categoria": "Cultura",
   "preco": 45.0

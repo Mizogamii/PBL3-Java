@@ -12,7 +12,7 @@
         "descricao": "Comidas e Bebidas de Todo o Mundo",
         "quantidadeAssentosDisponiveis": 2499,
         "data": "Jan 15, 2025, 8:32:38 AM",
-        "statusEvento": false,
+        "statusEvento": true,
         "idEvento": "Festival Gastronômico15-01-2025",
         "categoria": "Gastronomia",
         "preco": 35.0
@@ -20,6 +20,36 @@
       "preco": 35.0,
       "ativo": false,
       "idIngresso": "b2581f7e-c6ca-4603-95d1-91489454904f"
+    },
+    {
+      "evento": {
+        "nome": "The Wings Tour",
+        "descricao": "Segunda turne mundial do grupo BTS",
+        "quantidadeAssentosDisponiveis": 13997,
+        "data": "Feb 18, 2025, 6:32:38 PM",
+        "statusEvento": false,
+        "idEvento": "The Wings Tour18-02-2025",
+        "categoria": "Musica",
+        "preco": 600.0
+      },
+      "preco": 600.0,
+      "ativo": false,
+      "idIngresso": "09f6d3ff-03eb-4d1a-8db8-ec86977a3617"
+    },
+    {
+      "evento": {
+        "nome": "Love Yourself",
+        "descricao": "Grupo BTS",
+        "quantidadeAssentosDisponiveis": 2498,
+        "data": "May 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Love Yourself10-05-2025",
+        "categoria": "Musica",
+        "preco": 650.0
+      },
+      "preco": 650.0,
+      "ativo": false,
+      "idIngresso": "03025a46-78de-488a-919c-21a2094da02c"
     }
   ],
   "recibos": [
@@ -30,6 +60,22 @@
       "nomeDoEvento": "Festival Gastronômico",
       "dataDoEvento": "Jan 15, 2025, 8:32:38 AM",
       "preco": 35.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "PIX",
+      "dataDaCompra": "Dec 6, 2024, 6:28:09 AM",
+      "nomeDoEvento": "The Wings Tour",
+      "dataDoEvento": "Feb 18, 2025, 6:32:38 PM",
+      "preco": 600.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "PIX",
+      "dataDaCompra": "Dec 6, 2024, 6:28:20 AM",
+      "nomeDoEvento": "Love Yourself",
+      "dataDoEvento": "May 10, 2025, 8:32:38 AM",
+      "preco": 650.0
     }
   ]
 }

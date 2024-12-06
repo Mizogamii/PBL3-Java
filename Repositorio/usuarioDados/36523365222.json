@@ -5,6 +5,100 @@
   "cpf": "36523365222",
   "email": "usuario2@email.com",
   "admin": false,
-  "ingressos": [],
-  "recibos": []
+  "ingressos": [
+    {
+      "evento": {
+        "nome": "Love Yourself",
+        "descricao": "Grupo BTS",
+        "quantidadeAssentosDisponiveis": 2497,
+        "data": "May 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Love Yourself10-05-2025",
+        "categoria": "Musica",
+        "preco": 650.0
+      },
+      "preco": 650.0,
+      "ativo": false,
+      "idIngresso": "68e50cff-02fe-4a54-a7ca-209daa99d622"
+    },
+    {
+      "evento": {
+        "nome": "The Wings Tour",
+        "descricao": "Segunda turne mundial do grupo BTS",
+        "quantidadeAssentosDisponiveis": 13996,
+        "data": "Feb 18, 2025, 6:32:38 PM",
+        "statusEvento": false,
+        "idEvento": "The Wings Tour18-02-2025",
+        "categoria": "Musica",
+        "preco": 600.0
+      },
+      "preco": 600.0,
+      "ativo": false,
+      "idIngresso": "38347f4b-043b-4753-8d9a-26c5a2613823"
+    },
+    {
+      "evento": {
+        "nome": "Trabalhando o amor próprio",
+        "descricao": "Milagre",
+        "quantidadeAssentosDisponiveis": 147,
+        "data": "Nov 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Trabalhando o amor próprio10-11-2025",
+        "categoria": "Cultura",
+        "preco": 90.0
+      },
+      "preco": 90.0,
+      "ativo": false,
+      "idIngresso": "dac4430e-f8a0-4186-aee0-56763f5d2128"
+    },
+    {
+      "evento": {
+        "nome": "Trabalhando o amor próprio",
+        "descricao": "Milagre",
+        "quantidadeAssentosDisponiveis": 147,
+        "data": "Nov 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Trabalhando o amor próprio10-11-2025",
+        "categoria": "Cultura",
+        "preco": 90.0
+      },
+      "preco": 90.0,
+      "ativo": false,
+      "idIngresso": "3a87cd26-498e-4bb5-a5c8-972fbd99d695"
+    }
+  ],
+  "recibos": [
+    {
+      "loginUsuario": "Usuario2",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 6, 2024, 6:29:03 AM",
+      "nomeDoEvento": "Love Yourself",
+      "dataDoEvento": "May 10, 2025, 8:32:38 AM",
+      "preco": 650.0
+    },
+    {
+      "loginUsuario": "Usuario2",
+      "tipoPagamento": "PIX",
+      "dataDaCompra": "Dec 6, 2024, 6:29:16 AM",
+      "nomeDoEvento": "The Wings Tour",
+      "dataDoEvento": "Feb 18, 2025, 6:32:38 PM",
+      "preco": 600.0
+    },
+    {
+      "loginUsuario": "Usuario2",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 6, 2024, 6:29:32 AM",
+      "nomeDoEvento": "Trabalhando o amor próprio",
+      "dataDoEvento": "Nov 10, 2025, 8:32:38 AM",
+      "preco": 90.0
+    },
+    {
+      "loginUsuario": "Usuario2",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 6, 2024, 6:29:32 AM",
+      "nomeDoEvento": "Trabalhando o amor próprio",
+      "dataDoEvento": "Nov 10, 2025, 8:32:38 AM",
+      "preco": 90.0
+    }
+  ]
 }

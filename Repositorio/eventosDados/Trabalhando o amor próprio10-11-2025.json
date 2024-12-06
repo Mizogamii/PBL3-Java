@@ -1,9 +1,9 @@
 {
   "nome": "Trabalhando o amor próprio",
   "descricao": "Milagre",
-  "quantidadeAssentosDisponiveis": 149,
+  "quantidadeAssentosDisponiveis": 147,
   "data": "Nov 10, 2025, 8:32:38 AM",
-  "ativo": true,
+  "statusEvento": true,
   "idEvento": "Trabalhando o amor próprio10-11-2025",
   "categoria": "Cultura",
   "preco": 90.0
