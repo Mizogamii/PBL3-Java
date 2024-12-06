@@ -186,6 +186,7 @@ public class ControllerUsuario {
                 ingressosEventosParticipados.add(ingresso);
             }
         }
+        System.out.println(ingressosEventosParticipados);
         return ingressosEventosParticipados;
     }
 

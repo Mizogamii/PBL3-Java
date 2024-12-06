@@ -124,6 +124,7 @@ public class ControllerCompra {
      */
     public List<String> listarIngressosComprados(Usuario usuario) {
         List<String> ingressosComprados = ArmazenamentoDados.listarCompras(usuario.getCpf()+".json");
+
         return ingressosComprados;
     }
 }
