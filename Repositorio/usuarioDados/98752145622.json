@@ -5,21 +5,22 @@
   "cpf": "98752145622",
   "email": "usuario1@gmail.com",
   "admin": false,
-  "ingressos": [{
-    "evento": {
-      "nome": "Shakespeare in the Park",
-      "descricao": "Teatro Nacional",
-      "quantidadeAssentosDisponiveis": 99,
-      "data": "Jan 30, 2025, 8:32:38 AM",
-      "statusEvento": true,
-      "idEvento": "Shakespeare in the Park30-01-2025",
-      "categoria": "Cultura",
-      "preco": 45.0
+  "ingressos": [
+    {
+      "evento": {
+        "nome": "Shakespeare in the Park",
+        "descricao": "Teatro Nacional",
+        "quantidadeAssentosDisponiveis": 99,
+        "data": "Jan 30, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Shakespeare in the Park30-01-2025",
+        "categoria": "Cultura",
+        "preco": 45.0
+      },
+      "preco": 45.0,
+      "ativo": false,
+      "idIngresso": "742cd224-7463-4798-9bcc-73ed91892d48"
     },
-    "preco": 45.0,
-    "ativo": false,
-    "idIngresso": "742cd224-7463-4798-9bcc-73ed91892d48"
-  },
     {
       "evento": {
         "nome": "Fanmeeting Brasil",
@@ -49,8 +50,143 @@
       "preco": 150.0,
       "ativo": false,
       "idIngresso": "5f004c58-c0d8-4f51-bd49-a945ff29760d"
-    }],
-
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 93,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "9a991021-c604-4428-8bf1-83e8ecc2e7ab"
+    },
+    {
+      "evento": {
+        "nome": "Shakespeare in the Park",
+        "descricao": "Teatro Nacional",
+        "quantidadeAssentosDisponiveis": 94,
+        "data": "Jan 30, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Shakespeare in the Park30-01-2025",
+        "categoria": "Cultura",
+        "preco": 45.0
+      },
+      "preco": 45.0,
+      "ativo": false,
+      "idIngresso": "5ebdb9b8-e8b9-41a4-8caf-037a071ab1ea"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 92,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "dab2a4dd-e224-419d-b896-8a78d0b8576b"
+    },
+    {
+      "evento": {
+        "nome": "Tech Innovators 2025",
+        "descricao": "Conferência sobre Inovações Tecnológicas",
+        "quantidadeAssentosDisponiveis": 2497,
+        "data": "Sep 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Tech Innovators 202510-09-2025",
+        "categoria": "Tecnologia",
+        "preco": 96.0
+      },
+      "preco": 96.0,
+      "ativo": false,
+      "idIngresso": "9648b755-1b90-426e-81a1-e984409df618"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 91,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "cdc1ad7e-d365-466e-bcfe-8e19489abdfb"
+    },
+    {
+      "evento": {
+        "nome": "Art Expo 2025",
+        "descricao": "Exposição de Arte Contemporânea",
+        "quantidadeAssentosDisponiveis": 97,
+        "data": "Jan 10, 2026, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Art Expo 202510-01-2025",
+        "categoria": "Musica",
+        "preco": 40.0
+      },
+      "preco": 40.0,
+      "ativo": false,
+      "idIngresso": "f088e36c-93cf-4267-b096-db652c0b692a"
+    },
+    {
+      "evento": {
+        "nome": "Tech Innovators 2025",
+        "descricao": "Conferência sobre Inovações Tecnológicas",
+        "quantidadeAssentosDisponiveis": 2496,
+        "data": "Sep 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Tech Innovators 202510-09-2025",
+        "categoria": "Tecnologia",
+        "preco": 96.0
+      },
+      "preco": 96.0,
+      "ativo": false,
+      "idIngresso": "35ef8949-76e6-49ec-9f2b-8944e36d9f7a"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 89,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "f63840f9-8755-44eb-b487-8e37a4949cc3"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 88,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": false,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "f8d7de06-a14f-4328-a681-d75189ce1176"
+    }
+  ],
   "recibos": [
     {
       "loginUsuario": "Usuario1",
@@ -75,6 +211,79 @@
       "nomeDoEvento": "Fanmeeting Brasil",
       "dataDoEvento": "Oct 10, 2023, 8:32:38 AM",
       "preco": 150.0
+    },
+    {
+      "loginUsuario": "Usuario1",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 7, 2024, 3:05:47 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "Usuario1",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 3:42:54 PM",
+      "nomeDoEvento": "Shakespeare in the Park",
+      "dataDoEvento": "Jan 30, 2025, 8:32:38 AM",
+      "preco": 45.0
+    },
+    {
+      "loginUsuario": "Usuario1",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 3:44:04 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "Usuario1",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 3:44:48 PM",
+      "nomeDoEvento": "Tech Innovators 2025",
+      "dataDoEvento": "Sep 10, 2025, 8:32:38 AM",
+      "preco": 96.0
+    },
+    {
+      "loginUsuario": "Usuario1",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 4:00:46 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "Usuario1",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 7, 2024, 4:02:53 PM",
+      "nomeDoEvento": "Art Expo 2025",
+      "dataDoEvento": "Jan 10, 2026, 8:32:38 AM",
+      "preco": 40.0
+    },
+    {
+      "loginUsuario": "Usuario1",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 4:19:12 PM",
+      "nomeDoEvento": "Tech Innovators 2025",
+      "dataDoEvento": "Sep 10, 2025, 8:32:38 AM",
+      "preco": 96.0
+    },
+    {
+      "loginUsuario": "Usuario1",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 7, 2024, 4:48:46 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "Usuario1",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 7, 2024, 5:09:21 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
     }
-  ]
+  ],
+  "notificacoes": []
 }

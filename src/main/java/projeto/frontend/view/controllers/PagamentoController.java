@@ -12,6 +12,7 @@ import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Evento;
 import projeto.backend.model.Ingresso;
 import projeto.backend.model.Notificacoes;
+import projeto.backend.service.NotificacaoService;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.backend.model.Pagamento;
 import projeto.backend.controller.ControllerCompra;
@@ -23,6 +24,7 @@ public class PagamentoController {
 
     private ControllerCompra controllerCompra = new ControllerCompra();
     private ControllerUsuario controllerUsuario = new ControllerUsuario();
+    private PrincipalUsuarioLogadoController principalUsuarioLogadoController = new PrincipalUsuarioLogadoController();
 
     @FXML
     private Label nomeEventoLabel;
@@ -88,12 +90,16 @@ public class PagamentoController {
             Pagamento.TipoPagamento tipoPagamento = Pagamento.TipoPagamento.valueOf(metodoSelecionado);
             Ingresso ingresso = controllerCompra.fazerIngresso(UsuarioLogado.getUsuarioLogado(), eventoInfo.getNome(), tipoPagamento, UsuarioLogado.getUsuarioLogado().getLogin());
             NavegacaoTela.showSuccessMessage("Pagamento", "Pagamento realizado com sucesso!");
-            NavegacaoTela.voltarTelaInicial();
+
             Notificacoes notificacoes = new Notificacoes("Compra realizada para o evento: " + eventoInfo.getNome());
-            UsuarioLogado.getUsuarioLogado().adicionarNotificoes(notificacoes);
+            UsuarioLogado.getUsuarioLogado().adicionarNotificacoes(notificacoes);
+
+            NavegacaoTela.voltarTelaInicial();
             System.out.println("teste not: " + notificacoes);
+
         }catch (IllegalArgumentException | NullPointerException e){
             NavegacaoTela.showErrorMessage("Erro! Selecione uma forma de pagamento.");
         }
     }
+
 }

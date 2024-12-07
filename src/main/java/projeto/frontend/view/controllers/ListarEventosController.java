@@ -120,7 +120,7 @@ public class ListarEventosController {
         stage.setScene(new Scene(root));
     }
 
-
+    //NÃO TO USANDO MAS QUERO USAR PRA OUTRA COISA
     public void abrirTelaDetalhes(Evento evento){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Detalhes do Evento");

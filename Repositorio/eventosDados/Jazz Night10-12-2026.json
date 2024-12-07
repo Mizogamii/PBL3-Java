@@ -1,9 +1,9 @@
 {
   "nome": "Jazz Night",
   "descricao": "Trio de Jazz",
-  "quantidadeAssentosDisponiveis": 2500,
+  "quantidadeAssentosDisponiveis": 2498,
   "data": "Dec 10, 2026, 8:32:38 AM",
-  "ativo": true,
+  "statusEvento": false,
   "idEvento": "Jazz Night10-12-2026",
   "categoria": "Musica",
   "preco": 70.0

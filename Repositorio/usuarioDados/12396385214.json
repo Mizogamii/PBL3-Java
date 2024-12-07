@@ -86,7 +86,7 @@
         "nome": "The Wings Tour",
         "descricao": "Segunda turne mundial do grupo BTS",
         "quantidadeAssentosDisponiveis": 13999,
-        "data": "Feb 18, 2017, 16:32:38 PM",
+        "data": "Feb 19, 2017, 4:32:38 AM",
         "statusEvento": false,
         "idEvento": "The Wings Tour18-02-2017",
         "categoria": "Musica",
@@ -95,6 +95,81 @@
       "preco": 600.0,
       "ativo": false,
       "idIngresso": "5d721a66-a188-4674-9377-704cda370826"
+    },
+    {
+      "evento": {
+        "nome": "Shakespeare in the Park",
+        "descricao": "Teatro Nacional",
+        "quantidadeAssentosDisponiveis": 95,
+        "data": "Jan 30, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Shakespeare in the Park30-01-2025",
+        "categoria": "Cultura",
+        "preco": 45.0
+      },
+      "preco": 45.0,
+      "ativo": false,
+      "idIngresso": "051f2fd5-a76d-4a4f-b2a7-763a5d3648d4"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 94,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "e380831a-60a5-4f1e-b359-5e29331fc3db"
+    },
+    {
+      "evento": {
+        "nome": "Trabalhando o amor próprio",
+        "descricao": "Milagre",
+        "quantidadeAssentosDisponiveis": 146,
+        "data": "Nov 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Trabalhando o amor próprio10-11-2025",
+        "categoria": "Cultura",
+        "preco": 90.0
+      },
+      "preco": 90.0,
+      "ativo": false,
+      "idIngresso": "967bce7f-eea1-4144-ba66-078f962d102a"
+    },
+    {
+      "evento": {
+        "nome": "Shakespeare in the Park",
+        "descricao": "Teatro Nacional",
+        "quantidadeAssentosDisponiveis": 93,
+        "data": "Jan 30, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Shakespeare in the Park30-01-2025",
+        "categoria": "Cultura",
+        "preco": 45.0
+      },
+      "preco": 45.0,
+      "ativo": false,
+      "idIngresso": "2bd46fbe-67eb-44de-b223-8efb3983bc82"
+    },
+    {
+      "evento": {
+        "nome": "Festival Gastronômico",
+        "descricao": "Comidas e Bebidas de Todo o Mundo",
+        "quantidadeAssentosDisponiveis": 2497,
+        "data": "Jan 15, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Festival Gastronômico15-01-2025",
+        "categoria": "Gastronomia",
+        "preco": 35.0
+      },
+      "preco": 35.0,
+      "ativo": false,
+      "idIngresso": "92b32291-14e5-42fd-8223-31937776028b"
     }
   ],
   "recibos": [
@@ -141,10 +216,56 @@
     {
       "loginUsuario": "t",
       "tipoPagamento": "CREDITO",
-      "dataDaCompra": "Jan 18, 2017, 16:27:06 PM",
+      "dataDaCompra": "Jan 19, 2017, 4:27:06 AM",
       "nomeDoEvento": "The Wings Tour",
       "dataDoEvento": "Feb 18, 2017, 6:32:38 PM",
       "preco": 600.0
+    },
+    {
+      "loginUsuario": "t",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 7, 2024, 2:06:57 PM",
+      "nomeDoEvento": "Shakespeare in the Park",
+      "dataDoEvento": "Jan 30, 2025, 8:32:38 AM",
+      "preco": 45.0
+    },
+    {
+      "loginUsuario": "t",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 2:39:55 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "t",
+      "tipoPagamento": "PIX",
+      "dataDaCompra": "Dec 7, 2024, 5:12:31 PM",
+      "nomeDoEvento": "Trabalhando o amor próprio",
+      "dataDoEvento": "Nov 10, 2025, 8:32:38 AM",
+      "preco": 90.0
+    },
+    {
+      "loginUsuario": "t",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 7, 2024, 5:12:52 PM",
+      "nomeDoEvento": "Shakespeare in the Park",
+      "dataDoEvento": "Jan 30, 2025, 8:32:38 AM",
+      "preco": 45.0
+    },
+    {
+      "loginUsuario": "t",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 5:53:42 PM",
+      "nomeDoEvento": "Festival Gastronômico",
+      "dataDoEvento": "Jan 15, 2025, 8:32:38 AM",
+      "preco": 35.0
+    }
+  ],
+  "notificacoes": [
+    {
+      "mensagemNotificada": "Compra realizada para o evento: Trabalhando o amor próprio",
+      "lido": false
     }
   ]
 }

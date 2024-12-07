@@ -57,7 +57,7 @@
         "descricao": "Exposição de Arte Contemporânea",
         "quantidadeAssentosDisponiveis": 98,
         "data": "Jan 10, 2026, 8:32:38 AM",
-        "statusEvento": false,
+        "statusEvento": true,
         "idEvento": "Art Expo 202510-01-2025",
         "categoria": "Musica",
         "preco": 40.0
@@ -72,7 +72,7 @@
         "descricao": "Conferência sobre Inovações Tecnológicas",
         "quantidadeAssentosDisponiveis": 2499,
         "data": "Sep 10, 2025, 8:32:38 AM",
-        "statusEvento": false,
+        "statusEvento": true,
         "idEvento": "Tech Innovators 202510-09-2025",
         "categoria": "Tecnologia",
         "preco": 96.0
@@ -80,6 +80,96 @@
       "preco": 96.0,
       "ativo": false,
       "idIngresso": "0f66e502-83e7-4726-a6ba-483884f58f6e"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 87,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "f821a4ea-a53f-40f9-9ec2-8f2a143ba7e7"
+    },
+    {
+      "evento": {
+        "nome": "Shakespeare in the Park",
+        "descricao": "Teatro Nacional",
+        "quantidadeAssentosDisponiveis": 92,
+        "data": "Jan 30, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Shakespeare in the Park30-01-2025",
+        "categoria": "Cultura",
+        "preco": 45.0
+      },
+      "preco": 45.0,
+      "ativo": false,
+      "idIngresso": "8b05c43a-b581-40e4-817e-b627fd04dd65"
+    },
+    {
+      "evento": {
+        "nome": "Trabalhando o amor próprio",
+        "descricao": "Milagre",
+        "quantidadeAssentosDisponiveis": 144,
+        "data": "Nov 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Trabalhando o amor próprio10-11-2025",
+        "categoria": "Cultura",
+        "preco": 90.0
+      },
+      "preco": 90.0,
+      "ativo": false,
+      "idIngresso": "8d5cc07d-f5e9-4c98-9842-45d5bcfbe9a6"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 86,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "778abe82-7502-4fcc-bd5a-7fc607310be1"
+    },
+    {
+      "evento": {
+        "nome": "Trabalhando o amor próprio",
+        "descricao": "Milagre",
+        "quantidadeAssentosDisponiveis": 144,
+        "data": "Nov 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Trabalhando o amor próprio10-11-2025",
+        "categoria": "Cultura",
+        "preco": 90.0
+      },
+      "preco": 90.0,
+      "ativo": false,
+      "idIngresso": "e17652a4-65b3-425b-a794-0f082e9d4073"
+    },
+    {
+      "evento": {
+        "nome": "Tech Innovators 2025",
+        "descricao": "Conferência sobre Inovações Tecnológicas",
+        "quantidadeAssentosDisponiveis": 2495,
+        "data": "Sep 10, 2025, 8:32:38 AM",
+        "statusEvento": false,
+        "idEvento": "Tech Innovators 202510-09-2025",
+        "categoria": "Tecnologia",
+        "preco": 96.0
+      },
+      "preco": 96.0,
+      "ativo": false,
+      "idIngresso": "f8c01bac-386b-4c26-83d9-1e7e834e805f"
     }
   ],
   "recibos": [
@@ -122,6 +212,64 @@
       "nomeDoEvento": "Tech Innovators 2025",
       "dataDoEvento": "Sep 10, 2025, 8:32:38 AM",
       "preco": 96.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 7, 2024, 5:52:38 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 5:53:29 PM",
+      "nomeDoEvento": "Shakespeare in the Park",
+      "dataDoEvento": "Jan 30, 2025, 8:32:38 AM",
+      "preco": 45.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "PIX",
+      "dataDaCompra": "Dec 7, 2024, 5:54:55 PM",
+      "nomeDoEvento": "Trabalhando o amor próprio",
+      "dataDoEvento": "Nov 10, 2025, 8:32:38 AM",
+      "preco": 90.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 5:55:06 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 7, 2024, 5:55:18 PM",
+      "nomeDoEvento": "Trabalhando o amor próprio",
+      "dataDoEvento": "Nov 10, 2025, 8:32:38 AM",
+      "preco": 90.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 6:06:07 PM",
+      "nomeDoEvento": "Tech Innovators 2025",
+      "dataDoEvento": "Sep 10, 2025, 8:32:38 AM",
+      "preco": 96.0
+    }
+  ],
+  "notificacoes": [
+    {
+      "mensagemNotificada": "Compra realizada para o evento: Trabalhando o amor próprio",
+      "lido": false
+    },
+    {
+      "mensagemNotificada": "Compra realizada para o evento: Show de Rock",
+      "lido": false
     }
   ]
 }

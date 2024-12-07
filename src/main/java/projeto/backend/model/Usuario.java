@@ -143,7 +143,7 @@ public class Usuario {
         return cpfVerif.length() == 11 && cpfVerif.matches("[0-9]+");
     }
 
-    public void adicionarNotificoes(Notificacoes notificacao) {
+    public void adicionarNotificacoes(Notificacoes notificacao) {
         if (this.notificacoes == null) {
             this.notificacoes = new ArrayList<>();
         }

@@ -1,14 +1,20 @@
 package projeto.frontend.view.controllers;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import projeto.backend.model.Comentario;
+import projeto.backend.model.Notificacoes;
+import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
 
@@ -27,12 +33,36 @@ public class PrincipalUsuarioLogadoController {
     private Label labelAvaliarEvento;
 
     @FXML
-    private VBox notificacoesBox;
+    private ListView<Notificacoes> areaTexto;
 
     @FXML
     public void initialize() {
-        List<String> notificacoesIniciais = List.of("Bem-vindo ao sistema!", "Novo evento disponível.");
-        carregarNotificacoes(notificacoesIniciais);
+        if (areaTexto != null) {
+            ObservableList<Notificacoes> notificacoesObservable = FXCollections.observableArrayList(UsuarioLogado.getUsuarioLogado().getNotificacoes());
+            areaTexto.setItems(notificacoesObservable);
+
+            if (notificacoesObservable.isEmpty()) {
+                areaTexto.setPlaceholder(new Label("Não há notificações a serem exibidas."));
+            } else {
+                areaTexto.setCellFactory(listView -> new ListCell<Notificacoes>() {
+                    @Override
+                    protected void updateItem(Notificacoes notificacao, boolean empty) {
+                        super.updateItem(notificacao, empty);
+                        if (empty || notificacao == null) {
+                            setText(null);
+                        } else {
+                            setText(notificacao.getMensagemNotificada());
+                        }
+                    }
+                });
+            }
+        }
+    }
+
+    public void atualizarNotificacoes() {
+        ObservableList<Notificacoes> notificacoesObservable = FXCollections.observableArrayList(UsuarioLogado.getUsuarioLogado().getNotificacoes());
+        areaTexto.setItems(notificacoesObservable);
+        areaTexto.refresh();
     }
 
     @FXML
@@ -52,7 +82,7 @@ public class PrincipalUsuarioLogadoController {
         if (labelAbrirTelaListar == null) {
             System.out.println("labelAbriTelaListar está null!");
         } else {
-            stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
+            stage = (Stage) labelAbrirTelaListar.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaListarEvento.fxml", "Listar dados");
     }
@@ -103,14 +133,4 @@ public class PrincipalUsuarioLogadoController {
         NavegacaoTela.trocarTela(stage, "/fxml/TelaListaEventosFeedBack.fxml", "Compras Realizadas");
     }
 
-    public void carregarNotificacoes(List<String> notificacoes){
-        for (String mensagem : notificacoes) {
-            Label notificacaoLabel = new Label(mensagem);
-            notificacaoLabel.setStyle("-fx-padding: 10; -fx-font-size: 14; -fx-background-color: #f0f0f0; -fx-border-color: #ccc; -fx-border-radius: 5; -fx-background-radius: 5;");
-            notificacaoLabel.setMaxWidth(Double.MAX_VALUE);
-            notificacoesBox.getChildren().add(notificacaoLabel);
-            ScrollPane scrollPane = (ScrollPane) notificacoesBox.getParent();
-            scrollPane.setVvalue(1.0);
-        }
-    }
 }

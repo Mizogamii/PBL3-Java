@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import projeto.frontend.view.controllers.PrincipalUsuarioLogadoController;
 
 import java.io.IOException;
 
@@ -17,16 +18,23 @@ public class NavegacaoTela {
     }
 
     public static void trocarTela(Stage stage, String fxmlPath, String title) {
-        if(stage == null){
+        if (stage == null) {
             System.out.println("Stage nulo");
+            return;
         }
         try {
             FXMLLoader loader = new FXMLLoader(NavegacaoTela.class.getResource(fxmlPath));
             Parent root = loader.load();
+
+            if (fxmlPath.equals("/fxml/TelaLogada.fxml")) {
+                PrincipalUsuarioLogadoController controller = loader.getController();
+                controller.atualizarNotificacoes();
+            }
+
             stage.setTitle(title);
             stage.setScene(new Scene(root));
             stage.show();
-        }catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             showErrorMessage("Erro ao carregar a tela: " + e.getMessage());
         }

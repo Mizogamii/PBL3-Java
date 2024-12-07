@@ -212,7 +212,6 @@ public class ControllerUsuario {
         }
     }
 
-
     public void notificarEventoProximo(Usuario usuario){
         Date dataAtual = new Date();
         for(Ingresso ingresso: usuario.getIngressos()){
@@ -222,17 +221,18 @@ public class ControllerUsuario {
                 long diasRestantes = (dataEvento.getTime() - dataAtual.getTime()) / (1000 * 60 * 60 * 24);
                 if(diasRestantes <= 7 && diasRestantes > 0){
                     String mensagem = "O evento " + evento.getNome() + "está chegando! Não esqueça de participar!";
-                    usuario.adicionarNotificoes(new Notificacoes(mensagem));
+                    usuario.adicionarNotificacoes(new Notificacoes(mensagem));
                 }
             }
         }
-
     }
+
     public void verificarNotificacoes(Usuario usuario) {
         System.out.println("Todas as notificações do usuário:");
         for (Notificacoes notificacao : usuario.getNotificacoes()) {
             System.out.println("Notificação: " + notificacao.getMensagemNotificada());
         }
     }
+
 
 }

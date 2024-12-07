@@ -26,7 +26,7 @@
         "nome": "The Wings Tour",
         "descricao": "Segunda turne mundial do grupo BTS",
         "quantidadeAssentosDisponiveis": 13996,
-        "data": "Feb 18, 2017, 16:32:38 PM",
+        "data": "Feb 19, 2017, 4:32:38 AM",
         "statusEvento": false,
         "idEvento": "The Wings Tour18-02-2017",
         "categoria": "Musica",
@@ -65,6 +65,81 @@
       "preco": 90.0,
       "ativo": false,
       "idIngresso": "3a87cd26-498e-4bb5-a5c8-972fbd99d695"
+    },
+    {
+      "evento": {
+        "nome": "Love Yourself",
+        "descricao": "Grupo BTS",
+        "quantidadeAssentosDisponiveis": 2496,
+        "data": "May 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Love Yourself10-05-2025",
+        "categoria": "Musica",
+        "preco": 650.0
+      },
+      "preco": 650.0,
+      "ativo": false,
+      "idIngresso": "6a68129f-e794-4d5e-baf5-7f454c73dd7a"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 90,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "c8cf8d91-eae6-4e71-bff8-7aaba3e640af"
+    },
+    {
+      "evento": {
+        "nome": "Jazz Night",
+        "descricao": "Trio de Jazz",
+        "quantidadeAssentosDisponiveis": 2499,
+        "data": "Dec 10, 2026, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Jazz Night10-12-2026",
+        "categoria": "Musica",
+        "preco": 70.0
+      },
+      "preco": 70.0,
+      "ativo": false,
+      "idIngresso": "715c1d3e-a887-4a21-80d7-0212d641db8f"
+    },
+    {
+      "evento": {
+        "nome": "Love Yourself",
+        "descricao": "Grupo BTS",
+        "quantidadeAssentosDisponiveis": 2495,
+        "data": "May 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Love Yourself10-05-2025",
+        "categoria": "Musica",
+        "preco": 650.0
+      },
+      "preco": 650.0,
+      "ativo": false,
+      "idIngresso": "8beabc96-a5b0-452b-bc93-780646a41cbe"
+    },
+    {
+      "evento": {
+        "nome": "Jazz Night",
+        "descricao": "Trio de Jazz",
+        "quantidadeAssentosDisponiveis": 2498,
+        "data": "Dec 10, 2026, 8:32:38 AM",
+        "statusEvento": false,
+        "idEvento": "Jazz Night10-12-2026",
+        "categoria": "Musica",
+        "preco": 70.0
+      },
+      "preco": 70.0,
+      "ativo": false,
+      "idIngresso": "707cffe7-52e1-43d3-9ac9-08ea26e0f1da"
     }
   ],
   "recibos": [
@@ -99,6 +174,47 @@
       "nomeDoEvento": "Trabalhando o amor próprio",
       "dataDoEvento": "Nov 10, 2025, 8:32:38 AM",
       "preco": 90.0
+    },
+    {
+      "loginUsuario": "Usuario2",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 4:04:51 PM",
+      "nomeDoEvento": "Love Yourself",
+      "dataDoEvento": "May 10, 2025, 8:32:38 AM",
+      "preco": 650.0
+    },
+    {
+      "loginUsuario": "Usuario2",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 7, 2024, 4:06:03 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "Usuario2",
+      "tipoPagamento": "PIX",
+      "dataDaCompra": "Dec 7, 2024, 4:21:25 PM",
+      "nomeDoEvento": "Jazz Night",
+      "dataDoEvento": "Dec 10, 2026, 8:32:38 AM",
+      "preco": 70.0
+    },
+    {
+      "loginUsuario": "Usuario2",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 7, 2024, 4:25:01 PM",
+      "nomeDoEvento": "Love Yourself",
+      "dataDoEvento": "May 10, 2025, 8:32:38 AM",
+      "preco": 650.0
+    },
+    {
+      "loginUsuario": "Usuario2",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 5:10:30 PM",
+      "nomeDoEvento": "Jazz Night",
+      "dataDoEvento": "Dec 10, 2026, 8:32:38 AM",
+      "preco": 70.0
     }
-  ]
+  ],
+  "notificacoes": []
 }
