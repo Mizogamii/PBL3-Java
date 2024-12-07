@@ -16,6 +16,7 @@ import projeto.backend.model.Evento;
 import projeto.backend.model.Ingresso;
 import projeto.backend.model.Usuario;
 import projeto.backend.repository.ArmazenamentoDados;
+import projeto.backend.repository.LeituraDados;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -98,15 +99,22 @@ public class ControllerEvento {
             }
         }
         if(!listarEventosDisponiveis().contains(nomeEvento) && eventoCompradoPeloUsuario){
+            List<Comentario> comentariosAtualizados = listarComentarios(evento);
             Comentario comentario = new Comentario(usuario.getLogin(), nomeEvento, coment);
-            if(evento.getComentarios() == null){
-                evento.setComentarios(new ArrayList<>());
-            }
-            evento.getComentarios().add(comentario);
+            comentariosAtualizados.add(comentario);
+            evento.setComentarios(comentariosAtualizados);
             ArmazenamentoDados.salvarNoRepositorio(evento, "eventosDados", evento.getIdEvento() + ".json");
             return comentario;
         }else{
             throw new IllegalArgumentException("Erro: Não é possível comentar neste evento. Verifique seus dados e tente novamente.");
         }
+    }
+
+    public List<Comentario> listarComentarios(Evento evento){
+        Evento leituraEvento = LeituraDados.ler(Evento.class, "Repositorio/eventosDados/" + evento.getIdEvento() + ".json" );
+        if(leituraEvento.getComentarios() == null){
+            return new ArrayList<>();
+        }
+        return leituraEvento.getComentarios();
     }
 }
