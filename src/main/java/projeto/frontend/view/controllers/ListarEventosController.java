@@ -120,16 +120,4 @@ public class ListarEventosController {
         stage.setScene(new Scene(root));
     }
 
-    //NÃO TO USANDO MAS QUERO USAR PRA OUTRA COISA
-    public void abrirTelaDetalhes(Evento evento){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Detalhes do Evento");
-        alert.setHeaderText(evento.getNome());
-        alert.setContentText("Categoria: " + evento.getCategoria() + "\n" +
-                "Descrição: " + evento.getDescricao() + "\n" +
-                "Data: " + evento.getData() + "\n" +
-                "Preço: R$ " + evento.getPreco() + "\n" +
-                "Assentos Disponíveis: " + evento.getQuantidadeAssentosDisponiveis());
-        alert.showAndWait();
-    }
 }

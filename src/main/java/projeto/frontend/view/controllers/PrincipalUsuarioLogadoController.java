@@ -5,14 +5,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import projeto.backend.model.Comentario;
+import projeto.backend.model.Evento;
 import projeto.backend.model.Notificacoes;
 import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
@@ -55,8 +53,17 @@ public class PrincipalUsuarioLogadoController {
                         }
                     }
                 });
+                areaTexto.setOnMouseClicked(event -> {
+                    if (event.getClickCount() == 2) {
+                        Notificacoes notificacaoSelecionada = areaTexto.getSelectionModel().getSelectedItem();
+                        if (notificacaoSelecionada != null) {
+                            abrirTelaDetalhes(notificacaoSelecionada);
+                        }
+                    }
+                });
             }
         }
+
     }
 
     public void atualizarNotificacoes() {
@@ -131,6 +138,16 @@ public class PrincipalUsuarioLogadoController {
             stage = (Stage) labelAvaliarEvento.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaListaEventosFeedBack.fxml", "Compras Realizadas");
+    }
+
+
+
+    public void abrirTelaDetalhes(Notificacoes notificacoes){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Detalhes do Evento");
+        alert.setHeaderText("Notificação");
+        alert.setContentText(notificacoes.getMensagemNotificada());
+        alert.showAndWait();
     }
 
 }
