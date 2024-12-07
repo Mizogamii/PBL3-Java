@@ -5,15 +5,18 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="449.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 70%, #FFB6C1 70%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.PrincipalUsuarioLogadoController">
    <children>
       <Region layoutY="136.0" prefHeight="317.0" prefWidth="154.0" style="-fx-background-color: #e8e8e8;" />
-      <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="293.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">
+      <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="293.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">
          <image>
             <Image url="@../imagemLogo.png" />
          </image>
@@ -71,6 +74,38 @@
             </ImageView>
          </graphic>
       </Label>
-      <ListView fx:id="areaTexto" layoutX="459.0" layoutY="140.0" prefHeight="310.0" prefWidth="200.0" />
+      <ListView fx:id="areaTexto" layoutX="565.0" layoutY="169.0" prefHeight="251.0" prefWidth="94.0" />
+      <ImageView fitHeight="103.0" fitWidth="118.0" layoutX="21.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Downloads/imagemYoon.png" />
+         </image>
+      </ImageView>
+      <TableView layoutX="207.0" layoutY="195.0" prefHeight="222.0" prefWidth="321.0">
+        <columns>
+          <TableColumn prefWidth="112.0" text="Evento" />
+          <TableColumn prefWidth="106.39996337890625" text="Data" />
+            <TableColumn prefWidth="103.19998168945312" text="Categoria" />
+        </columns>
+      </TableView>
+      <Label layoutX="170.0" layoutY="144.0" text="Bem vindo!">
+         <font>
+            <Font name="Comic Sans MS" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="567.0" layoutY="144.0" text="Notificações">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="163.0" layoutY="421.0" prefHeight="26.0" prefWidth="484.0" text="Duplo clique na notificação ou no evento para mais informações.">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="268.0" layoutY="174.0" text="Resumo eventos disponíveis ">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
