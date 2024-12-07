@@ -13,9 +13,12 @@ package projeto.backend.repository;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Faz a leitura dos dados para possíveis buscas e listagens.

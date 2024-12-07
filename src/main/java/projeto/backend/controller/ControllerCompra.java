@@ -60,7 +60,6 @@ public class ControllerCompra {
         System.out.println(eventos);
         for (Evento evento : eventos) {
             if (evento.getNome().equals(nomeEvento) && evento.getData().after(dataDaCompra) && evento.quantidadeEvento()) {
-                System.out.println("Teste data");
                 Ingresso ingresso = criarIngresso(usuario, evento);
                 atualizarQuantidadeAssentoDisponivel(evento);
                 comprarIngresso(tipoPagamento, ingresso, loginUsuario, usuario);

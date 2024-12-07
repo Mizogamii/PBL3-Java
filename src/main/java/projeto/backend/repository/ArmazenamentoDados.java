@@ -32,9 +32,6 @@ public class ArmazenamentoDados {
 
     public static List<Evento> eventos = new ArrayList<>();
 
-    /*public static void adicionarEvento(Evento evento) {
-        eventos.add(evento);
-    }*/
 
     public static void carregarEventos() {
         eventos.clear();
