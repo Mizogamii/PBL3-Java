@@ -26,7 +26,7 @@
         "nome": "The Wings Tour",
         "descricao": "Segunda turne mundial do grupo BTS",
         "quantidadeAssentosDisponiveis": 13997,
-        "data": "Feb 18, 2017, 16:32:38 PM",
+        "data": "Feb 19, 2017, 4:32:38 AM",
         "statusEvento": false,
         "idEvento": "The Wings Tour18-02-2017",
         "categoria": "Musica",
@@ -65,6 +65,21 @@
       "preco": 40.0,
       "ativo": false,
       "idIngresso": "e5d1a65f-2fca-459a-a214-0ae34e66b709"
+    },
+    {
+      "evento": {
+        "nome": "Tech Innovators 2025",
+        "descricao": "Conferência sobre Inovações Tecnológicas",
+        "quantidadeAssentosDisponiveis": 2499,
+        "data": "Sep 10, 2025, 8:32:38 AM",
+        "statusEvento": false,
+        "idEvento": "Tech Innovators 202510-09-2025",
+        "categoria": "Tecnologia",
+        "preco": 96.0
+      },
+      "preco": 96.0,
+      "ativo": false,
+      "idIngresso": "0f66e502-83e7-4726-a6ba-483884f58f6e"
     }
   ],
   "recibos": [
@@ -79,9 +94,9 @@
     {
       "loginUsuario": "Sayuyu",
       "tipoPagamento": "PIX",
-      "dataDaCompra": "Jan 18, 2017, 16:28:09 PM",
+      "dataDaCompra": "Jan 19, 2017, 4:28:09 AM",
       "nomeDoEvento": "The Wings Tour",
-      "dataDoEvento": "Feb 18, 2017, 16:32:38 PM",
+      "dataDoEvento": "Feb 19, 2017, 4:32:38 AM",
       "preco": 600.0
     },
     {
@@ -99,6 +114,14 @@
       "nomeDoEvento": "Art Expo 2025",
       "dataDoEvento": "Jan 10, 2026, 8:32:38 AM",
       "preco": 40.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 9:58:46 AM",
+      "nomeDoEvento": "Tech Innovators 2025",
+      "dataDoEvento": "Sep 10, 2025, 8:32:38 AM",
+      "preco": 96.0
     }
   ]
 }

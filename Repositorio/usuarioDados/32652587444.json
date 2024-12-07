@@ -65,6 +65,156 @@
       "preco": 153.0,
       "ativo": false,
       "idIngresso": "a986be32-f42c-4d82-b70e-3e9c7becb4bd"
+    },
+    {
+      "evento": {
+        "nome": "Classical Night",
+        "descricao": "Orquestra Sinfônica",
+        "quantidadeAssentosDisponiveis": 2496,
+        "data": "Oct 10, 2026, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Classical Night10-10-2026",
+        "categoria": "Musica",
+        "preco": 153.0
+      },
+      "preco": 153.0,
+      "ativo": false,
+      "idIngresso": "6b5108d5-81d6-445d-87bd-f899c38dcbe2"
+    },
+    {
+      "evento": {
+        "nome": "Classical Night",
+        "descricao": "Orquestra Sinfônica",
+        "quantidadeAssentosDisponiveis": 2496,
+        "data": "Oct 10, 2026, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Classical Night10-10-2026",
+        "categoria": "Musica",
+        "preco": 153.0
+      },
+      "preco": 153.0,
+      "ativo": false,
+      "idIngresso": "9dbd5415-6205-4fe8-9f9e-edb8b3eb9f9d"
+    },
+    {
+      "evento": {
+        "nome": "Classical Night",
+        "descricao": "Orquestra Sinfônica",
+        "quantidadeAssentosDisponiveis": 2496,
+        "data": "Oct 10, 2026, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Classical Night10-10-2026",
+        "categoria": "Musica",
+        "preco": 153.0
+      },
+      "preco": 153.0,
+      "ativo": false,
+      "idIngresso": "898bbd01-3df0-4d3f-af09-f5eb79462a1b"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 99,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "f2385cb2-9f4f-47c3-a4ab-1878b437c400"
+    },
+    {
+      "evento": {
+        "nome": "Tech Innovators 2025",
+        "descricao": "Conferência sobre Inovações Tecnológicas",
+        "quantidadeAssentosDisponiveis": 2498,
+        "data": "Sep 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Tech Innovators 202510-09-2025",
+        "categoria": "Tecnologia",
+        "preco": 96.0
+      },
+      "preco": 96.0,
+      "ativo": false,
+      "idIngresso": "0441cf60-9718-476b-a3c1-f37524817fc9"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 98,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "4f1ad4cb-6766-4388-9322-289c8bcb25b8"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 97,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "933e241e-1913-428b-b034-7f94979b7a5c"
+    },
+    {
+      "evento": {
+        "nome": "Shakespeare in the Park",
+        "descricao": "Teatro Nacional",
+        "quantidadeAssentosDisponiveis": 96,
+        "data": "Jan 30, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Shakespeare in the Park30-01-2025",
+        "categoria": "Cultura",
+        "preco": 45.0
+      },
+      "preco": 45.0,
+      "ativo": false,
+      "idIngresso": "88b5b8bb-b243-4f65-afa7-ca860c3f51c9"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 96,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "eee5a4be-443d-459a-9393-dd82b2dc37b9"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 95,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": false,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "d92b6c67-e49b-4c2d-9757-b074a08937a9"
     }
   ],
   "recibos": [
@@ -99,6 +249,87 @@
       "nomeDoEvento": "Classical Night",
       "dataDoEvento": "Oct 10, 2026, 8:32:38 AM",
       "preco": 153.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 7, 2024, 9:54:24 AM",
+      "nomeDoEvento": "Classical Night",
+      "dataDoEvento": "Oct 10, 2026, 8:32:38 AM",
+      "preco": 153.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 7, 2024, 9:54:24 AM",
+      "nomeDoEvento": "Classical Night",
+      "dataDoEvento": "Oct 10, 2026, 8:32:38 AM",
+      "preco": 153.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 7, 2024, 9:54:24 AM",
+      "nomeDoEvento": "Classical Night",
+      "dataDoEvento": "Oct 10, 2026, 8:32:38 AM",
+      "preco": 153.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 7, 2024, 10:00:17 AM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 10:21:54 AM",
+      "nomeDoEvento": "Tech Innovators 2025",
+      "dataDoEvento": "Sep 10, 2025, 8:32:38 AM",
+      "preco": 96.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 7, 2024, 10:39:20 AM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 10:58:19 AM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 7, 2024, 10:59:14 AM",
+      "nomeDoEvento": "Shakespeare in the Park",
+      "dataDoEvento": "Jan 30, 2025, 8:32:38 AM",
+      "preco": 45.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 11:02:36 AM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "a",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 7, 2024, 11:27:15 AM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
     }
-  ]
+  ],
+  "notificacoes": []
 }

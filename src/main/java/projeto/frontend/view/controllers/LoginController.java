@@ -55,6 +55,8 @@ public class LoginController {
             UsuarioLogado.login(usuario);
             abrirTelaPrincipal(usuario);
             System.out.println(usuario.getNome());
+            controllerUsuario.notificarEventoProximo(usuario);
+            controllerUsuario.verificarNotificacoes(usuario);
             //controllerUsuario.atualizarRecibo(usuario);
 
 
@@ -66,6 +68,7 @@ public class LoginController {
 
     private void abrirTelaPrincipal(Usuario usuario) {
         Stage stage = (Stage) campoLogin.getScene().getWindow();
+
         NavegacaoTela.trocarTela(stage, "/fxml/TelaLogada.fxml", "Tela Principal");
     }
 
@@ -92,5 +95,6 @@ public class LoginController {
     public void voltarTela(MouseEvent mouseEvent) {
         NavegacaoTela.voltarTelaInicial();
     }
+
 }
 

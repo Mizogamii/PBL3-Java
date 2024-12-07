@@ -26,6 +26,7 @@ public class Usuario {
     private boolean admin;
     private List<Ingresso> ingressos;
     private List<Recibo> recibos;
+    private List<Notificacoes> notificacoes;
 
     /**
      * Construtor
@@ -61,6 +62,7 @@ public class Usuario {
         this.email = email;
         this.ingressos = new ArrayList<>();
         this.recibos = new ArrayList<>();
+        this.notificacoes = new ArrayList<>();
     }
 
     //Getters e setters
@@ -132,10 +134,28 @@ public class Usuario {
         this.recibos = compras;
     }
 
+    public void setNotificacoes(List<Notificacoes> notificacoes) {
+        this.notificacoes = notificacoes;
+    }
 
     //Verifica o CPF(quantidade de números e se é composta apenas por números)
     public boolean cpfVerificacao(String cpfVerif) {
         return cpfVerif.length() == 11 && cpfVerif.matches("[0-9]+");
+    }
+
+    public void adicionarNotificoes(Notificacoes notificacao) {
+        if (this.notificacoes == null) {
+            this.notificacoes = new ArrayList<>();
+        }
+        this.notificacoes.add(notificacao);
+        System.out.println("Notificação adicionada: " + notificacao);
+    }
+
+    public List<Notificacoes> getNotificacoes() {
+        if (this.notificacoes == null) {
+            this.notificacoes = new ArrayList<>();
+        }
+        return this.notificacoes;
     }
 
     /**
@@ -144,7 +164,6 @@ public class Usuario {
      * @return Retorna true se os usuários forem iguais, false caso contrário.
      * @param o Objeto a ser comparado.
      */
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -1,20 +1,21 @@
 package projeto.frontend.view.controllers;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
 
 import java.io.IOException;
+import java.util.List;
 
 public class PrincipalUsuarioLogadoController {
-
-    @FXML
-    public Label labelAbrirTelaComentar;
 
     @FXML
     private Label labelAbrirTelaEdicao;
@@ -24,6 +25,15 @@ public class PrincipalUsuarioLogadoController {
 
     @FXML
     private Label labelAvaliarEvento;
+
+    @FXML
+    private VBox notificacoesBox;
+
+    @FXML
+    public void initialize() {
+        List<String> notificacoesIniciais = List.of("Bem-vindo ao sistema!", "Novo evento disponível.");
+        carregarNotificacoes(notificacoesIniciais);
+    }
 
     @FXML
     public void abrirTelaEditar(){
@@ -91,5 +101,16 @@ public class PrincipalUsuarioLogadoController {
             stage = (Stage) labelAvaliarEvento.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaListaEventosFeedBack.fxml", "Compras Realizadas");
+    }
+
+    public void carregarNotificacoes(List<String> notificacoes){
+        for (String mensagem : notificacoes) {
+            Label notificacaoLabel = new Label(mensagem);
+            notificacaoLabel.setStyle("-fx-padding: 10; -fx-font-size: 14; -fx-background-color: #f0f0f0; -fx-border-color: #ccc; -fx-border-radius: 5; -fx-background-radius: 5;");
+            notificacaoLabel.setMaxWidth(Double.MAX_VALUE);
+            notificacoesBox.getChildren().add(notificacaoLabel);
+            ScrollPane scrollPane = (ScrollPane) notificacoesBox.getParent();
+            scrollPane.setVvalue(1.0);
+        }
     }
 }

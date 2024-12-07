@@ -64,6 +64,7 @@ public class ControllerCompra {
                 atualizarQuantidadeAssentoDisponivel(evento);
                 comprarIngresso(tipoPagamento, ingresso, loginUsuario, usuario);
                 ArmazenamentoDados.salvarNoRepositorio(usuario, "usuarioDados", usuario.getCpf() + ".json");
+
                 return ingresso;
             }
         }

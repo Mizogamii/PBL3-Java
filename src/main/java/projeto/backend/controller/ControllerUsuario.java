@@ -10,13 +10,13 @@
  *******************************************************************************************/
 package projeto.backend.controller;
 
-import projeto.backend.model.Evento;
-import projeto.backend.model.Ingresso;
-import projeto.backend.model.Usuario;
+import projeto.backend.model.*;
 import projeto.backend.repository.ArmazenamentoDados;
 import projeto.backend.repository.LeituraDados;
 
 import java.io.File;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -211,4 +211,28 @@ public class ControllerUsuario {
             }
         }
     }
+
+
+    public void notificarEventoProximo(Usuario usuario){
+        Date dataAtual = new Date();
+        for(Ingresso ingresso: usuario.getIngressos()){
+            Evento evento = ingresso.getEvento();
+            Date dataEvento = evento.getData();
+            if(evento.isStatusEvento()){
+                long diasRestantes = (dataEvento.getTime() - dataAtual.getTime()) / (1000 * 60 * 60 * 24);
+                if(diasRestantes <= 7 && diasRestantes > 0){
+                    String mensagem = "O evento " + evento.getNome() + "está chegando! Não esqueça de participar!";
+                    usuario.adicionarNotificoes(new Notificacoes(mensagem));
+                }
+            }
+        }
+
+    }
+    public void verificarNotificacoes(Usuario usuario) {
+        System.out.println("Todas as notificações do usuário:");
+        for (Notificacoes notificacao : usuario.getNotificacoes()) {
+            System.out.println("Notificação: " + notificacao.getMensagemNotificada());
+        }
+    }
+
 }

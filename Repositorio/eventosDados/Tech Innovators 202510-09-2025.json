@@ -1,9 +1,9 @@
 {
   "nome": "Tech Innovators 2025",
   "descricao": "Conferência sobre Inovações Tecnológicas",
-  "quantidadeAssentosDisponiveis": 2500,
+  "quantidadeAssentosDisponiveis": 2498,
   "data": "Sep 10, 2025, 8:32:38 AM",
-  "ativo": true,
+  "statusEvento": false,
   "idEvento": "Tech Innovators 202510-09-2025",
   "categoria": "Tecnologia",
   "preco": 96.0

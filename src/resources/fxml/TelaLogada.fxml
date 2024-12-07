@@ -4,10 +4,12 @@
 <?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="449.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 70%, #FFB6C1 70%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.PrincipalUsuarioLogadoController">
    <children>
@@ -70,5 +72,10 @@
             </ImageView>
          </graphic>
       </Label>
+      <ScrollPane fx:id="caixaNotificacoes" layoutX="465.0" layoutY="138.0" prefHeight="310.0" prefWidth="200.0">
+        <content>
+          <VBox fx:id="notificacoesBox" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="145.0" />
+        </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
