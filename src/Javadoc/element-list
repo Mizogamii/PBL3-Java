@@ -1,0 +1,7 @@
+module:projeto
+projeto.backend.controller
+projeto.backend.model
+projeto.backend.repository
+projeto.frontend.utils
+projeto.frontend.view
+projeto.frontend.view.controllers
