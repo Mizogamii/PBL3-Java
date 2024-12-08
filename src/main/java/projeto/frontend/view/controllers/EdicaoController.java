@@ -1,3 +1,13 @@
+/*******************************************************************************************
+ Autor: Sayumi Mizogami Santana
+ Componente Curricular: EXA 863 - MI Programação
+ Concluido em: 08/12/2024
+ Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
+ trecho de código de outro colega ou de outro autor, tais como provindos de livros e
+ apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
+ de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
+ do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
+ *******************************************************************************************/
 package projeto.frontend.view.controllers;
 
 import javafx.fxml.FXML;
@@ -9,6 +19,10 @@ import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
 
+/**
+ * Controlador da tela de edição de dados do usuário, permitindo que o usuário altere
+ * seu nome, login, email e senha.
+ */
 public class EdicaoController {
     @FXML
     private TextField campoNome;
@@ -24,18 +38,31 @@ public class EdicaoController {
 
     private ControllerUsuario controllerUsuario = new ControllerUsuario();
 
+    /**
+     * Volta para a tela inicial quando o botão de voltar é pressionado.
+     *
+     * @param mouseEvent O evento de clique do mouse.
+     */
     public void voltarTela(MouseEvent mouseEvent) {
         NavegacaoTela.voltarTelaInicial();
     }
 
-
+    /**
+     * Realiza a alteração dos dados do usuário (nome, login, email, senha) com base
+     * nos valores preenchidos nos campos de texto. Se os campos estiverem vazios,
+     * exibe uma mensagem de erro.
+     *
+     * @throws IllegalArgumentException Se algum dado inválido for fornecido.
+     */
     @FXML
     private void botaoAlterarDados() {
+        //Armazena o que o usuário digitou
         String newNome = campoNome.getText();
         String newLogin = campoLogin.getText();
         String newEmail = campoEmail.getText();
         String newSenha = campoSenha.getText();
 
+        //Salva o usuário logado
         Usuario usuario = UsuarioLogado.getUsuarioLogado();
 
         if (newNome.isEmpty() && newLogin.isEmpty() && newEmail.isEmpty() && newSenha.isEmpty()) {
@@ -47,6 +74,7 @@ public class EdicaoController {
             NavegacaoTela.showErrorMessage("ERRO! Controller não foi inicializado.");
             return;
         }
+        //Edição de dados do usuário
         try {
             if (!newNome.isEmpty()) {
                 controllerUsuario.editarNome(usuario, newNome);

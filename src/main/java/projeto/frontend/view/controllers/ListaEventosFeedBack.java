@@ -1,3 +1,13 @@
+/*******************************************************************************************
+ Autor: Sayumi Mizogami Santana
+ Componente Curricular: EXA 863 - MI Programação
+ Concluido em: 08/12/2024
+ Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
+ trecho de código de outro colega ou de outro autor, tais como provindos de livros e
+ apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
+ de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
+ do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
+ *******************************************************************************************/
 package projeto.frontend.view.controllers;
 
 import javafx.collections.FXCollections;
@@ -24,6 +34,10 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Controlador da tela de lista de eventos com feedback. Permite visualizar os eventos
+ * em que o usuário participou e acessar a tela de comentários para dar feedback.
+ */
 public class ListaEventosFeedBack {
     @FXML
     public Label voltarTelaInicial;
@@ -50,17 +64,22 @@ public class ListaEventosFeedBack {
 
     private List<Ingresso> ingressos = controllerUsuario.listarEventosParticipados(UsuarioLogado.getUsuarioLogado());
 
+    /**
+     * Inicializa a tabela de eventos participados, associando as colunas aos dados do ingresso
+     * e configurando o filtro de categoria.
+     */
     @FXML
     public void initialize() {
+        //Inserindo dados nas colunas da tabela
         colunaNomeEvento.setCellValueFactory(new PropertyValueFactory<>("nomeEvento"));
         colunaCategoria.setCellValueFactory(new PropertyValueFactory<>("categoriaEvento"));
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricaoEvento"));
         colunaData.setCellValueFactory(new PropertyValueFactory<>("dataEvento"));
 
         ObservableList<Ingresso> listaIngressos = FXCollections.observableArrayList(ingressos);
-
         tabelaEventoParticipado.setItems(listaIngressos);
 
+        //Ação ao clicar duas vezes no evento
         tabelaEventoParticipado.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 Ingresso ingressoSelecionado = tabelaEventoParticipado.getSelectionModel().getSelectedItem();
@@ -75,6 +94,12 @@ public class ListaEventosFeedBack {
         });
     }
 
+    /**
+     * Abre a tela de comentários para o evento selecionado.
+     *
+     * @param ingresso O ingresso selecionado, representando o evento a ser comentado.
+     * @throws IOException Caso ocorra um erro ao carregar a tela de comentários.
+     */
     public void comentar(Ingresso ingresso) throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaComentario.fxml"));
@@ -91,6 +116,11 @@ public class ListaEventosFeedBack {
         }
     }
 
+    /**
+     * Retorna para a tela inicial quando o botão de voltar é pressionado.
+     *
+     * @param mouseEvent O evento de clique do mouse.
+     */
     public void voltarTela(javafx.scene.input.MouseEvent mouseEvent) {
         NavegacaoTela.voltarTelaInicial();
     }

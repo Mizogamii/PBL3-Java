@@ -1,7 +1,7 @@
 /*******************************************************************************************
  Autor: Sayumi Mizogami Santana
  Componente Curricular: EXA 863 - MI Programação
- Concluido em: 20/10/2024
+ Concluido em: 08/12/2024
  Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
  trecho de código de outro colega ou de outro autor, tais como provindos de livros e
  apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
@@ -171,47 +171,41 @@ public class ControllerUsuario {
         return null;
     }
 
+    /**
+     * Lista todas as compras realizadas por um usuário.
+     *
+     * @param usuario O usuário cujas compras serão listadas.
+     * @return Uma lista de ingressos comprados pelo usuário.
+     */
     public List<Ingresso> listarComprasRealizadas(Usuario usuario){
         List<Ingresso> comprasFeitas = new ArrayList<>(ArmazenamentoDados.listarComprasObjeto(usuario.getCpf() + ".json"));
         return comprasFeitas;
     }
 
-    public List<Ingresso> listarEventosParticipados(Usuario usuario){
+    /**
+     * Lista todos os eventos que o usuário participou.
+     *
+     * @param usuario O usuário cujos eventos serão listados.
+     * @return Uma lista de ingressos relacionados a eventos passados.
+     */
+    public List<Ingresso> listarEventosParticipados(Usuario usuario) {
         List<String> eventosPassados = ArmazenamentoDados.listarEventosPassados();
         List<Ingresso> ingressosComprados = listarComprasRealizadas(usuario);
         List<Ingresso> ingressosEventosParticipados = new ArrayList<>();
 
-        for(Ingresso ingresso: ingressosComprados){
-            if(eventosPassados.contains(ingresso.getEvento().getIdEvento())){
+        for (Ingresso ingresso : ingressosComprados) {
+            if (eventosPassados.contains(ingresso.getEvento().getIdEvento())) {
                 ingressosEventosParticipados.add(ingresso);
             }
         }
-        System.out.println(ingressosEventosParticipados);
         return ingressosEventosParticipados;
     }
 
-    public void atualizarRecibo(Usuario usuario){
-        File arquivosJson[];
-        File diretorio = new File("Repositorio/usuarioDados");
-        arquivosJson = diretorio.listFiles();
-        Date dataAtual = new Date();
-        System.out.println(dataAtual);
-        if(diretorio.isDirectory() || diretorio.exists() || arquivosJson != null || arquivosJson.length > 0){
-            for (int i = 0; i < arquivosJson.length; i++) {
-                File arquivo = arquivosJson[i];
-
-                if(arquivo.isFile() && arquivo.getName().toLowerCase().endsWith(".json")) {
-                    Ingresso ingresso = LeituraDados.ler(Ingresso.class, arquivo.getPath());
-                    System.out.println(ingresso.getDataEvento());
-                    if (ingresso != null && ingresso.getDataEvento().before(dataAtual)) {
-                        ingresso.setAtivo(false);
-                        ArmazenamentoDados.salvarNoRepositorio(usuario, "Repositorio/usuarioDados", usuario.getCpf()+".json");
-                    }
-                }
-            }
-        }
-    }
-
+    /**
+     * Notifica o usuário sobre eventos que estão próximos de acontecer.
+     *
+     * @param usuario O usuário a ser notificado.
+     */
     public void notificarEventoProximo(Usuario usuario){
         Date dataAtual = new Date();
         for(Ingresso ingresso: usuario.getIngressos()){
@@ -226,13 +220,4 @@ public class ControllerUsuario {
             }
         }
     }
-
-    public void verificarNotificacoes(Usuario usuario) {
-        System.out.println("Todas as notificações do usuário:");
-        for (Notificacoes notificacao : usuario.getNotificacoes()) {
-            System.out.println("Notificação: " + notificacao.getMensagemNotificada());
-        }
-    }
-
-
 }

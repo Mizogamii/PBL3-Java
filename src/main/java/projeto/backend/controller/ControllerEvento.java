@@ -1,7 +1,7 @@
 /*******************************************************************************************
  Autor: Sayumi Mizogami Santana
  Componente Curricular: EXA 863 - MI Programação
- Concluido em: 20/10/2024
+ Concluido em: 08/12/2024
  Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
  trecho de código de outro colega ou de outro autor, tais como provindos de livros e
  apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
@@ -62,6 +62,11 @@ public class ControllerEvento {
         return eventosDisponiveis;
     }
 
+    /**
+     * Lista todos os eventos cadastrados no sistema.
+     *
+     * @return Retorna uma lista com todos os eventos cadastrados, ordenados por data.
+     */
     public List<Evento> listarTodosOsEventos() {
         if (ArmazenamentoDados.eventos.isEmpty()) {
             ArmazenamentoDados.carregarEventos();
@@ -71,6 +76,11 @@ public class ControllerEvento {
         return eventosExistentes;
     }
 
+    /**
+     * Lista os nomes dos eventos disponíveis.
+     *
+     * @return Retorna uma lista de strings contendo os nomes dos eventos disponíveis.
+     */
     public List<String> listarEventosDisponiveisNome() {
 
         List<Evento> eventos = ArmazenamentoDados.listarEventos();
@@ -110,6 +120,12 @@ public class ControllerEvento {
         }
     }
 
+    /**
+     * Lista os comentários de um evento específico.
+     *
+     * @param evento Evento para o qual os comentários serão listados.
+     * @return Retorna uma lista de comentários associados ao evento.
+     */
     public List<Comentario> listarComentarios(Evento evento){
         Evento leituraEvento = LeituraDados.ler(Evento.class, "Repositorio/eventosDados/" + evento.getIdEvento() + ".json" );
         if(leituraEvento.getComentarios() == null){

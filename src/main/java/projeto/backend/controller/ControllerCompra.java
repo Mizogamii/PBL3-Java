@@ -1,7 +1,7 @@
 /*******************************************************************************************
  Autor: Sayumi Mizogami Santana
  Componente Curricular: EXA 863 - MI Programação
- Concluido em: 20/10/2024
+ Concluido em: 08/12/2024
  Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
  trecho de código de outro colega ou de outro autor, tais como provindos de livros e
  apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
@@ -56,8 +56,6 @@ public class ControllerCompra {
      * @return Retorna o ingresso comprado.
      */
     public Ingresso fazerIngresso(Usuario usuario, String nomeEvento, Pagamento.TipoPagamento tipoPagamento, String loginUsuario) {
-        System.out.println(dataDaCompra);
-        System.out.println(eventos);
         for (Evento evento : eventos) {
             if (evento.getNome().equals(nomeEvento) && evento.getData().after(dataDaCompra) && evento.quantidadeEvento()) {
                 Ingresso ingresso = criarIngresso(usuario, evento);

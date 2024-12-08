@@ -68,21 +68,6 @@
     },
     {
       "evento": {
-        "nome": "Shakespeare in the Park",
-        "descricao": "Teatro Nacional",
-        "quantidadeAssentosDisponiveis": 98,
-        "data": "Jan 30, 2025, 8:32:38 AM",
-        "statusEvento": true,
-        "idEvento": "Shakespeare in the Park30-01-2025",
-        "categoria": "Cultura",
-        "preco": 45.0
-      },
-      "preco": 45.0,
-      "ativo": false,
-      "idIngresso": "493c62e7-8931-43bf-9828-fc8012471cf8"
-    },
-    {
-      "evento": {
         "nome": "The Wings Tour",
         "descricao": "Segunda turne mundial do grupo BTS",
         "quantidadeAssentosDisponiveis": 13999,

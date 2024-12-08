@@ -1,3 +1,13 @@
+/*******************************************************************************************
+ Autor: Sayumi Mizogami Santana
+ Componente Curricular: EXA 863 - MI Programação
+ Concluido em: 08/12/2024
+ Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
+ trecho de código de outro colega ou de outro autor, tais como provindos de livros e
+ apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
+ de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
+ do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
+ *******************************************************************************************/
 package projeto.frontend.view.controllers;
 
 import javafx.collections.FXCollections;
@@ -21,6 +31,10 @@ import projeto.frontend.utils.UsuarioLogado;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Controlador responsável pela tela principal do usuário logado no sistema.
+ * Gerencia notificações, eventos e navegação entre telas do sistema.
+ */
 public class PrincipalUsuarioLogadoController {
     private ControllerEvento controllerEvento = new ControllerEvento();
 
@@ -47,6 +61,10 @@ public class PrincipalUsuarioLogadoController {
 
     private final List<Evento> eventos = controllerEvento.listarEventosDisponiveis();
 
+    /**
+     * Inicializa os componentes da interface.
+     * Configura as tabelas de eventos e as notificações.
+     */
     @FXML
     public void initialize() {
         if (areaTexto != null) {
@@ -95,82 +113,106 @@ public class PrincipalUsuarioLogadoController {
         });
     }
 
+    /**
+     * Atualiza a lista de notificações exibida no ListView.
+     */
     public void atualizarNotificacoes() {
         ObservableList<Notificacoes> notificacoesObservable = FXCollections.observableArrayList(UsuarioLogado.getUsuarioLogado().getNotificacoes());
         areaTexto.setItems(notificacoesObservable);
         areaTexto.refresh();
     }
 
+    /**
+     * Abre a tela de edição de dados do usuário.
+     */
     @FXML
     public void abrirTelaEditar(){
         Stage stage = null;
-        if (labelAbrirTelaEdicao == null) {
-            System.out.println("labelAbriTelaEdicao está null!");
-        } else {
+        if (labelAbrirTelaEdicao != null) {
             stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaEdicao.fxml", "Editar Dados");
     }
 
+    /**
+     * Abre a tela de listagem de eventos disponíveis.
+     */
     @FXML
     public void abrirTelaListar(){
         Stage stage = null;
-        if (labelAbrirTelaListar == null) {
-            System.out.println("labelAbriTelaListar está null!");
-        } else {
+        if (labelAbrirTelaListar != null) {
             stage = (Stage) labelAbrirTelaListar.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaListarEvento.fxml", "Listar dados");
     }
 
+    /**
+     * Realiza o logout do usuário e retorna à tela principal.
+     */
     @FXML
     public void sairDaConta(){
         UsuarioLogado.sairConta();
         Stage stage = null;
-        if (labelAbrirTelaListar == null) {
-            System.out.println("labelAbriTelaPrincipal está null!");
-        } else {
+        if (labelAbrirTelaListar != null) {
             stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaPrincipal.fxml", "Tela Principal");
     }
 
+    /**
+     * Abre a tela para compra de ingressos.
+     *
+     * @param mouseEvent Evento do mouse que acionou a navegação.
+     */
     public void abrirTelaComprar(MouseEvent mouseEvent) {
         Stage stage = null;
-        if (labelAbrirTelaListar == null) {
-            System.out.println("labelAbriTelaComprar está null!");
-        } else {
+        if (labelAbrirTelaListar != null) {
             stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaComprar.fxml", "Comprar Ingresso");
     }
 
+    /**
+     * Retorna à tela inicial do sistema.
+     *
+     * @param mouseEvent Evento do mouse que acionou a navegação.
+     */
     public void voltarTela(MouseEvent mouseEvent) {
         NavegacaoTela.voltarTelaInicial();
     }
 
+    /**
+     * Abre a tela que lista as compras realizadas pelo usuário.
+     *
+     * @param mouseEvent Evento do mouse que acionou a navegação.
+     */
     public void comprasFeitas(MouseEvent mouseEvent) {
         Stage stage = null;
-        if (labelAbrirTelaListar == null) {
-            System.out.println("labelComprasFeitas está null!");
-        } else {
+        if (labelAbrirTelaListar != null) {
             stage = (Stage) labelAbrirTelaEdicao.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaComprasFeitas.fxml", "Compras Realizadas");
     }
 
+    /**
+     * Abre a tela para realizar avaliações de eventos.
+     *
+     * @param mouseEvent Evento do mouse que acionou a navegação.
+     * @throws IOException Se ocorrer um erro ao carregar a tela.
+     */
     public void fazerFeedBack(MouseEvent mouseEvent) throws IOException {
         Stage stage = null;
-        if (labelAvaliarEvento == null) {
-            System.out.println("labelFeedBack está null!");
-        } else {
+        if (labelAvaliarEvento != null) {
             stage = (Stage) labelAvaliarEvento.getScene().getWindow();
         }
         NavegacaoTela.trocarTela(stage, "/fxml/TelaListaEventosFeedBack.fxml", "Compras Realizadas");
     }
 
-
-
+    /**
+     * Exibe os detalhes de uma notificação selecionada.
+     *
+     * @param notificacoes A notificação a ser detalhada.
+     */
     public void abrirTelaDetalhesNotificacao(Notificacoes notificacoes){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Detalhes do Evento");
@@ -179,6 +221,11 @@ public class PrincipalUsuarioLogadoController {
         alert.showAndWait();
     }
 
+    /**
+     * Exibe os detalhes de um evento selecionado.
+     *
+     * @param evento O evento a ser detalhado.
+     */
     public void abrirDetalhesEventos(Evento evento){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Detalhes do Evento");

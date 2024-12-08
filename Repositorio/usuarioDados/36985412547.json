@@ -1,0 +1,11 @@
+{
+  "login": "u",
+  "senha": "123",
+  "nome": "U",
+  "cpf": "36985412547",
+  "email": "u@gmail.com",
+  "admin": false,
+  "ingressos": [],
+  "recibos": [],
+  "notificacoes": []
+}

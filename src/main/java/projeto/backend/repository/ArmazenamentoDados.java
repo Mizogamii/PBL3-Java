@@ -1,7 +1,7 @@
 /*******************************************************************************************
  Autor: Sayumi Mizogami Santana
  Componente Curricular: EXA 863 - MI Programação
- Concluido em: 20/10/2024
+ Concluido em: 08/12/2024
  Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
  trecho de código de outro colega ou de outro autor, tais como provindos de livros e
  apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
@@ -32,16 +32,16 @@ public class ArmazenamentoDados {
 
     public static List<Evento> eventos = new ArrayList<>();
 
-
+    /**
+     * Carrega todos os eventos salvos no repositório para a memória.
+     * Os eventos são carregados a partir dos arquivos JSON encontrados.
+     */
     public static void carregarEventos() {
         eventos.clear();
         List<File> arquivos = listarArquivos("eventosDados");
-        System.out.println("Chamando carregar");
         for(File arquivo : arquivos){
             Evento evento = LeituraDados.ler(Evento.class, arquivo.getPath());
-            System.out.println("testando car");
             if(evento != null){
-                System.out.println("carregando...");
                 eventos.add(evento);
             }
         }
@@ -123,6 +123,11 @@ public class ArmazenamentoDados {
         return eventosDisponiveis;
     }
 
+    /**
+     * Lista todos os eventos salvos no sistema, independentemente do status.
+     *
+     * @return Retorna uma lista de todos os eventos salvos.
+     */
     public static List<Evento> listarTodosEventos(){
         List<Evento> todosEventos = new ArrayList<>();
         List<File> arquivos = listarArquivos("eventosDados");
@@ -135,10 +140,11 @@ public class ArmazenamentoDados {
     }
 
     /**
-     * Lista os ingressos compradoa pelo usuário.
-     * @return Retorna uma lista de strings de algumas informações essenciais do ingresso comprado.
+     * Lista os ingressos comprados por um usuário específico.
+     *
+     * @param nomeArquivoUsuario Nome do arquivo JSON correspondente ao usuário.
+     * @return Retorna uma lista de strings com informações essenciais dos ingressos.
      */
-
     public static List<String> listarCompras(String nomeArquivoUsuario) {
         List<String> ingressosComprados = new ArrayList<>();
         File diretorio = new File("Repositorio/usuarioDados");
@@ -164,6 +170,12 @@ public class ArmazenamentoDados {
         return ingressosComprados;
     }
 
+    /**
+     * Lista os ingressos comprados por um usuário como objetos do tipo Ingresso.
+     *
+     * @param nomeArquivoUsuario Nome do arquivo JSON correspondente ao usuário.
+     * @return Retorna uma lista de objetos do tipo Ingresso.
+     */
     public static List<Ingresso> listarComprasObjeto(String nomeArquivoUsuario){
         List<Ingresso> ingressosComprados = new ArrayList<>();
         List<File> arquivos = listarArquivos("usuarioDados");
@@ -177,11 +189,16 @@ public class ArmazenamentoDados {
                     }
                     return ingressosComprados;
                 }
+            }
         }
-    }
         return ingressosComprados;
     }
 
+    /**
+     * Lista todos os eventos que já ocorreram (inativos).
+     *
+     * @return Retorna uma lista de identificadores de eventos passados.
+     */
     public static List<String> listarEventosPassados(){
         List<String> eventosPassados = new ArrayList<>();
         List<File> arquivos = listarArquivos("eventosDados");
@@ -191,13 +208,9 @@ public class ArmazenamentoDados {
             if (evento != null && !evento.isStatusEvento()) {
                 String idEventosPassados = evento.getIdEvento();
                 eventosPassados.add(idEventosPassados);
-                System.out.println(eventosPassados);
             }
         }
         return eventosPassados;
-
     }
-
-
 }
 

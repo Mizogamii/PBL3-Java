@@ -1,3 +1,13 @@
+/*******************************************************************************************
+ Autor: Sayumi Mizogami Santana
+ Componente Curricular: EXA 863 - MI Programação
+ Concluido em: 08/12/2024
+ Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
+ trecho de código de outro colega ou de outro autor, tais como provindos de livros e
+ apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
+ de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
+ do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
+ *******************************************************************************************/
 package projeto.frontend.view.controllers;
 
 import javafx.collections.FXCollections;
@@ -22,6 +32,10 @@ import projeto.frontend.utils.UsuarioLogado;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Controlador da tela de compras realizadas, responsável por exibir a lista de ingressos
+ * comprados pelo usuário e permitir o filtro por status do evento.
+ */
 public class ComprasRealizadasController {
 
     private ControllerUsuario controllerUsuario = new ControllerUsuario();
@@ -51,18 +65,24 @@ public class ComprasRealizadasController {
     @FXML
     private ComboBox<String> filtroStatus;
 
+    /**
+     * Inicializa a tela de compras realizadas, configura as colunas da tabela e o filtro de status.
+     * Também carrega a lista de ingressos comprados pelo usuário logado.
+     */
     @FXML
     public void initialize() {
+        //Configura as colunas da tabela
         colunaNomeEvento.setCellValueFactory(new PropertyValueFactory<>("nomeEvento"));
         colunaCategoria.setCellValueFactory(new PropertyValueFactory<>("categoriaEvento"));
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricaoEvento"));
         colunaData.setCellValueFactory(new PropertyValueFactory<>("dataEvento"));
         colunaStatusEvento.setCellValueFactory(new PropertyValueFactory<>("statusEvento"));
 
+        //Adiciona os ingressos à tabela
         ObservableList<Ingresso> listaIngressos = FXCollections.observableArrayList(ingressos);
-
         tabelaCompras.setItems(listaIngressos);
 
+        //Configura o filtro de status
         ObservableList<String> filtro = FXCollections.observableArrayList("Todas");
         ingressos.forEach(ingresso -> {
             if(!filtro.contains(ingresso.getStatusEvento())){
@@ -72,6 +92,7 @@ public class ComprasRealizadasController {
         filtroStatus.setItems(filtro);
         filtroStatus.setValue("Todas");
 
+        // Ação ao clicar duas vezes sobre um ingresso
         tabelaCompras.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 Ingresso ingressoSelecionado = tabelaCompras.getSelectionModel().getSelectedItem();
@@ -86,7 +107,12 @@ public class ComprasRealizadasController {
         });
     }
 
-
+    /**
+     * Abre a tela de recibo com as informações do ingresso selecionado.
+     *
+     * @param ingresso O ingresso selecionado, cujos detalhes serão exibidos na tela de recibo.
+     * @throws IOException Se ocorrer um erro ao carregar a tela de recibo.
+     */
     private void abrirTelaRecibo(Ingresso ingresso) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TelaRecibo.fxml"));
         Parent root = loader.load();
@@ -100,10 +126,20 @@ public class ComprasRealizadasController {
 
     }
 
+    /**
+     * Volta para a tela inicial quando o botão de voltar é pressionado.
+     *
+     * @param mouseEvent O evento de clique do mouse.
+     */
     public void voltarTela(MouseEvent mouseEvent) {
         NavegacaoTela.voltarTelaInicial();
     }
 
+    /**
+     * Filtra os ingressos exibidos na tabela de acordo com o status selecionado.
+     *
+     * @param actionEvent O evento de ação gerado pelo filtro de status.
+     */
     public void filtrarStatus(ActionEvent actionEvent) {
         String statusSelecionado = filtroStatus.getValue();
         if("Todas".equals(statusSelecionado)){

@@ -1,3 +1,13 @@
+/*******************************************************************************************
+ Autor: Sayumi Mizogami Santana
+ Componente Curricular: EXA 863 - MI Programação
+ Concluido em: 08/12/2024
+ Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
+ trecho de código de outro colega ou de outro autor, tais como provindos de livros e
+ apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
+ de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
+ do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
+ *******************************************************************************************/
 package projeto.frontend.view.controllers;
 
 import javafx.fxml.FXML;
@@ -10,8 +20,13 @@ import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
 
+/**
+ * Controlador responsável pelo gerenciamento das ações na tela de cadastro de usuário.
+ * Permite cadastrar novos usuários, retornar à tela de login e limpar os campos de entrada.
+ */
 public class CadastroController {
 
+    /** Controlador responsável pela lógica de usuários. */
     private ControllerUsuario controllerUsuario = new ControllerUsuario();
 
     @FXML
@@ -32,6 +47,10 @@ public class CadastroController {
     @FXML
     private Label voltarParaLogin;
 
+    /**
+     * Método chamado ao pressionar o botão de salvar.
+     * Recebe os dados do formulário, tenta cadastrar o usuário e exibe mensagens de sucesso ou erro.
+     */
     @FXML
     private void botaoSalvar() {
         String nome = campoNome.getText();
@@ -59,7 +78,9 @@ public class CadastroController {
         }
     }
 
-
+    /**
+     * Retorna à tela de login ao pressionar o botão correspondente.
+     */
     @FXML
     public void voltandoLogin() {
         Stage stage = (Stage) campoNome.getScene().getWindow();
@@ -69,7 +90,9 @@ public class CadastroController {
             NavegacaoTela.showErrorMessage("Erro: Não foi possível acessar a janela de login.");
         }
     }
-
+    /**
+     * Limpa os campos de entrada de texto na tela de cadastro.
+     */
     private void limparCampos() {
         campoNome.clear();
         campoLogin.clear();
@@ -78,6 +101,11 @@ public class CadastroController {
         campoSenha.clear();
     }
 
+    /**
+     * Retorna à tela inicial ao clicar no elemento correspondente.
+     *
+     * @param mouseEvent Evento de clique do mouse.
+     */
     public void voltarTela(MouseEvent mouseEvent) {
         NavegacaoTela.voltarTelaInicial();
     }
