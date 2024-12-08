@@ -43,9 +43,6 @@ public class PrincipalUsuarioLogadoController {
     private TableColumn<Evento, String> colunaNomeEvento;
 
     @FXML
-    private TableColumn<Evento, String> colunaCategoria;
-
-    @FXML
     private TableColumn<Evento, String> colunaData;
 
     private final List<Evento> eventos = controllerEvento.listarEventosDisponiveis();
@@ -96,8 +93,6 @@ public class PrincipalUsuarioLogadoController {
                 }
             }
         });
-
-
     }
 
     public void atualizarNotificacoes() {

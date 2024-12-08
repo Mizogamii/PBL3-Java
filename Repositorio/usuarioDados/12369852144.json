@@ -53,21 +53,6 @@
     },
     {
       "evento": {
-        "nome": "Art Expo 2025",
-        "descricao": "Exposição de Arte Contemporânea",
-        "quantidadeAssentosDisponiveis": 98,
-        "data": "Jan 10, 2026, 8:32:38 AM",
-        "statusEvento": true,
-        "idEvento": "Art Expo 202510-01-2025",
-        "categoria": "Musica",
-        "preco": 40.0
-      },
-      "preco": 40.0,
-      "ativo": false,
-      "idIngresso": "e5d1a65f-2fca-459a-a214-0ae34e66b709"
-    },
-    {
-      "evento": {
         "nome": "Tech Innovators 2025",
         "descricao": "Conferência sobre Inovações Tecnológicas",
         "quantidadeAssentosDisponiveis": 2499,
@@ -113,21 +98,6 @@
     },
     {
       "evento": {
-        "nome": "Trabalhando o amor próprio",
-        "descricao": "Milagre",
-        "quantidadeAssentosDisponiveis": 144,
-        "data": "Nov 10, 2025, 8:32:38 AM",
-        "statusEvento": true,
-        "idEvento": "Trabalhando o amor próprio10-11-2025",
-        "categoria": "Cultura",
-        "preco": 90.0
-      },
-      "preco": 90.0,
-      "ativo": false,
-      "idIngresso": "8d5cc07d-f5e9-4c98-9842-45d5bcfbe9a6"
-    },
-    {
-      "evento": {
         "nome": "Show de Rock",
         "descricao": "Banda XYZ",
         "quantidadeAssentosDisponiveis": 86,
@@ -170,21 +140,6 @@
       "preco": 96.0,
       "ativo": false,
       "idIngresso": "f8c01bac-386b-4c26-83d9-1e7e834e805f"
-    },
-    {
-      "evento": {
-        "nome": "Show de Rock",
-        "descricao": "Banda XYZ",
-        "quantidadeAssentosDisponiveis": 84,
-        "data": "Feb 10, 2025, 8:32:38 AM",
-        "statusEvento": false,
-        "idEvento": "Show de Rock10-02-2025",
-        "categoria": "Musica",
-        "preco": 65.0
-      },
-      "preco": 65.0,
-      "ativo": false,
-      "idIngresso": "f1800bc6-3303-4f72-a883-1a22bb89855d"
     }
   ],
   "recibos": [
@@ -292,6 +247,10 @@
     },
     {
       "mensagemNotificada": "Compra realizada para o evento: Show de Rock",
+      "lido": false
+    },
+    {
+      "mensagemNotificada": "Cancelamento realizado para o evento",
       "lido": false
     }
   ]

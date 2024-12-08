@@ -13,7 +13,7 @@
 <AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.ListarEventosController">
    <children>
       <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
-      <TableView fx:id="tabelaEventos" layoutX="32.0" layoutY="154.0" prefHeight="245.0" prefWidth="602.0" style="-fx-background-color: #fdfdfd;">
+      <TableView fx:id="tabelaEventos" layoutX="32.0" layoutY="154.0" prefHeight="245.0" prefWidth="602.0" style="-fx-background-color: #fdfdfd; -fx-cursor: hand;">
         <columns>
           <TableColumn fx:id="colunaNomeEvento" prefWidth="102.40003204345703" text="Evento" />
           <TableColumn fx:id="colunaCategoria" prefWidth="109.60003662109375" text="Categoria" />
@@ -43,10 +43,17 @@
             <Image url="@../categoria.png" />
          </image>
       </ImageView>
-      <Label layoutX="101.0" layoutY="400.0" text="Para mais informações, clique duas vezes no evento desejado.">
+      <Label layoutX="210.0" layoutY="404.0" prefHeight="26.0" prefWidth="261.0" text="Clique duas vezes para detalhes">
          <font>
-            <Font name="Arial" size="16.0" />
+            <Font name="Arial" size="14.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../clique.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Label>
    </children>
 </AnchorPane>
