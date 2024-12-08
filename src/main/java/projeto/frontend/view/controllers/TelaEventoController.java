@@ -12,13 +12,17 @@ package projeto.frontend.view.controllers;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import projeto.backend.model.Comentario;
 import projeto.backend.model.Evento;
+import projeto.backend.model.Ingresso;
 import projeto.frontend.utils.NavegacaoTela;
+
+import java.io.IOException;
 
 /**
  * Classe controladora responsável por exibir os detalhes de um evento e seus comentários associados.
@@ -71,6 +75,16 @@ public class TelaEventoController {
             }
         });
 
+        // Ação ao clicar duas vezes sobre um evento
+        areaTexto.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                Comentario comentario = areaTexto.getSelectionModel().getSelectedItem();
+                if (comentario != null) {
+                    abrirDetalhesComentario(comentario);
+                }
+            }
+        });
+
     }
 
     /**
@@ -82,4 +96,19 @@ public class TelaEventoController {
         NavegacaoTela.voltarTelaInicial();
     }
 
+    /**
+     * Exibe os detalhes de um evento selecionado.
+     *
+     * @param comentario Comentario cuja descrição será exibida.
+     */
+    public void abrirDetalhesComentario(Comentario comentario){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Detalhes do comentário ");
+        alert.setHeaderText("Comentário");
+
+        String detalhes = "Usuário:  " + comentario.getLogin()  + "\nEvento: " + comentario.getNomeEvento() + "\nComentário: " + comentario.getComent();
+
+        alert.setContentText(detalhes);
+        alert.showAndWait();
+    }
 }
