@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -15,13 +16,14 @@
 
 <AnchorPane prefHeight="449.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 70%, #FFB6C1 70%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.PrincipalUsuarioLogadoController">
    <children>
+      <Region layoutX="512.0" layoutY="136.0" prefHeight="318.0" prefWidth="154.0" style="-fx-background-color: #e8e8e8;" />
       <Region layoutY="136.0" prefHeight="317.0" prefWidth="154.0" style="-fx-background-color: #e8e8e8;" />
-      <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="293.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">
+      <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="274.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">
          <image>
             <Image url="@../imagemLogo.png" />
          </image>
       </ImageView>
-      <Label fx:id="labelAbrirTelaEdicao" layoutX="18.0" layoutY="153.0" onMouseClicked="#abrirTelaEditar" prefHeight="30.0" prefWidth="117.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Editar dados ">
+      <Label fx:id="labelAbrirTelaEdicao" layoutX="18.0" layoutY="176.0" onMouseClicked="#abrirTelaEditar" prefHeight="30.0" prefWidth="117.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Editar dados ">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -29,7 +31,7 @@
                </image>
             </ImageView>
          </graphic></Label>
-      <Label fx:id="labelAbrirTelaListar" layoutX="18.0" layoutY="189.0" onMouseClicked="#abrirTelaListar" prefHeight="30.0" prefWidth="117.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Listar eventos">
+      <Label fx:id="labelAbrirTelaListar" layoutX="16.0" layoutY="208.0" onMouseClicked="#abrirTelaListar" prefHeight="30.0" prefWidth="117.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Listar eventos">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -38,7 +40,7 @@
             </ImageView>
          </graphic></Label>
       <Region layoutY="-1.0" prefHeight="30.0" prefWidth="667.0" style="-fx-background-color: #909090;" />
-      <ChoiceBox fx:id="SelecionarIdioma" layoutX="559.0" layoutY="98.0" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #000000; -fx-text-fill: #333; -fx-cursor: hand;">
+      <ChoiceBox fx:id="SelecionarIdioma" layoutX="525.0" layoutY="98.0" prefHeight="30.0" prefWidth="134.0" style="-fx-background-color: transparent; -fx-border-color: #000000; -fx-text-fill: #333; -fx-cursor: hand;">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="English" />
@@ -48,7 +50,7 @@
          </items>
       </ChoiceBox>
       <Label fx:id="sairDaConta" layoutX="577.0" layoutY="5.0" onMouseClicked="#sairDaConta" prefHeight="18.0" prefWidth="69.0" style="-fx-background-color: #FF1493; -fx-text-fill: white; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.3, 0, 2);" text="       Sair " />
-      <Label fx:id="labelComprarIngresso" layoutX="18.0" layoutY="225.0" onMouseClicked="#abrirTelaComprar" prefHeight="30.0" prefWidth="133.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Comprar ingresso">
+      <Label fx:id="labelComprarIngresso" layoutX="15.0" layoutY="241.0" onMouseClicked="#abrirTelaComprar" prefHeight="30.0" prefWidth="133.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Comprar ingresso">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -56,7 +58,7 @@
                </image>
             </ImageView>
          </graphic></Label>
-      <Label fx:id="compras" layoutX="18.0" layoutY="261.0" onMouseClicked="#comprasFeitas" prefHeight="30.0" prefWidth="118.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Compras feitas">
+      <Label fx:id="compras" layoutX="18.0" layoutY="272.0" onMouseClicked="#comprasFeitas" prefHeight="30.0" prefWidth="118.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Compras feitas">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -65,7 +67,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label fx:id="labelAvaliarEvento" layoutX="17.0" layoutY="293.0" onMouseClicked="#fazerFeedBack" prefHeight="30.0" prefWidth="118.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Avaliar evento">
+      <Label fx:id="labelAvaliarEvento" layoutX="16.0" layoutY="303.0" onMouseClicked="#fazerFeedBack" prefHeight="30.0" prefWidth="118.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Avaliar evento">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -74,38 +76,59 @@
             </ImageView>
          </graphic>
       </Label>
-      <ListView fx:id="areaTexto" layoutX="565.0" layoutY="169.0" prefHeight="251.0" prefWidth="94.0" />
-      <ImageView fitHeight="103.0" fitWidth="118.0" layoutX="21.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+      <ListView fx:id="areaTexto" layoutX="521.0" layoutY="168.0" prefHeight="275.0" prefWidth="134.0" style="-fx-background-color: #e8e8e8;" />
+      <ImageView fitHeight="103.0" fitWidth="118.0" layoutX="21.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../Downloads/imagemYoon.png" />
          </image>
       </ImageView>
-      <TableView layoutX="207.0" layoutY="195.0" prefHeight="222.0" prefWidth="321.0">
+      <TableView fx:id="tabelaEventos" layoutX="173.0" layoutY="176.0" prefHeight="230.0" prefWidth="327.0" style="-fx-font-family: Segoe UI; fx-font-size: 14px; -fx-border-color: transparent;">
         <columns>
-          <TableColumn prefWidth="112.0" text="Evento" />
-          <TableColumn prefWidth="106.39996337890625" text="Data" />
-            <TableColumn prefWidth="103.19998168945312" text="Categoria" />
+          <TableColumn fx:id="colunaNomeEvento" prefWidth="163.20001220703125" text="Evento" />
+          <TableColumn fx:id="colunaData" prefWidth="163.199951171875" text="Data" />
         </columns>
       </TableView>
-      <Label layoutX="170.0" layoutY="144.0" text="Bem vindo!">
+      <Label layoutX="529.0" layoutY="145.0" prefHeight="24.0" prefWidth="126.0" text="Notificações">
          <font>
-            <Font name="Comic Sans MS" size="23.0" />
+            <Font name="Arial Black" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../botao-ativar-notificacoes.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label layoutX="225.0" layoutY="416.0" prefHeight="26.0" prefWidth="223.0" text="Clique duas vezes para detalhes">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../clique.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label layoutX="217.0" layoutY="151.0" text="Resumo eventos disponíveis ">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../evento.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label layoutX="26.0" layoutY="150.0" text="Bem vindo!">
+         <font>
+            <Font name="Arial Black" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="567.0" layoutY="144.0" text="Notificações">
-         <font>
-            <Font name="Arial Black" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="163.0" layoutY="421.0" prefHeight="26.0" prefWidth="484.0" text="Duplo clique na notificação ou no evento para mais informações.">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="268.0" layoutY="174.0" text="Resumo eventos disponíveis ">
-         <font>
-            <Font name="Arial Black" size="12.0" />
-         </font>
-      </Label>
+      <Separator layoutX="509.0" layoutY="137.0" orientation="VERTICAL" prefHeight="318.0" prefWidth="2.0" />
    </children>
 </AnchorPane>

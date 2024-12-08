@@ -6,9 +6,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Comentario;
 import projeto.backend.model.Evento;
 import projeto.backend.model.Notificacoes;
@@ -20,6 +22,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class PrincipalUsuarioLogadoController {
+    private ControllerEvento controllerEvento = new ControllerEvento();
 
     @FXML
     private Label labelAbrirTelaEdicao;
@@ -32,6 +35,20 @@ public class PrincipalUsuarioLogadoController {
 
     @FXML
     private ListView<Notificacoes> areaTexto;
+
+    @FXML
+    private TableView<Evento> tabelaEventos;
+
+    @FXML
+    private TableColumn<Evento, String> colunaNomeEvento;
+
+    @FXML
+    private TableColumn<Evento, String> colunaCategoria;
+
+    @FXML
+    private TableColumn<Evento, String> colunaData;
+
+    private final List<Evento> eventos = controllerEvento.listarEventosDisponiveis();
 
     @FXML
     public void initialize() {
@@ -53,16 +70,33 @@ public class PrincipalUsuarioLogadoController {
                         }
                     }
                 });
+
                 areaTexto.setOnMouseClicked(event -> {
                     if (event.getClickCount() == 2) {
                         Notificacoes notificacaoSelecionada = areaTexto.getSelectionModel().getSelectedItem();
                         if (notificacaoSelecionada != null) {
-                            abrirTelaDetalhes(notificacaoSelecionada);
+                            abrirTelaDetalhesNotificacao(notificacaoSelecionada);
                         }
                     }
                 });
             }
         }
+        colunaNomeEvento.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colunaData.setCellValueFactory(new PropertyValueFactory<>("data"));
+
+        ObservableList<Evento> listaEventos = FXCollections.observableArrayList(eventos);
+
+        tabelaEventos.setItems(listaEventos);
+
+        tabelaEventos.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
+                if (eventoSelecionado != null) {
+                    abrirDetalhesEventos(eventoSelecionado);
+                }
+            }
+        });
+
 
     }
 
@@ -142,7 +176,7 @@ public class PrincipalUsuarioLogadoController {
 
 
 
-    public void abrirTelaDetalhes(Notificacoes notificacoes){
+    public void abrirTelaDetalhesNotificacao(Notificacoes notificacoes){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Detalhes do Evento");
         alert.setHeaderText("Notificação");
@@ -150,4 +184,18 @@ public class PrincipalUsuarioLogadoController {
         alert.showAndWait();
     }
 
+    public void abrirDetalhesEventos(Evento evento){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Detalhes do Evento");
+        alert.setHeaderText("Notificação");
+
+        String detalhes = "Evento: " + evento.getNome() +
+                "\nDescrição: " + evento.getDescricao() +
+                "\nData do evento: " + evento.getDataFormatada() +
+                "\nCategoria: " + evento.getCategoria() +
+                "\nPreço: R$" + evento.getPreco();
+
+        alert.setContentText(detalhes);
+        alert.showAndWait();
+    }
 }
