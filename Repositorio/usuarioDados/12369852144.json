@@ -162,7 +162,7 @@
         "descricao": "Trio de Jazz",
         "quantidadeAssentosDisponiveis": 2497,
         "data": "Dec 10, 2026, 8:32:38 AM",
-        "statusEvento": false,
+        "statusEvento": true,
         "idEvento": "Jazz Night10-12-2026",
         "categoria": "Musica",
         "preco": 70.0
@@ -170,6 +170,21 @@
       "preco": 70.0,
       "ativo": false,
       "idIngresso": "d1232b35-1d22-4d4c-8131-7ad63f4a0d65"
+    },
+    {
+      "evento": {
+        "nome": "Shakespeare in the Park",
+        "descricao": "Teatro Nacional",
+        "quantidadeAssentosDisponiveis": 90,
+        "data": "Jan 30, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Shakespeare in the Park30-01-2025",
+        "categoria": "Cultura",
+        "preco": 45.0
+      },
+      "preco": 45.0,
+      "ativo": false,
+      "idIngresso": "b9725614-ca6d-474f-968e-ee5f388e84cd"
     }
   ],
   "recibos": [
@@ -284,6 +299,14 @@
       "nomeDoEvento": "Jazz Night",
       "dataDoEvento": "Dec 10, 2026, 8:32:38 AM",
       "preco": 70.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 9, 2024, 1:41:37 PM",
+      "nomeDoEvento": "Shakespeare in the Park",
+      "dataDoEvento": "Jan 30, 2025, 8:32:38 AM",
+      "preco": 45.0
     }
   ],
   "notificacoes": [

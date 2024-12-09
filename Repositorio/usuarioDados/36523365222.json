@@ -132,7 +132,7 @@
         "descricao": "Trio de Jazz",
         "quantidadeAssentosDisponiveis": 2498,
         "data": "Dec 10, 2026, 8:32:38 AM",
-        "statusEvento": false,
+        "statusEvento": true,
         "idEvento": "Jazz Night10-12-2026",
         "categoria": "Musica",
         "preco": 70.0
@@ -140,6 +140,21 @@
       "preco": 70.0,
       "ativo": false,
       "idIngresso": "707cffe7-52e1-43d3-9ac9-08ea26e0f1da"
+    },
+    {
+      "evento": {
+        "nome": "Natal 2023",
+        "descricao": "Evento natalino",
+        "quantidadeAssentosDisponiveis": 147,
+        "data": "Dec 25, 2023, 8:32:38 AM",
+        "statusEvento": false,
+        "idEvento": "Natal25-12-2023",
+        "categoria": "Musica",
+        "preco": 30.0
+      },
+      "preco": 30.0,
+      "ativo": false,
+      "idIngresso": "f9a4a6f7-5ff8-407c-9e6d-9bc9a1701736"
     }
   ],
   "recibos": [
@@ -214,6 +229,14 @@
       "nomeDoEvento": "Jazz Night",
       "dataDoEvento": "Dec 10, 2026, 8:32:38 AM",
       "preco": 70.0
+    },
+    {
+      "loginUsuario": "Usuario2",
+      "tipoPagamento": "DEBITO",
+      "dataDaCompra": "Dec 9, 2023, 1:52:46 PM",
+      "nomeDoEvento": "Natal 2023",
+      "dataDoEvento": "Dec 25, 2023, 8:32:38 AM",
+      "preco": 30.0
     }
   ],
   "notificacoes": []

@@ -1,11 +1,76 @@
 {
   "login": "u",
   "senha": "123",
-  "nome": "U",
+  "nome": "Nome Uuuu",
   "cpf": "36985412547",
   "email": "u@gmail.com",
   "admin": false,
-  "ingressos": [],
-  "recibos": [],
-  "notificacoes": []
+  "ingressos": [
+    {
+      "evento": {
+        "nome": "Festival Gastronômico",
+        "descricao": "Comidas e Bebidas de Todo o Mundo",
+        "quantidadeAssentosDisponiveis": 2495,
+        "data": "Jan 15, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Festival Gastronômico15-01-2025",
+        "categoria": "Gastronomia",
+        "preco": 35.0
+      },
+      "preco": 35.0,
+      "ativo": false,
+      "idIngresso": "b5e9042a-d220-4f04-b803-a9cf8c94bc4a"
+    },
+    {
+      "evento": {
+        "nome": "Show de Rock",
+        "descricao": "Banda XYZ",
+        "quantidadeAssentosDisponiveis": 80,
+        "data": "Feb 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Show de Rock10-02-2025",
+        "categoria": "Musica",
+        "preco": 65.0
+      },
+      "preco": 65.0,
+      "ativo": false,
+      "idIngresso": "229c06a6-3516-4486-9338-dc2aedab7e66"
+    }
+  ],
+  "recibos": [
+    {
+      "loginUsuario": "u",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 9, 2024, 1:56:57 PM",
+      "nomeDoEvento": "Festival Gastronômico",
+      "dataDoEvento": "Jan 15, 2025, 8:32:38 AM",
+      "preco": 35.0
+    },
+    {
+      "loginUsuario": "u",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 9, 2024, 2:00:34 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    },
+    {
+      "loginUsuario": "u",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 9, 2024, 2:01:32 PM",
+      "nomeDoEvento": "Show de Rock",
+      "dataDoEvento": "Feb 10, 2025, 8:32:38 AM",
+      "preco": 65.0
+    }
+  ],
+  "notificacoes": [
+    {
+      "mensagemNotificada": "Compra realizada para o evento: Show de Rock",
+      "lido": false
+    },
+    {
+      "mensagemNotificada": "Cancelamento realizado para o eventoShow de Rock",
+      "lido": false
+    }
+  ]
 }

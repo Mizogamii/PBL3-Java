@@ -113,21 +113,6 @@
     },
     {
       "evento": {
-        "nome": "Trabalhando o amor próprio",
-        "descricao": "Milagre",
-        "quantidadeAssentosDisponiveis": 146,
-        "data": "Nov 10, 2025, 8:32:38 AM",
-        "statusEvento": true,
-        "idEvento": "Trabalhando o amor próprio10-11-2025",
-        "categoria": "Cultura",
-        "preco": 90.0
-      },
-      "preco": 90.0,
-      "ativo": false,
-      "idIngresso": "967bce7f-eea1-4144-ba66-078f962d102a"
-    },
-    {
-      "evento": {
         "nome": "Shakespeare in the Park",
         "descricao": "Teatro Nacional",
         "quantidadeAssentosDisponiveis": 93,
@@ -185,6 +170,21 @@
       "preco": 650.0,
       "ativo": false,
       "idIngresso": "4d004315-3d04-49db-80da-312a6dcc88c0"
+    },
+    {
+      "evento": {
+        "nome": "Natal 2023",
+        "descricao": "Evento natalino",
+        "quantidadeAssentosDisponiveis": 148,
+        "data": "Dec 25, 20243, 8:32:38 AM",
+        "statusEvento": false,
+        "idEvento": "Natal25-12-2023",
+        "categoria": "Musica",
+        "preco": 30.0
+      },
+      "preco": 30.0,
+      "ativo": false,
+      "idIngresso": "45036f11-32f9-4a83-a3cb-7a494dd90be8"
     }
   ],
   "recibos": [
@@ -291,6 +291,14 @@
       "nomeDoEvento": "Love Yourself",
       "dataDoEvento": "May 10, 2025, 8:32:38 AM",
       "preco": 650.0
+    },
+    {
+      "loginUsuario": "t",
+      "tipoPagamento": "CREDITO",
+      "dataDaCompra": "Dec 9, 2023, 1:52:08 PM",
+      "nomeDoEvento": "Natal 2023",
+      "dataDoEvento": "Dec 25, 2023, 8:32:38 AM",
+      "preco": 30.0
     }
   ],
   "notificacoes": [
