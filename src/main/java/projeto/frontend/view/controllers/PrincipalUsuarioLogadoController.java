@@ -69,6 +69,9 @@ public class PrincipalUsuarioLogadoController {
     @FXML
     private TableColumn<Evento, String> colunaData;
 
+    @FXML
+    private Label sairDaConta;
+
     private final List<Evento> eventos = controllerEvento.listarEventosDisponiveis();
 
     /**
@@ -83,13 +86,14 @@ public class PrincipalUsuarioLogadoController {
         labelComprarIngresso.setFocusTraversable(true);
         compras.setFocusTraversable(true);
         labelAvaliarEvento.setFocusTraversable(true);
-
+        sairDaConta.setFocusTraversable(true);
 
         Acessibilidade.configurarEstiloFoco(labelAbrirTelaEdicao);
         Acessibilidade.configurarEstiloFoco(labelAbrirTelaListar);
         Acessibilidade.configurarEstiloFoco(labelComprarIngresso);
         Acessibilidade.configurarEstiloFoco(compras);
         Acessibilidade.configurarEstiloFoco(labelAvaliarEvento);
+        Acessibilidade.configurarEstiloFoco(sairDaConta);
 
         // Configurar ações para Enter
         labelAbrirTelaEdicao.setOnKeyPressed(event -> {
@@ -120,6 +124,10 @@ public class PrincipalUsuarioLogadoController {
                     e.printStackTrace();
                 }
             }
+        });
+
+        sairDaConta.setOnKeyPressed(event -> {
+            if(event.getCode() == KeyCode.ENTER) sairDaConta();
         });
 
         if (areaTexto != null) {

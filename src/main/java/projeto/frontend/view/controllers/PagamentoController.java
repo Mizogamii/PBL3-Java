@@ -115,7 +115,16 @@ public class PagamentoController {
                 Pagamento.TipoPagamento.DEBITO.name(),
                 Pagamento.TipoPagamento.PIX.name()
         );
+
         metodoPagamento.setItems(opcoes);
+
+        metodoPagamento.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                if (!metodoPagamento.isShowing()) {
+                    metodoPagamento.show();
+                }
+            }
+        });
     }
 
     /**

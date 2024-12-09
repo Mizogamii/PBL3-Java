@@ -20,6 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Usuario;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
 
@@ -43,11 +44,23 @@ public class LoginController {
     @FXML
     private Label labelAbrirTelaCadastro;
 
+    @FXML
+    private Label voltarTelaInicial;
+
     /**
      * Inicializa o controlador configurando atalhos e eventos necessários na cena.
      */
     @FXML
     private void initialize(){
+        if (voltarTelaInicial != null) {
+            voltarTelaInicial.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarTelaInicial);
+            voltarTelaInicial.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltarTela(null);
+                }
+            });
+        }
         campoLogin.sceneProperty().addListener((obs, oldScene, newScene) -> {
             if (newScene != null) {
                 KeyCodeCombination fecharPorTeclado = new KeyCodeCombination(KeyCode.W, KeyCodeCombination.CONTROL_DOWN);

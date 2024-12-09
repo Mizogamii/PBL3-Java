@@ -155,6 +155,36 @@
       "preco": 35.0,
       "ativo": false,
       "idIngresso": "92b32291-14e5-42fd-8223-31937776028b"
+    },
+    {
+      "evento": {
+        "nome": "Festival Gastronômico",
+        "descricao": "Comidas e Bebidas de Todo o Mundo",
+        "quantidadeAssentosDisponiveis": 2496,
+        "data": "Jan 15, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Festival Gastronômico15-01-2025",
+        "categoria": "Gastronomia",
+        "preco": 35.0
+      },
+      "preco": 35.0,
+      "ativo": false,
+      "idIngresso": "1aacfec3-adcf-4521-bff4-9728ee184600"
+    },
+    {
+      "evento": {
+        "nome": "Love Yourself",
+        "descricao": "Grupo BTS",
+        "quantidadeAssentosDisponiveis": 2494,
+        "data": "May 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Love Yourself10-05-2025",
+        "categoria": "Musica",
+        "preco": 650.0
+      },
+      "preco": 650.0,
+      "ativo": false,
+      "idIngresso": "4d004315-3d04-49db-80da-312a6dcc88c0"
     }
   ],
   "recibos": [
@@ -245,11 +275,31 @@
       "nomeDoEvento": "Festival Gastronômico",
       "dataDoEvento": "Jan 15, 2025, 8:32:38 AM",
       "preco": 35.0
+    },
+    {
+      "loginUsuario": "t",
+      "tipoPagamento": "PIX",
+      "dataDaCompra": "Dec 9, 2024, 9:21:49 AM",
+      "nomeDoEvento": "Festival Gastronômico",
+      "dataDoEvento": "Jan 15, 2025, 8:32:38 AM",
+      "preco": 35.0
+    },
+    {
+      "loginUsuario": "t",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Dec 9, 2024, 9:22:04 AM",
+      "nomeDoEvento": "Love Yourself",
+      "dataDoEvento": "May 10, 2025, 8:32:38 AM",
+      "preco": 650.0
     }
   ],
   "notificacoes": [
     {
       "mensagemNotificada": "Compra realizada para o evento: Trabalhando o amor próprio",
+      "lido": false
+    },
+    {
+      "mensagemNotificada": "Compra realizada para o evento: Festival Gastronômico",
       "lido": false
     }
   ]

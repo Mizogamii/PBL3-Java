@@ -2,10 +2,6 @@ package projeto.frontend.utils;
 
 import javafx.scene.control.Label;
 
-/**
- * Classe utilitária para configurar o estilo de foco nos componentes.
- * Facilita a reutilização de código relacionado ao estilo de foco.
- */
 public class Acessibilidade {
 
     /**
@@ -14,11 +10,15 @@ public class Acessibilidade {
      * @param label O label no qual o foco será configurado.
      */
     public static void configurarEstiloFoco(Label label) {
+        String estiloOriginal = label.getStyle(); // Pega o estilo original da label
+
         label.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                label.setStyle("-fx-border-color: blue; -fx-border-width: 2px; -fx-border-radius: 5px;");
+                // Mantém o estilo original e adiciona o estilo de foco
+                label.setStyle(estiloOriginal + "-fx-border-color: blue; -fx-border-width: 2px; -fx-border-radius: 5px;");
             } else {
-                label.setStyle("");
+                // Volta ao estilo original sem o foco
+                label.setStyle(estiloOriginal);
             }
         });
     }

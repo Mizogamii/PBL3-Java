@@ -22,6 +22,7 @@ import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Evento;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 
 import java.util.List;
@@ -64,6 +65,32 @@ public class PrincipalUsuarioController {
      */
     @FXML
     public void initialize() {
+        labelAbrirTelaLogin.setFocusTraversable(true);
+        labelAbrirTelaCadastro.setFocusTraversable(true);
+        labelAbrirTelaListar.setFocusTraversable(true);
+
+        Acessibilidade.configurarEstiloFoco(labelAbrirTelaLogin);
+        Acessibilidade.configurarEstiloFoco(labelAbrirTelaCadastro);
+        Acessibilidade.configurarEstiloFoco(labelAbrirTelaListar);
+
+        labelAbrirTelaLogin.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                abrirTelaLogin(null);
+            }
+        });
+
+        labelAbrirTelaCadastro.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                abrirTelaCadastro();
+            }
+        });
+
+        labelAbrirTelaListar.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                abrirTelaListar();
+            }
+        });
+
         colunaNomeEvento.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colunaData.setCellValueFactory(new PropertyValueFactory<>("dataFormatada"));
         colunaCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
