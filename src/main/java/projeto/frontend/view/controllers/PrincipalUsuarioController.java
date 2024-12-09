@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Evento;
@@ -64,7 +65,7 @@ public class PrincipalUsuarioController {
     @FXML
     public void initialize() {
         colunaNomeEvento.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        colunaData.setCellValueFactory(new PropertyValueFactory<>("data"));
+        colunaData.setCellValueFactory(new PropertyValueFactory<>("dataFormatada"));
         colunaCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
 
         ObservableList<Evento> listaEventos = FXCollections.observableArrayList(eventos);
@@ -73,6 +74,15 @@ public class PrincipalUsuarioController {
 
         tabelaEventos.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
+                Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
+                if (eventoSelecionado != null) {
+                    abrirDetalhesEventos(eventoSelecionado);
+                }
+            }
+        });
+
+        tabelaEventos.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
                 Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
                 if (eventoSelecionado != null) {
                     abrirDetalhesEventos(eventoSelecionado);

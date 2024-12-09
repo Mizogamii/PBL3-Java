@@ -16,10 +16,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import projeto.backend.model.Comentario;
 import projeto.backend.model.Evento;
 import projeto.backend.model.Ingresso;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 
 import java.io.IOException;
@@ -46,12 +48,25 @@ public class TelaEventoController {
     @FXML
     private ListView<Comentario> areaTexto;
 
+    @FXML
+    public Label voltarTelaInicial;
+
     /**
      * Inicializa a tela de evento com as informações do evento e seus comentários.
      *
      * @param evento o evento cujas informações serão exibidas na tela.
      */
     public void initialize(Evento evento) {
+
+        if (voltarTelaInicial != null) {
+            voltarTelaInicial.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarTelaInicial);
+            voltarTelaInicial.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltarTela(null);
+                }
+            });
+        }
         nomeEventoLabel.setText(evento.getNome());
         categoriaLabel.setText(evento.getCategoria());
         descricaoLabel.setText(evento.getDescricao());
@@ -78,6 +93,15 @@ public class TelaEventoController {
         // Ação ao clicar duas vezes sobre um evento
         areaTexto.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
+                Comentario comentario = areaTexto.getSelectionModel().getSelectedItem();
+                if (comentario != null) {
+                    abrirDetalhesComentario(comentario);
+                }
+            }
+        });
+
+        areaTexto.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
                 Comentario comentario = areaTexto.getSelectionModel().getSelectedItem();
                 if (comentario != null) {
                     abrirDetalhesComentario(comentario);

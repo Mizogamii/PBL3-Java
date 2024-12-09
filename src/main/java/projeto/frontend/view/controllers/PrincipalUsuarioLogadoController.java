@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -25,8 +26,10 @@ import projeto.backend.model.Comentario;
 import projeto.backend.model.Evento;
 import projeto.backend.model.Notificacoes;
 import projeto.backend.model.Usuario;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
+import javafx.scene.input.KeyCode;
 
 import java.io.IOException;
 import java.util.List;
@@ -38,6 +41,7 @@ import java.util.List;
 public class PrincipalUsuarioLogadoController {
     private ControllerEvento controllerEvento = new ControllerEvento();
 
+
     @FXML
     private Label labelAbrirTelaEdicao;
 
@@ -46,6 +50,12 @@ public class PrincipalUsuarioLogadoController {
 
     @FXML
     private Label labelAvaliarEvento;
+
+    @FXML
+    private Label labelComprarIngresso;
+
+    @FXML
+    private Label compras;
 
     @FXML
     private ListView<Notificacoes> areaTexto;
@@ -67,6 +77,51 @@ public class PrincipalUsuarioLogadoController {
      */
     @FXML
     public void initialize() {
+
+        labelAbrirTelaEdicao.setFocusTraversable(true);
+        labelAbrirTelaListar.setFocusTraversable(true);
+        labelComprarIngresso.setFocusTraversable(true);
+        compras.setFocusTraversable(true);
+        labelAvaliarEvento.setFocusTraversable(true);
+
+
+        Acessibilidade.configurarEstiloFoco(labelAbrirTelaEdicao);
+        Acessibilidade.configurarEstiloFoco(labelAbrirTelaListar);
+        Acessibilidade.configurarEstiloFoco(labelComprarIngresso);
+        Acessibilidade.configurarEstiloFoco(compras);
+        Acessibilidade.configurarEstiloFoco(labelAvaliarEvento);
+
+        // Configurar ações para Enter
+        labelAbrirTelaEdicao.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                abrirTelaEditar();
+            }
+        });
+
+        labelAbrirTelaListar.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                abrirTelaListar();
+            }
+        });
+
+        labelComprarIngresso.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) abrirTelaComprar(null);
+        });
+
+        compras.setOnKeyPressed(event -> {
+            if(event.getCode() == KeyCode.ENTER) abrirTelaComprar(null);
+        });
+
+        labelAvaliarEvento.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                try {
+                    fazerFeedBack(null);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
         if (areaTexto != null) {
             ObservableList<Notificacoes> notificacoesObservable = FXCollections.observableArrayList(UsuarioLogado.getUsuarioLogado().getNotificacoes());
             areaTexto.setItems(notificacoesObservable);
@@ -94,10 +149,19 @@ public class PrincipalUsuarioLogadoController {
                         }
                     }
                 });
+
+                areaTexto.setOnKeyPressed(event -> {
+                    if (event.getCode() == KeyCode.ENTER) {
+                        Notificacoes notificacaoSelecionada = areaTexto.getSelectionModel().getSelectedItem();
+                        if (notificacaoSelecionada != null) {
+                            abrirTelaDetalhesNotificacao(notificacaoSelecionada);
+                        }
+                    }
+                });
             }
         }
         colunaNomeEvento.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        colunaData.setCellValueFactory(new PropertyValueFactory<>("data"));
+        colunaData.setCellValueFactory(new PropertyValueFactory<>("dataFormatada"));
 
         ObservableList<Evento> listaEventos = FXCollections.observableArrayList(eventos);
 
@@ -111,7 +175,18 @@ public class PrincipalUsuarioLogadoController {
                 }
             }
         });
+
+        // Ação para pressionar a tecla Enter na TableView
+        tabelaEventos.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
+                if (eventoSelecionado != null) {
+                    abrirDetalhesEventos(eventoSelecionado);
+                }
+            }
+        });
     }
+
 
     /**
      * Atualiza a lista de notificações exibida no ListView.

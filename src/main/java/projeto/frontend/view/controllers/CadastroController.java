@@ -14,10 +14,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Usuario;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 
 /**
@@ -46,6 +48,34 @@ public class CadastroController {
 
     @FXML
     private Label voltarParaLogin;
+
+    @FXML
+    private Label voltarTelaInicial;
+
+
+    @FXML
+    public void initialize() {
+        if (voltarParaLogin != null) {
+            voltarParaLogin.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarParaLogin);
+            voltarParaLogin.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltandoLogin();
+                }
+            });
+        }
+
+        if (voltarTelaInicial != null) {
+            voltarTelaInicial.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarTelaInicial);
+            voltarTelaInicial.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltarTela(null);
+                }
+            });
+        }
+
+    }
 
     /**
      * Método chamado ao pressionar o botão de salvar.

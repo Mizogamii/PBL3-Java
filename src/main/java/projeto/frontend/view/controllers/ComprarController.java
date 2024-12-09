@@ -22,10 +22,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Evento;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 
 import java.io.IOException;
@@ -75,10 +77,19 @@ public class ComprarController {
      */
     @FXML
     public void initialize() {
+        if (voltarTelaInicial != null) {
+            voltarTelaInicial.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarTelaInicial);
+            voltarTelaInicial.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltarTela(null);
+                }
+            });
+        }
         colunaNomeEvento.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colunaCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
-        colunaData.setCellValueFactory(new PropertyValueFactory<>("data"));
+        colunaData.setCellValueFactory(new PropertyValueFactory<>("dataFormatada"));
         colunaQuantidadeAssentosDisponiveis.setCellValueFactory(new PropertyValueFactory<>("quantidadeAssentosDisponiveis"));
         colunaPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
 
@@ -97,6 +108,15 @@ public class ComprarController {
 
         tabelaEventos.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
+                Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
+                if (eventoSelecionado != null) {
+                    abrirTelaPagamento(eventoSelecionado);
+                }
+            }
+        });
+
+        tabelaEventos.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
                 Evento eventoSelecionado = tabelaEventos.getSelectionModel().getSelectedItem();
                 if (eventoSelecionado != null) {
                     abrirTelaPagamento(eventoSelecionado);

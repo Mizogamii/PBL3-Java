@@ -14,10 +14,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import projeto.backend.controller.ControllerEvento;
 import projeto.backend.model.Ingresso;
 import projeto.backend.model.Recibo;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
 
@@ -41,7 +43,23 @@ public class ComentarioController {
     @FXML
     private TextArea areaComentar;
 
+    @FXML
+    private Label voltarTelaInicial;
+
     private Ingresso ingresso;
+
+    @FXML
+    public void initialize() {
+        if (voltarTelaInicial != null) {
+            voltarTelaInicial.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarTelaInicial);
+            voltarTelaInicial.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltarTela(null);
+                }
+            });
+        }
+    }
 
     /**
      * Define o ingresso relacionado ao comentário e atualiza o nome do evento na interface.

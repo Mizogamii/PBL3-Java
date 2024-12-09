@@ -21,10 +21,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import projeto.backend.model.Evento;
 import projeto.backend.model.Ingresso;
 import projeto.backend.model.Usuario;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 
 import projeto.backend.controller.ControllerUsuario;
@@ -70,11 +72,20 @@ public class ListaEventosFeedBack {
      */
     @FXML
     public void initialize() {
+        if (voltarTelaInicial != null) {
+            voltarTelaInicial.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarTelaInicial);
+            voltarTelaInicial.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltarTela(null);
+                }
+            });
+        }
         //Inserindo dados nas colunas da tabela
         colunaNomeEvento.setCellValueFactory(new PropertyValueFactory<>("nomeEvento"));
         colunaCategoria.setCellValueFactory(new PropertyValueFactory<>("categoriaEvento"));
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricaoEvento"));
-        colunaData.setCellValueFactory(new PropertyValueFactory<>("dataEvento"));
+        colunaData.setCellValueFactory(new PropertyValueFactory<>("dataEventoFormatado"));
 
         ObservableList<Ingresso> listaIngressos = FXCollections.observableArrayList(ingressos);
         tabelaEventoParticipado.setItems(listaIngressos);
@@ -82,6 +93,19 @@ public class ListaEventosFeedBack {
         //Ação ao clicar duas vezes no evento
         tabelaEventoParticipado.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
+                Ingresso ingressoSelecionado = tabelaEventoParticipado.getSelectionModel().getSelectedItem();
+                if (ingressoSelecionado != null) {
+                    try {
+                        comentar(ingressoSelecionado);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        });
+
+        tabelaEventoParticipado.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
                 Ingresso ingressoSelecionado = tabelaEventoParticipado.getSelectionModel().getSelectedItem();
                 if (ingressoSelecionado != null) {
                     try {

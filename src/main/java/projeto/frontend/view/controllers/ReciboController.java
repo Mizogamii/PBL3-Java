@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerCompra;
@@ -25,6 +26,7 @@ import javafx.scene.control.Label;
 import projeto.backend.model.Notificacoes;
 import projeto.backend.model.Pagamento;
 import projeto.backend.model.Recibo;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
 
@@ -53,8 +55,24 @@ public class ReciboController {
     @FXML
     private Label statusLabel;
 
+    @FXML
+    public Label voltarTelaInicial;
+
     private Recibo recibo;
     private Ingresso ingressoSelecionado;
+
+    @FXML
+    public void initialize() {
+        if (voltarTelaInicial != null) {
+            voltarTelaInicial.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarTelaInicial);
+            voltarTelaInicial.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltarTela(null);
+                }
+            });
+        }
+    }
 
     /**
      * Exibe as informações do recibo com base nos detalhes do ingresso fornecido.

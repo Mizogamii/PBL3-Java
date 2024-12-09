@@ -22,10 +22,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import projeto.backend.controller.ControllerUsuario;
+import projeto.backend.model.Evento;
 import projeto.backend.model.Ingresso;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
 
@@ -71,11 +74,20 @@ public class ComprasRealizadasController {
      */
     @FXML
     public void initialize() {
+        if (voltarTelaInicial != null) {
+            voltarTelaInicial.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarTelaInicial);
+            voltarTelaInicial.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltarTela(null);
+                }
+            });
+        }
         //Configura as colunas da tabela
         colunaNomeEvento.setCellValueFactory(new PropertyValueFactory<>("nomeEvento"));
         colunaCategoria.setCellValueFactory(new PropertyValueFactory<>("categoriaEvento"));
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricaoEvento"));
-        colunaData.setCellValueFactory(new PropertyValueFactory<>("dataEvento"));
+        colunaData.setCellValueFactory(new PropertyValueFactory<>("dataEventoFormatado"));
         colunaStatusEvento.setCellValueFactory(new PropertyValueFactory<>("statusEvento"));
 
         //Adiciona os ingressos à tabela
@@ -95,6 +107,19 @@ public class ComprasRealizadasController {
         // Ação ao clicar duas vezes sobre um ingresso
         tabelaCompras.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
+                Ingresso ingressoSelecionado = tabelaCompras.getSelectionModel().getSelectedItem();
+                if (ingressoSelecionado != null) {
+                    try {
+                        abrirTelaRecibo(ingressoSelecionado);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        });
+
+        tabelaCompras.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
                 Ingresso ingressoSelecionado = tabelaCompras.getSelectionModel().getSelectedItem();
                 if (ingressoSelecionado != null) {
                     try {

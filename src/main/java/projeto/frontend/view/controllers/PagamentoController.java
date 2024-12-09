@@ -17,11 +17,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Evento;
 import projeto.backend.model.Ingresso;
 import projeto.backend.model.Notificacoes;
+import projeto.frontend.utils.Acessibilidade;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.backend.model.Pagamento;
 import projeto.backend.controller.ControllerCompra;
@@ -67,6 +69,8 @@ public class PagamentoController {
     @FXML
     private ComboBox<String> metodoPagamento;
 
+    @FXML
+    public Label voltarTelaInicial;
 
     /**
      * Informações do evento associado à compra.
@@ -96,6 +100,15 @@ public class PagamentoController {
      */
     @FXML
     public void initialize(){
+        if (voltarTelaInicial != null) {
+            voltarTelaInicial.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarTelaInicial);
+            voltarTelaInicial.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltarTela(null);
+                }
+            });
+        }
         ObservableList<String> opcoes = FXCollections.observableArrayList(
                 Pagamento.TipoPagamento.BOLETO.name(),
                 Pagamento.TipoPagamento.CREDITO.name(),

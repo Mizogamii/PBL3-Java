@@ -11,6 +11,7 @@
 package projeto.frontend.view.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -18,6 +19,8 @@ import projeto.backend.controller.ControllerUsuario;
 import projeto.backend.model.Usuario;
 import projeto.frontend.utils.NavegacaoTela;
 import projeto.frontend.utils.UsuarioLogado;
+import projeto.frontend.utils.Acessibilidade;
+import javafx.scene.input.KeyCode;
 
 /**
  * Controlador da tela de edição de dados do usuário, permitindo que o usuário altere
@@ -36,6 +39,9 @@ public class EdicaoController {
     @FXML
     private PasswordField campoSenha;
 
+    @FXML
+    public Label voltarTelaInicial;
+
     private ControllerUsuario controllerUsuario = new ControllerUsuario();
 
     /**
@@ -45,6 +51,19 @@ public class EdicaoController {
      */
     public void voltarTela(MouseEvent mouseEvent) {
         NavegacaoTela.voltarTelaInicial();
+    }
+
+    @FXML
+    public void initialize() {
+        if (voltarTelaInicial != null) {
+            voltarTelaInicial.setFocusTraversable(true);
+            Acessibilidade.configurarEstiloFoco(voltarTelaInicial);
+            voltarTelaInicial.setOnKeyPressed(event -> {
+                if (event.getCode() == KeyCode.ENTER) {
+                    voltarTela(null);
+                }
+            });
+        }
     }
 
     /**
