@@ -11,29 +11,29 @@
    <children>
       <Label layoutX="58.0" layoutY="119.0" prefHeight="36.0" prefWidth="166.0" text="Login" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS Bold" size="16.0" />
+            <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
       <Label layoutX="58.0" layoutY="155.0" text="Nome de usuário">
          <font>
-            <Font name="Comic Sans MS Bold" size="12.0" />
+            <Font name="Arial Bold" size="12.0" />
          </font>
       </Label>
       <TextField fx:id="campoLogin" layoutX="56.0" layoutY="173.0" prefHeight="26.0" prefWidth="210.0" promptText="Informe o nome do usuário" />
-      <Label layoutX="56.0" layoutY="214.0" text="Senha">
+      <Label layoutX="56.0" layoutY="222.0" text="Senha">
          <font>
-            <Font name="Comic Sans MS Bold" size="12.0" />
+            <Font name="Arial Bold" size="12.0" />
          </font>
       </Label>
       <PasswordField fx:id="campoSenha" layoutX="56.0" layoutY="237.0" prefHeight="26.0" prefWidth="210.0" promptText="Informe sua senha" />
       <Label layoutX="169.0" layoutY="272.0" text="Esqueceu a senha? " />
       <Label layoutX="168.0" layoutY="290.0" onMouseClicked="#abrirTelaCadastro" style="-fx-text-fill: #000000; -fx-cursor: hand;" styleClass="label-button" text="Faça outra conta.">
          <font>
-            <Font name="Comic Sans MS Bold" size="12.0" />
+            <Font name="Arial Bold" size="12.0" />
          </font></Label>
       <Button layoutX="56.0" layoutY="316.0" mnemonicParsing="false" onAction="#abrirTelaLogin" prefHeight="36.0" prefWidth="210.0" style="-fx-background-color: #FFB6C1; -fx-cursor: hand;" text="Entrar" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
          <font>
-            <Font name="Comic Sans MS Bold" size="14.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
          <effect>
             <Blend mode="RED" />
@@ -45,7 +45,7 @@
       <Label layoutX="105.0" layoutY="362.0" text="Não tem conta? " />
       <Label fx:id="labelAbrirTelaCadastro" layoutX="195.0" layoutY="362.0" onMouseClicked="#abrirTelaCadastro" style="-fx-text-fill: #000000; -fx-cursor: hand;" styleClass="label-button" text="Inscreva-se">
          <font>
-            <Font name="Comic Sans MS Bold" size="12.0" />
+            <Font name="Arial Bold" size="12.0" />
          </font>
       </Label>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="69.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">

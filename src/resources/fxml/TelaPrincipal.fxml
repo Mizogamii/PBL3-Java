@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id=" linear-gradient(to top, #FFFFFF 95%, #FFFFFF)" prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.PrincipalUsuarioController">
+<AnchorPane id=" linear-gradient(to top, #FFFFFF 95%, #FFFFFF)" prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.PrincipalUsuarioController">
    <children>
       <Region layoutY="113.0" prefHeight="338.0" prefWidth="154.0" style="-fx-background-color: #e8e8e8;" />
       <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="265.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">
@@ -27,7 +22,10 @@
                   <Image url="@../verificacao-de-lista.png" />
                </image>
             </ImageView>
-         </graphic></Label>
+         </graphic>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Label>
       <Region layoutY="-1.0" prefHeight="30.0" prefWidth="650.0" style="-fx-background-color: #909090;" />
       <ChoiceBox fx:id="SelecionarIdioma" layoutX="547.0" layoutY="77.0" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #000000; -fx-text-fill: #333; -fx-cursor: hand;">
          <items>
@@ -40,11 +38,11 @@
       </ChoiceBox>
       <Label fx:id="labelAbrirTelaLogin" layoutX="526.0" layoutY="5.0" onMouseClicked="#abrirTelaLogin" style="-fx-background-color: #FF1493; -fx-text-fill: white; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.3, 0, 2);" text=" Entrar ">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="Arial Bold" size="12.0" />
          </font></Label>
       <Label fx:id="labelAbrirTelaCadastro" layoutX="576.0" layoutY="5.0" onMouseClicked="#abrirTelaCadastro" style="-fx-background-color: #FF1493; -fx-text-fill: white; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.3, 0, 2);" text=" Cadastrar ">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="Arial Bold" size="12.0" />
          </font>
    </Label>
       <ImageView fitHeight="119.0" fitWidth="120.0" layoutX="17.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
@@ -71,6 +69,5 @@
             </ImageView>
          </graphic>
       </Label>
-
    </children>
 </AnchorPane>

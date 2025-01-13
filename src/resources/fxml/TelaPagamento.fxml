@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="446.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to top, #FFFFFF 75%, #FFB6C1 75%, #FF69B4, #FF1493);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projeto.frontend.view.controllers.PagamentoController">
     <children>
         <Region layoutY="89.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
-        <Label layoutX="285.0" layoutY="93.0" text="Pagamento">
+        <Label layoutX="285.0" layoutY="92.0" text="Pagamento">
             <font>
                 <Font name="Arial Bold" size="18.0" />
             </font>
@@ -27,14 +27,14 @@
             <Font name="Arial Bold" size="16.0" />
          </font></Label>
       <ComboBox fx:id="metodoPagamento" layoutX="61.0" layoutY="387.0" prefHeight="26.0" prefWidth="173.0" />
-      <Label layoutX="61.0" layoutY="360.0" text="Escolha a forma de pagamento:">
+      <Label layoutX="61.0" layoutY="368.0" text="Escolha a forma de pagamento:">
          <font>
-            <Font name="Comic Sans MS Bold" size="12.0" />
+            <Font name="Arial Bold" size="12.0" />
          </font>
       </Label>
       <Button layoutX="458.0" layoutY="389.0" mnemonicParsing="false" onAction="#botaoRealizarPagamento" style="-fx-background-color: #FFB6C1; -fx-cursor: hand;" text="Realizar pagamento" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Comic Sans MS Bold" size="15.0" />
+            <Font name="Arial Bold" size="15.0" />
          </font>
       </Button>
       <Pane layoutX="14.0" layoutY="157.0" prefHeight="212.0" prefWidth="594.0">
@@ -45,7 +45,7 @@
                      <children>
                         <Label layoutX="26.0" layoutY="4.0" text="Formas de pagamento">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                         </Label>
                         <Label layoutX="26.0" layoutY="35.0" text="Boleto">
@@ -92,7 +92,7 @@
                <children>
                   <Label layoutX="13.0" layoutY="14.0" text="Informações sobre o evento">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
                   <Label layoutX="13.0" layoutY="49.0" prefHeight="29.0" prefWidth="122.0" text="Data do evento: ">
@@ -129,14 +129,14 @@
             </Pane>
             <Pane layoutX="431.0" layoutY="3.0" prefHeight="184.0" prefWidth="174.0">
                <children>
-                  <Label layoutX="38.0" layoutY="14.0" prefHeight="20.0" prefWidth="98.0" text="Total a pagar: ">
+                  <Label layoutX="38.0" layoutY="12.0" prefHeight="20.0" prefWidth="98.0" text="Total a pagar: ">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
                   <Label fx:id="precoLabel1" alignment="CENTER" layoutX="14.0" layoutY="46.0" prefHeight="58.0" prefWidth="147.0" text="R$" textAlignment="CENTER" textFill="RED">
                      <font>
-                        <Font name="System Bold" size="15.0" />
+                        <Font name="Arial Bold" size="15.0" />
                      </font>
                   </Label>
                </children>
