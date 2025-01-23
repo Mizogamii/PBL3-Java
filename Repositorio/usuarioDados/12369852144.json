@@ -12,7 +12,7 @@
         "descricao": "Comidas e Bebidas de Todo o Mundo",
         "quantidadeAssentosDisponiveis": 2499,
         "data": "Jan 15, 2025, 8:32:38 AM",
-        "statusEvento": true,
+        "statusEvento": false,
         "idEvento": "Festival Gastronômico15-01-2025",
         "categoria": "Gastronomia",
         "preco": 35.0
@@ -147,7 +147,7 @@
         "descricao": "Mostra de Filmes Independentes",
         "quantidadeAssentosDisponiveis": 99,
         "data": "Jan 10, 2025, 8:32:38 AM",
-        "statusEvento": true,
+        "statusEvento": false,
         "idEvento": "Festival de Cinema Brasileiro10-01-2025",
         "categoria": "Musica",
         "preco": 85.0
@@ -200,6 +200,21 @@
       "preco": 45.0,
       "ativo": false,
       "idIngresso": "ad055c82-dbf7-46ce-b305-6d7ae7e832cb"
+    },
+    {
+      "evento": {
+        "nome": "Tech Innovators 2025",
+        "descricao": "Conferência sobre Inovações Tecnológicas",
+        "quantidadeAssentosDisponiveis": 2494,
+        "data": "Sep 10, 2025, 8:32:38 AM",
+        "statusEvento": true,
+        "idEvento": "Tech Innovators 202510-09-2025",
+        "categoria": "Tecnologia",
+        "preco": 96.0
+      },
+      "preco": 96.0,
+      "ativo": false,
+      "idIngresso": "57af3592-2e21-4d2b-992b-f0331bcc5cde"
     }
   ],
   "recibos": [
@@ -330,6 +345,14 @@
       "nomeDoEvento": "Shakespeare in the Park",
       "dataDoEvento": "Jan 30, 2025, 8:32:38 AM",
       "preco": 45.0
+    },
+    {
+      "loginUsuario": "Sayuyu",
+      "tipoPagamento": "BOLETO",
+      "dataDaCompra": "Jan 23, 2025, 9:27:33 AM",
+      "nomeDoEvento": "Tech Innovators 2025",
+      "dataDoEvento": "Sep 10, 2025, 8:32:38 AM",
+      "preco": 96.0
     }
   ],
   "notificacoes": [
@@ -343,6 +366,18 @@
     },
     {
       "mensagemNotificada": "Cancelamento realizado para o evento",
+      "lido": false
+    },
+    {
+      "mensagemNotificada": "O evento Shakespeare in the Parkestá chegando! Não esqueça de participar!",
+      "lido": false
+    },
+    {
+      "mensagemNotificada": "O evento Shakespeare in the Parkestá chegando! Não esqueça de participar!",
+      "lido": false
+    },
+    {
+      "mensagemNotificada": "O evento Shakespeare in the Parkestá chegando! Não esqueça de participar!",
       "lido": false
     }
   ]
