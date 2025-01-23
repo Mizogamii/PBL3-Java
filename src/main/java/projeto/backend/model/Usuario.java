@@ -148,7 +148,6 @@ public class Usuario {
             this.notificacoes = new ArrayList<>();
         }
         this.notificacoes.add(notificacao);
-        System.out.println("Notificação adicionada: " + notificacao);
     }
 
     public List<Notificacoes> getNotificacoes() {
