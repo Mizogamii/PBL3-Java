@@ -50,7 +50,7 @@
       </Label>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="69.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagemLogo.png" />
+            <Image url="@../Icons/imagemLogo.png" />
          </image>
       </ImageView>
       <Label fx:id="voltarTelaInicial" layoutX="457.0" layoutY="412.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial">

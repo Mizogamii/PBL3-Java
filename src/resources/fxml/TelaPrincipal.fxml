@@ -12,14 +12,14 @@
       <Region layoutY="113.0" prefHeight="338.0" prefWidth="154.0" style="-fx-background-color: #e8e8e8;" />
       <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="265.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">
          <image>
-            <Image url="@../imagemLogo.png" />
+            <Image url="@../Icons/imagemLogo.png" />
          </image>
       </ImageView>
       <Label fx:id="labelAbrirTelaListar" layoutX="27.0" layoutY="131.0" onMouseClicked="#abrirTelaListar" prefHeight="30.0" prefWidth="100.0" style="-fx-text-fill: #000000; -fx-cursor: hand;" text="Listar eventos">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../verificacao-de-lista.png" />
+                  <Image url="@../Icons/verificacao-de-lista.png" />
                </image>
             </ImageView>
          </graphic>
@@ -47,7 +47,7 @@
    </Label>
       <ImageView fitHeight="119.0" fitWidth="120.0" layoutX="17.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagemYoon.png" />
+            <Image url="@../Icons/imagemYoon.png" />
          </image>
       </ImageView>
       <TableView fx:id="tabelaEventos" layoutX="181.0" layoutY="138.0" prefHeight="262.0" prefWidth="426.0" style="-fx-cursor: hand; -fx-background-color: white;">
@@ -64,7 +64,7 @@
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../clique.png" />
+                  <Image url="@../Icons/clique.png" />
                </image>
             </ImageView>
          </graphic>

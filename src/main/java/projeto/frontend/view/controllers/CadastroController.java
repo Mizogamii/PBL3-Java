@@ -88,7 +88,6 @@ public class CadastroController {
         String cpf = campoCpf.getText();
         String senha = campoSenha.getText();
 
-        System.out.println("Dados recebidos: " + nome + ", " + login + ", " + email + ", " + cpf + ", " + senha);
         if(controllerUsuario == null){
             NavegacaoTela.showErrorMessage("Erro: Controller não foi inicializado");
             return;

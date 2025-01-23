@@ -25,7 +25,7 @@
       </Label>
       <ImageView fitHeight="89.0" fitWidth="135.0" layoutX="266.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagemLogo.png" />
+            <Image url="@../Icons/imagemLogo.png" />
          </image>
       </ImageView>
       <Label fx:id="voltarTelaInicial" layoutX="462.0" layoutY="90.0" onMouseClicked="#voltarTela" style="-fx-text-fill: #000000; -fx-cursor: hand;" text=" ← Voltar para tela inicial">
@@ -35,7 +35,7 @@
       <ComboBox fx:id="filtroCategoria" layoutX="517.0" layoutY="123.0" onAction="#filtrarCategoria" prefHeight="26.0" prefWidth="114.0" />
       <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="594.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../categoria.png" />
+            <Image url="@../Icons/categoria.png" />
          </image>
       </ImageView>
       <Label layoutX="210.0" layoutY="404.0" prefHeight="26.0" prefWidth="261.0" text="Clique duas vezes para detalhes">
@@ -45,7 +45,7 @@
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../clique.png" />
+                  <Image url="@../Icons/clique.png" />
                </image>
             </ImageView>
          </graphic>

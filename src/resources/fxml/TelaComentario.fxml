@@ -10,7 +10,7 @@
       <Region layoutY="110.0" prefHeight="28.0" prefWidth="650.0" style="-fx-background-color: #e8e8e8;" />
       <ImageView fitHeight="82.0" fitWidth="142.0" layoutX="265.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 2;">
          <image>
-            <Image url="@../imagemLogo.png" />
+            <Image url="@../Icons/imagemLogo.png" />
          </image>
       </ImageView>
       <Region layoutY="-1.0" prefHeight="30.0" prefWidth="650.0" style="-fx-background-color: #909090;" />
